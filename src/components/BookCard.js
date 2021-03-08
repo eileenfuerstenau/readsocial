@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components/macro'
+import PropTypes from 'prop-types'
 
 export default function BookCard({ id, cover, title, author }) {
   return (
@@ -13,6 +14,13 @@ export default function BookCard({ id, cover, title, author }) {
       </section>
     </Card>
   )
+}
+
+BookCard.propTypes = {
+  id: PropTypes.string,
+  cover: PropTypes.any,
+  title: PropTypes.string,
+  author: PropTypes.string,
 }
 
 const Card = styled.section`
