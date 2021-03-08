@@ -1,4 +1,4 @@
-import data from '../material/bookdata.json'
+import { books } from '../material/bookdata.json'
 import BookCard from './BookCard'
 import styled from 'styled-components/macro'
 
@@ -6,7 +6,7 @@ export default function App() {
   return (
     <>
       <AppLayout>
-        {data.books.map(card => (
+        {books.map(card => (
           <BookCard
             key={card.id}
             cover={card.cover}

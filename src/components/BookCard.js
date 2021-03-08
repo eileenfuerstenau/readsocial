@@ -6,10 +6,10 @@ export default function BookCard({ id, cover, title, author }) {
   return (
     <Card key={id}>
       <CoverWrapper>
-        <img src={cover} alt="" width="75" height="110" />
+        <img src={cover} alt="cover" width="75" height="110" />
       </CoverWrapper>
       <section>
-        <h2>{title}</h2>
+        <Title>{title}</Title>
         <Author>{author}</Author>
       </section>
     </Card>
@@ -18,7 +18,7 @@ export default function BookCard({ id, cover, title, author }) {
 
 BookCard.propTypes = {
   id: PropTypes.string,
-  cover: PropTypes.any,
+  cover: PropTypes.string,
   title: PropTypes.string,
   author: PropTypes.string,
 }
@@ -27,6 +27,9 @@ const Card = styled.section`
   background-color: #f3f3f3;
   display: grid;
   grid-template-columns: 2fr 5fr;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px;
+  padding: 5px;
 `
 const CoverWrapper = styled.span`
   display: grid;
@@ -34,6 +37,11 @@ const CoverWrapper = styled.span`
   justify-content: center;
   padding: 10px;
 `
-const Author = styled.h3`
+const Author = styled.h2`
   font-weight: normal;
+  font-size: 100%;
+`
+const Title = styled.h2`
+  font-weight: bold;
+  font-size: 112.5%;
 `
