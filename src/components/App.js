@@ -1,15 +1,26 @@
 import data from '../material/bookdata.json'
 import BookCard from './BookCard'
+import styled from 'styled-components/macro'
 
-function App() {
-  data.books.map(card => (
-    <BookCard
-      key={card.id}
-      cover={card.cover}
-      title={card.title}
-      author={card.author}
-    />
-  ))
+export default function App() {
+  return (
+    <>
+      <AppLayout>
+        {data.books.map(card => (
+          <BookCard
+            key={card.id}
+            cover={card.cover}
+            title={card.title}
+            author={card.author}
+          />
+        ))}
+      </AppLayout>
+    </>
+  )
 }
 
-export default App
+const AppLayout = styled.div`
+  display: grid;
+  gap: 20px;
+  padding: 20px;
+`

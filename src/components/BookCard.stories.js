@@ -10,6 +10,7 @@ const Template = args => <BookCard {...args} />
 export const Primary = Template.bind({})
 
 Primary.args = {
-  title: 'Book1',
+  title: 'Book',
   author: 'Max Mustermann',
+  cover: '../material/book-cover/2.jpg',
 }
