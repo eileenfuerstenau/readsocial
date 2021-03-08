@@ -9,7 +9,7 @@ export default function BookCard({ id, cover, title, author }) {
       </CoverWrapper>
       <section>
         <h2>{title}</h2>
-        <h2>{author}</h2>
+        <Author>{author}</Author>
       </section>
     </Card>
   )
@@ -25,4 +25,7 @@ const CoverWrapper = styled.span`
   align-content: center;
   justify-content: center;
   padding: 10px;
+`
+const Author = styled.h3`
+  font-weight: normal;
 `
