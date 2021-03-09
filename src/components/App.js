@@ -12,6 +12,7 @@ export default function App() {
             cover={card.cover}
             title={card.title}
             author={card.author}
+            description={card.content}
           />
         ))}
       </AppLayout>

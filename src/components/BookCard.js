@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components/macro'
 import PropTypes from 'prop-types'
 
-export default function BookCard({ id, cover, title, author }) {
+export default function BookCard({ id, cover, title, author, description }) {
   return (
     <Card key={id}>
       <CoverWrapper>
@@ -11,6 +11,7 @@ export default function BookCard({ id, cover, title, author }) {
       <section>
         <Title>{title}</Title>
         <Author>{author}</Author>
+        {description}
       </section>
     </Card>
   )
