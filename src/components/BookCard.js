@@ -1,8 +1,11 @@
 import React from 'react'
 import styled from 'styled-components/macro'
 import PropTypes from 'prop-types'
+import Button from './Button'
 
 export default function BookCard({ id, cover, title, author, description }) {
+  const [isContentExtended, setContentExtended] = React.useState(false)
+
   return (
     <Card key={id}>
       <CoverWrapper>
@@ -11,7 +14,22 @@ export default function BookCard({ id, cover, title, author, description }) {
       <section>
         <Title>{title}</Title>
         <Author>{author}</Author>
-        {description}
+        <Content hidden={isContentExtended}>
+          {description.slice(0, 99)} ...
+        </Content>
+        <Button
+          hidden={isContentExtended}
+          onClick={() => setContentExtended(!isContentExtended)}
+        >
+          Read more
+        </Button>
+        <Content hidden={!isContentExtended}> {description} </Content>
+        <Button
+          hidden={!isContentExtended}
+          onClick={() => setContentExtended(!isContentExtended)}
+        >
+          Read less
+        </Button>
       </section>
     </Card>
   )
@@ -19,7 +37,7 @@ export default function BookCard({ id, cover, title, author, description }) {
 
 BookCard.propTypes = {
   id: PropTypes.string,
-  cover: PropTypes.string,
+  cover: PropTypes.any,
   title: PropTypes.string,
   author: PropTypes.string,
 }
@@ -30,7 +48,7 @@ const Card = styled.section`
   grid-template-columns: 2fr 5fr;
   border-radius: 5px;
   box-shadow: 0 2px 5px;
-  padding: 5px;
+  padding: 5px 5px 15px 5px;
 `
 const CoverWrapper = styled.span`
   display: grid;
@@ -45,4 +63,8 @@ const Author = styled.h2`
 const Title = styled.h2`
   font-weight: bold;
   font-size: 112.5%;
+`
+const Content = styled.p`
+  font-weight: normal;
+  font-size: 80%;
 `
