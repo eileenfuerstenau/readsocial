@@ -1,10 +1,10 @@
-import React from 'react'
+import { React, useState } from 'react'
 import styled from 'styled-components/macro'
 import PropTypes from 'prop-types'
 import Button from './Button'
 
 export default function BookCard({ id, cover, title, author, description }) {
-  const [isDescriptionExtended, setDescriptionExtended] = React.useState(false)
+  const [isDescriptionExtended, setDescriptionExtended] = useState(false)
 
   return (
     <Card key={id}>
@@ -14,23 +14,16 @@ export default function BookCard({ id, cover, title, author, description }) {
       <section>
         <Title>{title}</Title>
         <Author>{author}</Author>
-        <Description hidden={isDescriptionExtended}>
-          {description.slice(0, 99)} ...
+        <Description>
+          <span>{description.slice(0, 99)} </span>
+          <span hidden={isDescriptionExtended}>...</span>
+          <span hidden={!isDescriptionExtended}>{description.slice(99)} </span>
         </Description>
         <Button
-          aria-label="expand-description"
-          hidden={isDescriptionExtended}
+          aria-label="expand-shrink-description"
           onClick={() => setDescriptionExtended(!isDescriptionExtended)}
         >
-          Read more
-        </Button>
-        <Description hidden={!isDescriptionExtended}>{description}</Description>
-        <Button
-          aria-label="shrink-description"
-          hidden={!isDescriptionExtended}
-          onClick={() => setDescriptionExtended(!isDescriptionExtended)}
-        >
-          Read less
+          {isDescriptionExtended ? 'Read less' : 'Read more'}
         </Button>
       </section>
     </Card>
@@ -70,3 +63,12 @@ const Description = styled.p`
   font-weight: normal;
   font-size: 70%;
 `
+
+/* /*         <Description hidden={!isDescriptionExtended}>{description}</Description>
+        <Button
+          aria-label="shrink-description"
+          hidden={!isDescriptionExtended}
+          onClick={() => setDescriptionExtended(!isDescriptionExtended)}
+        >
+          Read less
+        </Button> */

@@ -33,7 +33,7 @@ describe('BookCard', () => {
     )
     expect(
       screen.getByText(
-        'Wie treffen wir unsere Entscheidungen? Warum ist Zögern ein überlebensnotwendiger Reflex, und warum ist es so schwer zu wissen, was uns in der Zukunft glücklich macht?'
+        'ist es so schwer zu wissen, was uns in der Zukunft glücklich macht?'
       )
     ).not.toBeVisible()
   })
@@ -52,7 +52,7 @@ describe('BookCard', () => {
     userEvent.click(extendButton)
     expect(
       screen.getByText(
-        'Wie treffen wir unsere Entscheidungen? Warum ist Zögern ein überlebensnotwendiger Reflex, und warum ist es so schwer zu wissen, was uns in der Zukunft glücklich macht?'
+        'ist es so schwer zu wissen, was uns in der Zukunft glücklich macht?'
       )
     ).toBeVisible()
   })
