@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import Button from './Button'
 
 export default function BookCard({ id, cover, title, author, description }) {
-  const [isContentExtended, setContentExtended] = React.useState(false)
+  const [isDescriptionExtended, setDescriptionExtended] = React.useState(false)
 
   return (
     <Card key={id}>
@@ -14,19 +14,21 @@ export default function BookCard({ id, cover, title, author, description }) {
       <section>
         <Title>{title}</Title>
         <Author>{author}</Author>
-        <Content hidden={isContentExtended}>
+        <Description hidden={isDescriptionExtended}>
           {description.slice(0, 99)} ...
-        </Content>
+        </Description>
         <Button
-          hidden={isContentExtended}
-          onClick={() => setContentExtended(!isContentExtended)}
+          aria-label="expand-description"
+          hidden={isDescriptionExtended}
+          onClick={() => setDescriptionExtended(!isDescriptionExtended)}
         >
           Read more
         </Button>
-        <Content hidden={!isContentExtended}> {description} </Content>
+        <Description hidden={!isDescriptionExtended}>{description}</Description>
         <Button
-          hidden={!isContentExtended}
-          onClick={() => setContentExtended(!isContentExtended)}
+          aria-label="shrink-description"
+          hidden={!isDescriptionExtended}
+          onClick={() => setDescriptionExtended(!isDescriptionExtended)}
         >
           Read less
         </Button>
@@ -48,7 +50,7 @@ const Card = styled.section`
   grid-template-columns: 2fr 5fr;
   border-radius: 5px;
   box-shadow: 0 2px 5px;
-  padding: 5px 5px 15px 5px;
+  padding: 5px 10px 15px 5px;
 `
 const CoverWrapper = styled.span`
   display: grid;
@@ -58,13 +60,13 @@ const CoverWrapper = styled.span`
 `
 const Author = styled.h2`
   font-weight: normal;
-  font-size: 100%;
+  font-size: 90%;
 `
 const Title = styled.h2`
   font-weight: bold;
-  font-size: 112.5%;
+  font-size: 100%;
 `
-const Content = styled.p`
+const Description = styled.p`
   font-weight: normal;
-  font-size: 80%;
+  font-size: 70%;
 `
