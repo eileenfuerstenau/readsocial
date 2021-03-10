@@ -5,6 +5,7 @@ import React, { useState } from 'react'
 
 export default function BookCardsPage() {
   const [bookmarkedBooks, setBookmarkedBooks] = useState([])
+  const [booksShown, setBooksShown] = useState('all')
 
   let bookmarkedBooksArray
   function handleBookmarkClick(currentBook) {
@@ -22,21 +23,35 @@ export default function BookCardsPage() {
     <>
       <CardspageLayout>
         <ButtonWrapper>
-          <PageButton>Alle</PageButton>
-          <PageButton>Favoriten</PageButton>
+          <PageButton
+            isActive={booksShown === 'all'}
+            onClick={() => setBooksShown('all')}
+          >
+            Alle
+          </PageButton>
+          <PageButton
+            isActive={booksShown === 'favorites'}
+            onClick={() => setBooksShown('favorites')}
+          >
+            Favoriten
+          </PageButton>
         </ButtonWrapper>
 
-        {books.map(card => (
-          <BookCard
-            key={card.id}
-            cover={card.cover}
-            title={card.title}
-            author={card.author}
-            description={card.content}
-            onBookmarkClick={handleBookmarkClick}
-            bookmarkedBooks={bookmarkedBooks}
-          />
-        ))}
+        {books
+          .filter(
+            book => booksShown === 'all' || bookmarkedBooks.includes(book.title)
+          )
+          .map(card => (
+            <BookCard
+              key={card.id}
+              cover={card.cover}
+              title={card.title}
+              author={card.author}
+              description={card.content}
+              onBookmarkClick={handleBookmarkClick}
+              bookmarkedBooks={bookmarkedBooks}
+            />
+          ))}
       </CardspageLayout>
     </>
   )
@@ -53,7 +68,7 @@ const ButtonWrapper = styled.div`
 `
 const PageButton = styled.button`
   border: none;
-  border-bottom: 2px solid #f1613d;
+  border-bottom: ${props => (props.isActive ? '2px solid #f1613d' : 'none')};
   background: transparent;
   font-size: 100%;
   padding: 5px;
