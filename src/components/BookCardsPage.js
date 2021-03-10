@@ -21,6 +21,11 @@ export default function BookCardsPage() {
   return (
     <>
       <CardspageLayout>
+        <ButtonWrapper>
+          <PageButton>Alle</PageButton>
+          <PageButton>Favoriten</PageButton>
+        </ButtonWrapper>
+
         {books.map(card => (
           <BookCard
             key={card.id}
@@ -41,4 +46,15 @@ const CardspageLayout = styled.div`
   display: grid;
   gap: 0.2%;
   padding: 1%;
+`
+const ButtonWrapper = styled.div`
+  justify-content: space-around;
+  display: flex;
+`
+const PageButton = styled.button`
+  border: none;
+  border-bottom: 2px solid #f1613d;
+  background: transparent;
+  font-size: 100%;
+  padding: 5px;
 `
