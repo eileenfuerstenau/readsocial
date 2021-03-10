@@ -54,6 +54,9 @@ BookCard.propTypes = {
   cover: PropTypes.any,
   title: PropTypes.string,
   author: PropTypes.string,
+  description: PropTypes.string,
+  onBookmarkClick: PropTypes.func.isRequired,
+  bookmarkedBooks: PropTypes.array.isRequired,
 }
 
 const Card = styled.section`
