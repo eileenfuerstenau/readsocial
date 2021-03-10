@@ -10,6 +10,7 @@ describe('BookCard', () => {
         author="John Doe"
         cover="/book-cover/1.jpg"
         description="Wie treffen wir unsere Entscheidungen? Warum ist Zögern ein überlebensnotwendiger Reflex?"
+        bookmarkedBooks="[Booktitle]"
       />
     )
     expect(screen.getByAltText('cover')).toBeInTheDocument()
@@ -29,6 +30,7 @@ describe('BookCard', () => {
         author="John Doe"
         cover="/book-cover/1.jpg"
         description="Wie treffen wir unsere Entscheidungen? Warum ist Zögern ein überlebensnotwendiger Reflex, und warum ist es so schwer zu wissen, was uns in der Zukunft glücklich macht?"
+        bookmarkedBooks="[Booktitle]"
       />
     )
     expect(
@@ -45,9 +47,12 @@ describe('BookCard', () => {
         author="John Doe"
         cover="/book-cover/1.jpg"
         description="Wie treffen wir unsere Entscheidungen? Warum ist Zögern ein überlebensnotwendiger Reflex, und warum ist es so schwer zu wissen, was uns in der Zukunft glücklich macht?"
+        bookmarkedBooks="[Booktitle]"
       />
     )
-    const extendButton = screen.getByRole('button', { name: 'Read more' })
+    const extendButton = screen.getByRole('button', {
+      name: 'expand-shrink-description',
+    })
     // expect(extendButton).toHaveTextContent(/Read more/i)
     userEvent.click(extendButton)
     expect(

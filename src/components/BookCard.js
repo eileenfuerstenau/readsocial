@@ -12,7 +12,6 @@ export default function BookCard({
   description,
   onBookmarkClick,
   bookmarkedBooks,
-  bookmarkedBooksArray,
 }) {
   const [isDescriptionExtended, setDescriptionExtended] = useState(false)
 
