@@ -12,6 +12,7 @@ export default function App() {
             cover={card.cover}
             title={card.title}
             author={card.author}
+            description={card.content}
           />
         ))}
       </AppLayout>
@@ -21,6 +22,6 @@ export default function App() {
 
 const AppLayout = styled.div`
   display: grid;
-  gap: 20px;
-  padding: 20px;
+  gap: 0.2%;
+  padding: 1%;
 `
