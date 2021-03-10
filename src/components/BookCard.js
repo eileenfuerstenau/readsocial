@@ -34,7 +34,10 @@ export default function BookCard({
         >
           {isDescriptionExtended ? 'Read less' : 'Read more'}
         </Button>
-        <BookmarkButton onClick={() => onBookmarkClick(title)}>
+        <BookmarkButton
+          aria-label="toggle-bookmarked"
+          onClick={() => onBookmarkClick(title)}
+        >
           {bookmarkedBooks.includes(title) ? (
             <Icon style={{ color: '#f1613d' }} glyph="like-fill" size={45} />
           ) : (
