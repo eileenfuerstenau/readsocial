@@ -16,7 +16,6 @@ export default function App() {
       bookmarkedBooksArray = [...bookmarkedBooks, currentBook]
     }
     setBookmarkedBooks(bookmarkedBooksArray)
-    console.log(bookmarkedBooksArray)
   }
 
   return (

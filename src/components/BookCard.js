@@ -49,14 +49,21 @@ export default function BookCard({
   )
 }
 
+const isPathToCover = function (props, pathToCover) {
+  const pathEnd = /.(png|jpeg|jpg)/
+  if (!pathEnd.test(props[pathToCover])) {
+    return new Error(`Expected a valid path to book cover.`)
+  }
+}
+
 BookCard.propTypes = {
   id: PropTypes.string,
-  cover: PropTypes.any,
+  cover: isPathToCover,
   title: PropTypes.string,
   author: PropTypes.string,
   description: PropTypes.string,
-  onBookmarkClick: PropTypes.func.isRequired,
-  bookmarkedBooks: PropTypes.array.isRequired,
+  onBookmarkClick: PropTypes.func,
+  bookmarkedBooks: PropTypes.string,
 }
 
 const Card = styled.section`
@@ -81,7 +88,7 @@ const Author = styled.h2`
 const Title = styled.h2`
   font-weight: bold;
   font-size: 100%;
-  padding: 0 40px 0 0;
+  padding-right: 40px;
 `
 const Description = styled.p`
   font-weight: normal;
