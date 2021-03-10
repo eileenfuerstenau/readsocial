@@ -59,7 +59,7 @@ export default function BookCardsPage() {
 
 const CardspageLayout = styled.div`
   display: grid;
-  gap: 0.2%;
+  gap: 10px;
   padding: 1%;
 `
 const ButtonWrapper = styled.div`
