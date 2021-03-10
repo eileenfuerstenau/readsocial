@@ -4,7 +4,16 @@ import PropTypes from 'prop-types'
 import Button from './Button'
 import Icon from 'supercons'
 
-export default function BookCard({ id, cover, title, author, description }) {
+export default function BookCard({
+  id,
+  cover,
+  title,
+  author,
+  description,
+  onBookmarkClick,
+  bookmarkedBooks,
+  bookmarkedBooksArray,
+}) {
   const [isDescriptionExtended, setDescriptionExtended] = useState(false)
 
   return (
@@ -26,8 +35,12 @@ export default function BookCard({ id, cover, title, author, description }) {
         >
           {isDescriptionExtended ? 'Read less' : 'Read more'}
         </Button>
-        <BookmarkButton>
-          <Icon style={{ color: '#f1613d' }} glyph="like" size={50} />
+        <BookmarkButton onClick={() => onBookmarkClick(title)}>
+          {bookmarkedBooks.includes(title) ? (
+            <Icon style={{ color: '#f1613d' }} glyph="like-fill" size={50} />
+          ) : (
+            <Icon style={{ color: '#f1613d' }} glyph="like" size={50} />
+          )}
         </BookmarkButton>
       </section>
     </Card>

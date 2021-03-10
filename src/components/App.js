@@ -1,8 +1,24 @@
 import { books } from '../material/bookdata.json'
 import BookCard from './BookCard'
 import styled from 'styled-components/macro'
+import React, { useState } from 'react'
 
 export default function App() {
+  const [bookmarkedBooks, setBookmarkedBooks] = useState([])
+
+  let bookmarkedBooksArray
+  function handleBookmarkClick(currentBook) {
+    if (bookmarkedBooks.includes(currentBook)) {
+      bookmarkedBooksArray = bookmarkedBooks.filter(
+        book => book !== currentBook
+      )
+    } else {
+      bookmarkedBooksArray = [...bookmarkedBooks, currentBook]
+    }
+    setBookmarkedBooks(bookmarkedBooksArray)
+    console.log(bookmarkedBooksArray)
+  }
+
   return (
     <>
       <AppLayout>
@@ -13,6 +29,8 @@ export default function App() {
             title={card.title}
             author={card.author}
             description={card.content}
+            onBookmarkClick={handleBookmarkClick}
+            bookmarkedBooks={bookmarkedBooks}
           />
         ))}
       </AppLayout>
