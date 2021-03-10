@@ -37,9 +37,9 @@ export default function BookCard({
         </Button>
         <BookmarkButton onClick={() => onBookmarkClick(title)}>
           {bookmarkedBooks.includes(title) ? (
-            <Icon style={{ color: '#f1613d' }} glyph="like-fill" size={50} />
+            <Icon style={{ color: '#f1613d' }} glyph="like-fill" size={45} />
           ) : (
-            <Icon style={{ color: '#f1613d' }} glyph="like" size={50} />
+            <Icon style={{ color: '#f1613d' }} glyph="like" size={45} />
           )}
         </BookmarkButton>
       </section>
@@ -76,6 +76,7 @@ const Author = styled.h2`
 const Title = styled.h2`
   font-weight: bold;
   font-size: 100%;
+  padding: 0 40px 0 0;
 `
 const Description = styled.p`
   font-weight: normal;
@@ -87,5 +88,5 @@ const BookmarkButton = styled.button`
   background: transparent;
   border: none;
   top: 1px;
-  right: 1px;
+  right: 0.5px;
 `
