@@ -64,7 +64,7 @@ BookCard.propTypes = {
   author: PropTypes.string,
   description: PropTypes.string,
   onBookmarkClick: PropTypes.func,
-  bookmarkedBooks: PropTypes.string,
+  bookmarkedBooks: PropTypes.array,
 }
 
 const Card = styled.section`
@@ -95,7 +95,6 @@ const Description = styled.p`
   font-weight: normal;
   font-size: 70%;
 `
-
 const BookmarkButton = styled.span`
   position: absolute;
   top: 1px;
