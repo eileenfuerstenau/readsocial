@@ -15,9 +15,9 @@ export default function BookCard({ id, cover, title, author, description }) {
         <Title>{title}</Title>
         <Author>{author}</Author>
         <Description>
-          <span>{description.slice(0, 99)} </span>
+          <span>{description.slice(0, 99)}</span>
           <span hidden={isDescriptionExtended}>...</span>
-          <span hidden={!isDescriptionExtended}>{description.slice(99)} </span>
+          <span hidden={!isDescriptionExtended}>{description.slice(99)}</span>
         </Description>
         <Button
           aria-label="expand-shrink-description"

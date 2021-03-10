@@ -5,6 +5,6 @@ export default styled.button`
   color: white;
   border: none;
   border-radius: 5px;
-  padding: 2px;
+  padding: 3px;
   box-shadow: 2px 1px 4px #f37a72;
 `
