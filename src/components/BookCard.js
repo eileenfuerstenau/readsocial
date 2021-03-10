@@ -2,8 +2,17 @@ import { React, useState } from 'react'
 import styled from 'styled-components/macro'
 import PropTypes from 'prop-types'
 import Button from './Button'
+import Icon from 'supercons'
 
-export default function BookCard({ id, cover, title, author, description }) {
+export default function BookCard({
+  id,
+  cover,
+  title,
+  author,
+  description,
+  onBookmarkClick,
+  bookmarkedBooks,
+}) {
   const [isDescriptionExtended, setDescriptionExtended] = useState(false)
 
   return (
@@ -25,16 +34,37 @@ export default function BookCard({ id, cover, title, author, description }) {
         >
           {isDescriptionExtended ? 'Read less' : 'Read more'}
         </Button>
+        <BookmarkButton
+          role="button"
+          aria-label="toggle-bookmarked"
+          onClick={() => onBookmarkClick(title)}
+        >
+          {bookmarkedBooks.includes(title) ? (
+            <Icon style={{ color: '#f1613d' }} glyph="like-fill" size={45} />
+          ) : (
+            <Icon style={{ color: '#f1613d' }} glyph="like" size={45} />
+          )}
+        </BookmarkButton>
       </section>
     </Card>
   )
 }
 
+const isPathToCover = function (props, pathToCover) {
+  const pathEnd = /.(png|jpeg|jpg)/
+  if (!pathEnd.test(props[pathToCover])) {
+    return new Error(`Expected a valid path to book cover.`)
+  }
+}
+
 BookCard.propTypes = {
   id: PropTypes.string,
-  cover: PropTypes.any,
+  cover: isPathToCover,
   title: PropTypes.string,
   author: PropTypes.string,
+  description: PropTypes.string,
+  onBookmarkClick: PropTypes.func,
+  bookmarkedBooks: PropTypes.string,
 }
 
 const Card = styled.section`
@@ -44,6 +74,7 @@ const Card = styled.section`
   border-radius: 5px;
   box-shadow: 0 2px 5px;
   padding: 5px 10px 15px 5px;
+  position: relative;
 `
 const CoverWrapper = styled.span`
   display: grid;
@@ -58,17 +89,15 @@ const Author = styled.h2`
 const Title = styled.h2`
   font-weight: bold;
   font-size: 100%;
+  padding-right: 40px;
 `
 const Description = styled.p`
   font-weight: normal;
   font-size: 70%;
 `
 
-/* /*         <Description hidden={!isDescriptionExtended}>{description}</Description>
-        <Button
-          aria-label="shrink-description"
-          hidden={!isDescriptionExtended}
-          onClick={() => setDescriptionExtended(!isDescriptionExtended)}
-        >
-          Read less
-        </Button> */
+const BookmarkButton = styled.span`
+  position: absolute;
+  top: 1px;
+  right: 0.5px;
+`
