@@ -47,8 +47,8 @@ describe('BookCard', () => {
         description="Wie treffen wir unsere Entscheidungen? Warum ist Zögern ein überlebensnotwendiger Reflex, und warum ist es so schwer zu wissen, was uns in der Zukunft glücklich macht?"
       />
     )
-    const extendButton = screen.getByRole('button')
-    expect(extendButton).toHaveTextContent(/Read more/i)
+    const extendButton = screen.getByRole('button', { name: 'Read more' })
+    // expect(extendButton).toHaveTextContent(/Read more/i)
     userEvent.click(extendButton)
     expect(
       screen.getByText(

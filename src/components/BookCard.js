@@ -2,6 +2,7 @@ import { React, useState } from 'react'
 import styled from 'styled-components/macro'
 import PropTypes from 'prop-types'
 import Button from './Button'
+import Icon from 'supercons'
 
 export default function BookCard({ id, cover, title, author, description }) {
   const [isDescriptionExtended, setDescriptionExtended] = useState(false)
@@ -25,6 +26,9 @@ export default function BookCard({ id, cover, title, author, description }) {
         >
           {isDescriptionExtended ? 'Read less' : 'Read more'}
         </Button>
+        <BookmarkButton>
+          <Icon style={{ color: '#f1613d' }} glyph="like" size={50} />
+        </BookmarkButton>
       </section>
     </Card>
   )
@@ -44,6 +48,7 @@ const Card = styled.section`
   border-radius: 5px;
   box-shadow: 0 2px 5px;
   padding: 5px 10px 15px 5px;
+  position: relative;
 `
 const CoverWrapper = styled.span`
   display: grid;
@@ -64,11 +69,10 @@ const Description = styled.p`
   font-size: 70%;
 `
 
-/* /*         <Description hidden={!isDescriptionExtended}>{description}</Description>
-        <Button
-          aria-label="shrink-description"
-          hidden={!isDescriptionExtended}
-          onClick={() => setDescriptionExtended(!isDescriptionExtended)}
-        >
-          Read less
-        </Button> */
+const BookmarkButton = styled.button`
+  position: absolute;
+  background: transparent;
+  border: none;
+  top: 1px;
+  right: 1px;
+`
