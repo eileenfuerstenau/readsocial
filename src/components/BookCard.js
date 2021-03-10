@@ -35,6 +35,7 @@ export default function BookCard({
           {isDescriptionExtended ? 'Read less' : 'Read more'}
         </Button>
         <BookmarkButton
+          role="button"
           aria-label="toggle-bookmarked"
           onClick={() => onBookmarkClick(title)}
         >
@@ -95,10 +96,8 @@ const Description = styled.p`
   font-size: 70%;
 `
 
-const BookmarkButton = styled.button`
+const BookmarkButton = styled.span`
   position: absolute;
-  background: transparent;
-  border: none;
   top: 1px;
   right: 0.5px;
 `
