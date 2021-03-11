@@ -1,10 +1,13 @@
 import BookCardsPage from './BookCardsPage'
 import { render, screen } from '@testing-library/react'
-import userEvent from '@testing-library/user-event'
 
 describe('BookCardsPage', () => {
-  it.todo('renders two filterbuttons and multiple bookcards by default')
-  it.todo(
-    'renders two favorited bookcards only when clicking the favorites button'
-  )
+  it('renders two filterbuttons and multiple bookcards by default', () => {
+    render(<BookCardsPage />)
+    expect(screen.getAllByRole('button', { name: /filter/ })).toHaveLength(2)
+    expect(screen.getByText('Ernest Hemingway')).toBeInTheDocument()
+    expect(
+      screen.getByText('Ichiro Kishimi, Fumitake Koga')
+    ).toBeInTheDocument()
+  })
 })

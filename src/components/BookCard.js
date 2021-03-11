@@ -64,7 +64,7 @@ BookCard.propTypes = {
   author: PropTypes.string,
   description: PropTypes.string,
   onBookmarkClick: PropTypes.func,
-  bookmarkedBooks: PropTypes.array,
+  bookmarkedBooks: PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
 }
 
 const Card = styled.section`
@@ -82,14 +82,14 @@ const CoverWrapper = styled.span`
   justify-content: center;
   padding: 10px;
 `
-const Author = styled.h2`
-  font-weight: normal;
-  font-size: 90%;
-`
 const Title = styled.h2`
   font-weight: bold;
   font-size: 100%;
   padding-right: 40px;
+`
+const Author = styled.h2`
+  font-weight: normal;
+  font-size: 90%;
 `
 const Description = styled.p`
   font-weight: normal;

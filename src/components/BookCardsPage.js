@@ -24,12 +24,14 @@ export default function BookCardsPage() {
       <CardspageLayout>
         <ButtonWrapper>
           <PageButton
+            aria-label="filter-all"
             isActive={booksShown === 'all'}
             onClick={() => setBooksShown('all')}
           >
             Alle
           </PageButton>
           <PageButton
+            aria-label="filter-favorites"
             isActive={booksShown === 'favorites'}
             onClick={() => setBooksShown('favorites')}
           >
