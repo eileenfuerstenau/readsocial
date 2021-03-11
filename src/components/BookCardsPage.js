@@ -54,7 +54,9 @@ export default function BookCardsPage() {
             />
           ))}
         <NoFavoritesStatement>
-          {bookmarkedBooks.length === 0 ? 'Du hast noch keine Favoriten.' : ' '}
+          {bookmarkedBooks.length === 0 && booksShown === 'favorites'
+            ? 'Du hast noch keine Favoriten.'
+            : ' '}
         </NoFavoritesStatement>
       </CardspageLayout>
     </>
