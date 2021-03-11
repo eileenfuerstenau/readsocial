@@ -38,7 +38,6 @@ export default function BookCardsPage() {
             Favoriten
           </PageButton>
         </ButtonWrapper>
-
         {books
           .filter(
             book => booksShown === 'all' || bookmarkedBooks.includes(book.title)
@@ -54,6 +53,9 @@ export default function BookCardsPage() {
               bookmarkedBooks={bookmarkedBooks}
             />
           ))}
+        <NoFavoritesStatement>
+          {bookmarkedBooks.length === 0 ? 'Du hast noch keine Favoriten.' : ' '}
+        </NoFavoritesStatement>
       </CardspageLayout>
     </>
   )
@@ -70,8 +72,12 @@ const ButtonWrapper = styled.div`
 `
 const PageButton = styled.button`
   border: none;
-  border-bottom: ${props => (props.isActive ? '2px solid #f1613d' : 'none')};
+  border-bottom: ${props =>
+    props.isActive ? '2px solid #f1613d' : '2px solid transparent'};
   background: transparent;
   font-size: 100%;
   padding: 5px;
+`
+const NoFavoritesStatement = styled.p`
+  text-align: center;
 `
