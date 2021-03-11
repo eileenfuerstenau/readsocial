@@ -78,9 +78,9 @@ const Card = styled.section`
 `
 const CoverWrapper = styled.span`
   display: grid;
-  align-content: center;
+  align-content: start;
   justify-content: center;
-  padding: 10px;
+  padding: 15px 10px;
 `
 const Title = styled.h2`
   font-weight: bold;
