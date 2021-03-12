@@ -87,7 +87,7 @@ const Title = styled.h2`
   font-size: 100%;
   padding-right: 40px;
 `
-const Author = styled.h2`
+const Author = styled.h3`
   font-weight: normal;
   font-size: 90%;
 `

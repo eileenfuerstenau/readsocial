@@ -20,50 +20,48 @@ export default function BookCardsPage() {
   }
 
   return (
-    <>
-      <CardspageLayout>
-        <ButtonWrapper>
-          <PageButton
-            aria-label="filter-all"
-            isActive={booksShown === 'all'}
-            onClick={() => setBooksShown('all')}
-          >
-            Alle
-          </PageButton>
-          <PageButton
-            aria-label="filter-favorites"
-            isActive={booksShown === 'favorites'}
-            onClick={() => setBooksShown('favorites')}
-          >
-            Favoriten
-          </PageButton>
-        </ButtonWrapper>
-        {books
-          .filter(
-            book => booksShown === 'all' || bookmarkedBooks.includes(book.title)
-          )
-          .map(card => (
-            <BookCard
-              key={card.id}
-              cover={card.cover}
-              title={card.title}
-              author={card.author}
-              description={card.content}
-              onBookmarkClick={handleBookmarkClick}
-              bookmarkedBooks={bookmarkedBooks}
-            />
-          ))}
-        <NoFavoritesStatement>
-          {bookmarkedBooks.length === 0 && booksShown === 'favorites'
-            ? 'Du hast noch keine Favoriten.'
-            : ' '}
-        </NoFavoritesStatement>
-      </CardspageLayout>
-    </>
+    <CardpageLayout>
+      <ButtonWrapper>
+        <PageButton
+          aria-label="filter-all"
+          isActive={booksShown === 'all'}
+          onClick={() => setBooksShown('all')}
+        >
+          Alle
+        </PageButton>
+        <PageButton
+          aria-label="filter-favorites"
+          isActive={booksShown === 'favorites'}
+          onClick={() => setBooksShown('favorites')}
+        >
+          Favoriten
+        </PageButton>
+      </ButtonWrapper>
+      {books
+        .filter(
+          book => booksShown === 'all' || bookmarkedBooks.includes(book.title)
+        )
+        .map(card => (
+          <BookCard
+            key={card.id}
+            cover={card.cover}
+            title={card.title}
+            author={card.author}
+            description={card.content}
+            onBookmarkClick={handleBookmarkClick}
+            bookmarkedBooks={bookmarkedBooks}
+          />
+        ))}
+      <NoFavoritesStatement>
+        {bookmarkedBooks.length === 0 && booksShown === 'favorites'
+          ? 'Du hast noch keine Favoriten.'
+          : ' '}
+      </NoFavoritesStatement>
+    </CardpageLayout>
   )
 }
 
-const CardspageLayout = styled.div`
+const CardpageLayout = styled.div`
   display: grid;
   gap: 10px;
   padding: 1%;
