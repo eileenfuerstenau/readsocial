@@ -3,9 +3,10 @@ import BookCard from './BookCard'
 import styled from 'styled-components/macro'
 import React, { useState } from 'react'
 
-export default function BookCardsPage({ setDescriptionExtended }) {
+export default function BookCardsPage() {
   const [bookmarkedBooks, setBookmarkedBooks] = useState([])
   const [booksShown, setBooksShown] = useState('all')
+  const [isDescriptionExtended, setDescriptionExtended] = useState([])
 
   let bookmarkedBooksArray
   function handleBookmarkClick(currentBook) {
@@ -25,7 +26,10 @@ export default function BookCardsPage({ setDescriptionExtended }) {
         <PageButton
           aria-label="filter-all"
           isActive={booksShown === 'all'}
-          onClick={() => setBooksShown('all')}
+          onClick={() => {
+            setBooksShown('all')
+            setDescriptionExtended([])
+          }}
         >
           Alle
         </PageButton>
@@ -34,7 +38,7 @@ export default function BookCardsPage({ setDescriptionExtended }) {
           isActive={booksShown === 'favorites'}
           onClick={() => {
             setBooksShown('favorites')
-            setDescriptionExtended(false)
+            setDescriptionExtended([])
           }}
         >
           Favoriten
@@ -54,7 +58,8 @@ export default function BookCardsPage({ setDescriptionExtended }) {
               description={card.content}
               onBookmarkClick={handleBookmarkClick}
               bookmarkedBooks={bookmarkedBooks}
-              booksShown={booksShown}
+              isDescriptionExtended={isDescriptionExtended}
+              setDescriptionExtended={setDescriptionExtended}
             />
           ))}
       </BookWrapper>
