@@ -3,7 +3,7 @@ import BookCard from './BookCard'
 import styled from 'styled-components/macro'
 import React, { useState } from 'react'
 
-export default function BookCardsPage() {
+export default function BookCardsPage({ setDescriptionExtended }) {
   const [bookmarkedBooks, setBookmarkedBooks] = useState([])
   const [booksShown, setBooksShown] = useState('all')
 
@@ -20,7 +20,7 @@ export default function BookCardsPage() {
   }
 
   return (
-    <CardpageLayout>
+    <CardsPageLayout>
       <ButtonWrapper>
         <PageButton
           aria-label="filter-all"
@@ -32,44 +32,66 @@ export default function BookCardsPage() {
         <PageButton
           aria-label="filter-favorites"
           isActive={booksShown === 'favorites'}
-          onClick={() => setBooksShown('favorites')}
+          onClick={() => {
+            setBooksShown('favorites')
+            setDescriptionExtended(false)
+          }}
         >
           Favoriten
         </PageButton>
       </ButtonWrapper>
-      {books
-        .filter(
-          book => booksShown === 'all' || bookmarkedBooks.includes(book.title)
-        )
-        .map(card => (
-          <BookCard
-            key={card.id}
-            cover={card.cover}
-            title={card.title}
-            author={card.author}
-            description={card.content}
-            onBookmarkClick={handleBookmarkClick}
-            bookmarkedBooks={bookmarkedBooks}
-          />
-        ))}
+      <BookWrapper>
+        {books
+          .filter(
+            book => booksShown === 'all' || bookmarkedBooks.includes(book.title)
+          )
+          .map(card => (
+            <BookCard
+              key={card.id}
+              cover={card.cover}
+              title={card.title}
+              author={card.author}
+              description={card.content}
+              onBookmarkClick={handleBookmarkClick}
+              bookmarkedBooks={bookmarkedBooks}
+              booksShown={booksShown}
+            />
+          ))}
+      </BookWrapper>
       <NoFavoritesStatement>
         {bookmarkedBooks.length === 0 && booksShown === 'favorites'
           ? 'Du hast noch keine Favoriten.'
           : ' '}
       </NoFavoritesStatement>
-    </CardpageLayout>
+    </CardsPageLayout>
   )
 }
 
-const CardpageLayout = styled.div`
-  display: grid;
-  gap: 10px;
-  padding: 1%;
+const CardsPageLayout = styled.div`
+  position: relative;
+  padding: 2%;
+  &:first-child {
+    padding-top: 55px;
+  }
 `
 const ButtonWrapper = styled.div`
   justify-content: space-around;
   display: flex;
+  background: white;
+  width: 100%;
+  position: fixed;
+  top: 0px;
+  z-index: 2;
+  padding: 10px;
+  border-radius: 0 0 10px 10px;
 `
+
+const BookWrapper = styled.div`
+  padding: 0 2% 0 2%;
+  display: grid;
+  gap: 10px;
+`
+
 const PageButton = styled.button`
   border: none;
   border-bottom: ${props =>
