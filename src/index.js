@@ -3,11 +3,16 @@ import ReactDOM from 'react-dom'
 import App from '../src/components/App/App'
 import reportWebVitals from './reportWebVitals'
 import GlobalStyle from './components/GlobalStyle'
+import Grid from './components/Grid/Grid'
+import Navigation from './components/Navigation/Navigation'
 
 ReactDOM.render(
   <React.StrictMode>
-    <GlobalStyle />
-    <App />
+    <Grid>
+      <GlobalStyle />
+      <App />
+      <Navigation />
+    </Grid>
   </React.StrictMode>,
   document.getElementById('root')
 )
