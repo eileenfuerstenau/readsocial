@@ -89,7 +89,7 @@ const CardsPageLayout = styled.div`
 `
 const TabBarWrapper = styled.div`
   display: grid;
-  grid-template-columns: 50% 50%;
+  grid-template-columns: 1fr 1fr;
   background: white;
   width: 100%;
   position: fixed;
