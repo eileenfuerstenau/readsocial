@@ -1,7 +1,7 @@
 import { React } from 'react'
 import styled from 'styled-components/macro'
 import PropTypes from 'prop-types'
-import Button from './Button'
+import Button from '../Button/Button'
 import Icon from 'supercons'
 
 export default function BookCard({
