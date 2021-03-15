@@ -21,6 +21,7 @@ const Nav = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
+  border-radius: 15px 15px 0 0;
 `
 
 const NavButton = styled.div`
