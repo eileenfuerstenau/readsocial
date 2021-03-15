@@ -23,6 +23,7 @@ const InputLabel = styled.label`
   padding: 5px;
   border: 1px solid #87939f;
   border-radius: 30px;
+  background: white;
 `
 
 const Input = styled.input`

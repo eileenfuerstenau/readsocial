@@ -3,18 +3,31 @@ import styled from 'styled-components/macro'
 import Icon from 'supercons'
 import { NavLink } from 'react-router-dom'
 
-export default function Navigation({
-  onNavigate,
-  currentPage,
-  setCurrentPage,
-}) {
+export default function Navigation(booksShown) {
   return (
     <Nav>
-      <NavButton as={NavLink} exact to="/">
+      <NavButton
+        aria-label="about"
+        as={NavLink}
+        exact
+        to="/"
+        style={{ color: '#87939F' }}
+        activeStyle={{
+          color: '#f1613d',
+        }}
+      >
         <Icon glyph="checkmark" size={30} />
         About
       </NavButton>
-      <NavButton as={NavLink} to="/inspiration">
+      <NavButton
+        aria-label="inspiration"
+        as={NavLink}
+        to="/inspiration"
+        style={{ color: '#87939F' }}
+        activeStyle={{
+          color: '#f1613d',
+        }}
+      >
         <Icon glyph="idea" size={30} />
         Inspiration
       </NavButton>
@@ -30,9 +43,10 @@ const Nav = styled.div`
   background: white;
 `
 
-const NavButton = styled.div`
+const NavButton = styled.button`
   display: grid;
   justify-items: center;
-  color: ${props => (props.isActive ? '#f1613d' : '#87939F')};
+  color: '#87939F';
   font-size: 60%;
+  text-decoration: none;
 `
