@@ -1,12 +1,14 @@
-import { books } from '../material/bookdata.json'
-import BookCard from './BookCard'
+import { books } from '../../material/bookdata.json'
+import BookCard from '../BookCard/BookCard'
 import styled from 'styled-components/macro'
 import React, { useState } from 'react'
+import SearchBar from '../SearchBar/SearchBar'
 
 export default function BookCardsPage() {
   const [bookmarkedBooks, setBookmarkedBooks] = useState([])
   const [booksShown, setBooksShown] = useState('all')
   const [isDescriptionExtended, setDescriptionExtended] = useState([])
+  const [userInput, setUserInput] = useState('')
 
   let bookmarkedBooksArray
   function handleBookmarkClick(currentBook) {
@@ -22,7 +24,8 @@ export default function BookCardsPage() {
 
   return (
     <CardsPageLayout>
-      <ButtonWrapper>
+      <TabBarWrapper>
+        <SearchBar userInput={userInput} setUserInput={setUserInput} />
         <PageButton
           aria-label="filter-all"
           isActive={booksShown === 'all'}
@@ -43,11 +46,16 @@ export default function BookCardsPage() {
         >
           Favoriten
         </PageButton>
-      </ButtonWrapper>
-      <BookWrapper>
+      </TabBarWrapper>
+      <BooksWrapper>
         {books
           .filter(
             book => booksShown === 'all' || bookmarkedBooks.includes(book.title)
+          )
+          .filter(
+            book =>
+              book.title.toLowerCase().includes(userInput.toLowerCase()) ||
+              book.author.toLowerCase().includes(userInput.toLowerCase())
           )
           .map(card => (
             <BookCard
@@ -62,7 +70,7 @@ export default function BookCardsPage() {
               setDescriptionExtended={setDescriptionExtended}
             />
           ))}
-      </BookWrapper>
+      </BooksWrapper>
       <NoFavoritesStatement>
         {bookmarkedBooks.length === 0 && booksShown === 'favorites'
           ? 'Du hast noch keine Favoriten.'
@@ -76,12 +84,11 @@ const CardsPageLayout = styled.div`
   position: relative;
   padding: 2%;
   &:first-child {
-    padding-top: 55px;
+    padding-top: 105px;
   }
 `
-const ButtonWrapper = styled.div`
-  justify-content: space-around;
-  display: flex;
+const TabBarWrapper = styled.div`
+  display: grid;
   background: white;
   width: 100%;
   position: fixed;
@@ -91,7 +98,7 @@ const ButtonWrapper = styled.div`
   border-radius: 0 0 10px 10px;
 `
 
-const BookWrapper = styled.div`
+const BooksWrapper = styled.div`
   padding: 0 2% 0 2%;
   display: grid;
   gap: 10px;
@@ -104,6 +111,8 @@ const PageButton = styled.button`
   background: transparent;
   font-size: 100%;
   padding: 5px;
+  justify-self: center;
+  margin-top: 5px;
 `
 const NoFavoritesStatement = styled.p`
   text-align: center;

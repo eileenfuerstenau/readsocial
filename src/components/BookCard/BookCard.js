@@ -1,7 +1,7 @@
 import { React } from 'react'
 import styled from 'styled-components/macro'
 import PropTypes from 'prop-types'
-import Button from './Button'
+import Button from '../Button/Button'
 import Icon from 'supercons'
 
 export default function BookCard({
@@ -98,12 +98,12 @@ const CoverWrapper = styled.span`
 `
 const Title = styled.h2`
   font-weight: bold;
-  font-size: 100%;
+  font-size: 90%;
   padding-right: 40px;
 `
 const Author = styled.h3`
   font-weight: normal;
-  font-size: 90%;
+  font-size: 80%;
 `
 const Description = styled.p`
   font-weight: normal;
