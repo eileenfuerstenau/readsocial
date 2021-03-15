@@ -69,7 +69,7 @@ describe('BookCard', () => {
         author="John Doe"
         cover="/book-cover/1.jpg"
         description="Wie treffen wir unsere Entscheidungen? Warum ist Zögern ein überlebensnotwendiger Reflex, und warum ist es so schwer zu wissen, was uns in der Zukunft glücklich macht?"
-        bookmarkedBooks="[Other]"
+        bookmarkedBooks="[Foo]"
         onBookmarkClick={callback}
       />
     )

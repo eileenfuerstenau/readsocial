@@ -1,4 +1,4 @@
-import { React, useState } from 'react'
+import { React } from 'react'
 import styled from 'styled-components/macro'
 import PropTypes from 'prop-types'
 import Button from './Button'
@@ -12,8 +12,20 @@ export default function BookCard({
   description,
   onBookmarkClick,
   bookmarkedBooks,
+  isDescriptionExtended,
+  setDescriptionExtended,
 }) {
-  const [isDescriptionExtended, setDescriptionExtended] = useState(false)
+  let DescriptionsExpandedArray
+  function readmore(title) {
+    if (isDescriptionExtended.includes(title)) {
+      DescriptionsExpandedArray = isDescriptionExtended.filter(
+        book => book !== title
+      )
+    } else {
+      DescriptionsExpandedArray = [...isDescriptionExtended, title]
+    }
+    setDescriptionExtended(DescriptionsExpandedArray)
+  }
 
   return (
     <Card key={id}>
@@ -25,14 +37,16 @@ export default function BookCard({
         <Author>{author}</Author>
         <Description>
           <span>{description.slice(0, 99)}</span>
-          <span hidden={isDescriptionExtended}>...</span>
-          <span hidden={!isDescriptionExtended}>{description.slice(99)}</span>
+          <span hidden={isDescriptionExtended.includes(title)}>...</span>
+          <span hidden={!isDescriptionExtended.includes(title)}>
+            {description.slice(99)}
+          </span>
         </Description>
         <Button
           aria-label="expand-shrink-description"
-          onClick={() => setDescriptionExtended(!isDescriptionExtended)}
+          onClick={() => readmore(title)}
         >
-          {isDescriptionExtended ? 'Read less' : 'Read more'}
+          {isDescriptionExtended.includes(title) ? 'Read less' : 'Read more'}
         </Button>
         <BookmarkButton
           role="button"
@@ -64,7 +78,7 @@ BookCard.propTypes = {
   author: PropTypes.string,
   description: PropTypes.string,
   onBookmarkClick: PropTypes.func,
-  bookmarkedBooks: PropTypes.string,
+  bookmarkedBooks: PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
 }
 
 const Card = styled.section`
@@ -78,24 +92,23 @@ const Card = styled.section`
 `
 const CoverWrapper = styled.span`
   display: grid;
-  align-content: center;
+  align-content: start;
   justify-content: center;
-  padding: 10px;
-`
-const Author = styled.h2`
-  font-weight: normal;
-  font-size: 90%;
+  padding: 15px 10px;
 `
 const Title = styled.h2`
   font-weight: bold;
   font-size: 100%;
   padding-right: 40px;
 `
+const Author = styled.h3`
+  font-weight: normal;
+  font-size: 90%;
+`
 const Description = styled.p`
   font-weight: normal;
   font-size: 70%;
 `
-
 const BookmarkButton = styled.span`
   position: absolute;
   top: 1px;
