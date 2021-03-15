@@ -1,6 +1,4 @@
 import BookCardsPage from '../BookCardsPage/BookCardsPage'
-import styled from 'styled-components/macro'
-// import { useState } from 'react'
 import { Route, Switch } from 'react-router-dom'
 import Grid from '../Grid/Grid'
 import Navigation from '../Navigation/Navigation'
