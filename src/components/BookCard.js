@@ -98,12 +98,12 @@ const CoverWrapper = styled.span`
 `
 const Title = styled.h2`
   font-weight: bold;
-  font-size: 100%;
+  font-size: 90%;
   padding-right: 40px;
 `
 const Author = styled.h3`
   font-weight: normal;
-  font-size: 90%;
+  font-size: 80%;
 `
 const Description = styled.p`
   font-weight: normal;

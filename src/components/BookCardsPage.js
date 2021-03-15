@@ -84,7 +84,7 @@ const CardsPageLayout = styled.div`
   position: relative;
   padding: 2%;
   &:first-child {
-    padding-top: 95px;
+    padding-top: 105px;
   }
 `
 const TabBarWrapper = styled.div`
@@ -113,6 +113,7 @@ const PageButton = styled.button`
   font-size: 100%;
   padding: 5px;
   justify-self: center;
+  margin-top: 5px;
 `
 const NoFavoritesStatement = styled.p`
   text-align: center;
