@@ -85,6 +85,7 @@ const CardsPageLayout = styled.div`
   padding: 2%;
   &:first-child {
     padding-top: 105px;
+    overflow-y: scroll;
   }
 `
 const TabBarWrapper = styled.div`
