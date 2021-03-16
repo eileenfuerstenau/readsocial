@@ -5,12 +5,12 @@ import Icon from 'supercons'
 export default function SearchBar({ userInput, setUserInput }) {
   return (
     <InputLabel>
-      <Icon glyph="search" size={30} />
+      <Icon style={{ color: '#87939F' }} glyph="search" size={30} />
       <Input
         value={userInput}
         onChange={event => setUserInput(event.target.value)}
         maxLength={200}
-        placeholder="Search books or authors"
+        placeholder="Suche Buch oder AutorIn"
       />
     </InputLabel>
   )
@@ -21,8 +21,9 @@ const InputLabel = styled.label`
   justify-self: center;
   display: flex;
   padding: 5px;
-  border: 1px solid lightgrey;
+  border: 1px solid #87939f;
   border-radius: 30px;
+  background: white;
 `
 
 const Input = styled.input`
