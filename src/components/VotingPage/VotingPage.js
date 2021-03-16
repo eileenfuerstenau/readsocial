@@ -3,7 +3,7 @@ import styled from 'styled-components/macro'
 export default function VotingPage() {
   return (
     <VotingPageLayout>
-      Reading is to the mind what exercising is to the body. ✨
+      Lesen ist für den Geist was Sport für den Körper ist. ✨
     </VotingPageLayout>
   )
 }

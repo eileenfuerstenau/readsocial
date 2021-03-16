@@ -17,7 +17,7 @@ export default function Navigation(booksShown) {
         }}
       >
         <Icon glyph="checkmark" size={30} />
-        About
+        Abstimmung
       </NavButton>
       <NavButton
         aria-label="inspiration"

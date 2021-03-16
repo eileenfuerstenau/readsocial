@@ -14,4 +14,6 @@ const AppGrid = styled.div`
   bottom: 0;
   left: 0;
   right: 0;
+  max-width: 800px;
+  margin: 0 auto;
 `
