@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components/macro'
 
 export default function Grid({ children }) {
-  return <AppGrid className="Grid"> {children} </AppGrid>
+  return <AppGrid>{children}</AppGrid>
 }
 
 const AppGrid = styled.div`

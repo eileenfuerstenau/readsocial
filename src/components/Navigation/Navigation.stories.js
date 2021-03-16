@@ -5,6 +5,6 @@ export default {
   component: Navigation,
 }
 
-const Template = args => <Navigation />
+const Template = () => <Navigation />
 
 export const Primary = Template.bind({})
