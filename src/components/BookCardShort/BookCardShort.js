@@ -67,7 +67,7 @@ BookCardShort.propTypes = {
 const Card = styled.section`
   border-radius: 5px;
   box-shadow: 0 2px 5px;
-  padding: 5px 10px 15px 5px;
+  padding: 5px 10px 10px 10px;
   position: relative;
 `
 const Title = styled.h2`

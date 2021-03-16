@@ -46,8 +46,9 @@ export default function BookCard({
           aria-label="expand-shrink-description"
           onClick={() => readmore(title)}
         >
-          {isDescriptionExtended.includes(title) ? 'Read less' : 'Read more'}
+          {isDescriptionExtended.includes(title) ? 'Weniger' : 'Mehr'}
         </Button>
+        <Button>Nominieren</Button>
         <BookmarkButton
           role="button"
           aria-label="toggle-bookmarked"
@@ -79,6 +80,8 @@ BookCard.propTypes = {
   description: PropTypes.string,
   onBookmarkClick: PropTypes.func,
   bookmarkedBooks: PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
+  /*  isDescriptionExtended,
+  setDescriptionExtended, */
 }
 
 const Card = styled.section`
