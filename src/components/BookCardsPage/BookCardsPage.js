@@ -4,7 +4,7 @@ import styled from 'styled-components/macro'
 import React, { useState } from 'react'
 import SearchBar from '../SearchBar/SearchBar'
 
-export default function BookCardsPage() {
+export default function BookCardsPage({ onNominate, nominatedBooks }) {
   const [bookmarkedBooks, setBookmarkedBooks] = useState([])
   const [booksShown, setBooksShown] = useState('all')
   const [isDescriptionExtended, setDescriptionExtended] = useState([])
@@ -68,6 +68,8 @@ export default function BookCardsPage() {
               bookmarkedBooks={bookmarkedBooks}
               isDescriptionExtended={isDescriptionExtended}
               setDescriptionExtended={setDescriptionExtended}
+              onNominate={onNominate}
+              nominatedBooks={nominatedBooks}
             />
           ))}
       </BooksWrapper>

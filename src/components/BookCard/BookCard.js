@@ -14,6 +14,8 @@ export default function BookCard({
   bookmarkedBooks,
   isDescriptionExtended,
   setDescriptionExtended,
+  onNominate,
+  nominatedBooks,
 }) {
   let descriptionsExpandedArray
   function readmore(title) {
@@ -48,7 +50,12 @@ export default function BookCard({
         >
           {isDescriptionExtended.includes(title) ? 'Weniger' : 'Mehr'}
         </Button>
-        <Button>Nominieren</Button>
+        <Button
+          aria-label="nominate"
+          onClick={() => onNominate(id, title, author, description)}
+        >
+          {nominatedBooks.includes(title) ? 'Schon nominiert' : 'Nominieren'}
+        </Button>
         <BookmarkButton
           role="button"
           aria-label="toggle-bookmarked"

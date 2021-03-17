@@ -1,6 +1,5 @@
 import { React } from 'react'
 import styled from 'styled-components/macro'
-import PropTypes from 'prop-types'
 import Button from '../Button/Button'
 
 export default function BookCardShort({
@@ -47,7 +46,7 @@ export default function BookCardShort({
   )
 }
 
-const isPathToCover = function (props, pathToCover) {
+/* const isPathToCover = function (props, pathToCover) {
   const pathEnd = /.(png|jpeg|jpg)/
   if (!pathEnd.test(props[pathToCover])) {
     return new Error(`Expected a valid path to book cover.`)
@@ -62,7 +61,6 @@ BookCardShort.propTypes = {
   description: PropTypes.string,
   /*  isDescriptionExtended,
   setDescriptionExtended, */
-}
 
 const Card = styled.section`
   border-radius: 5px;

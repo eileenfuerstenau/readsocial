@@ -5,14 +5,22 @@ import Navigation from '../Navigation/Navigation'
 import VotingPage from '../VotingPage/VotingPage'
 
 export default function App() {
+  const nominatedBooks = []
+  function onNominate(id, title, author, description) {
+    nominatedBooks.push({ id, title, author, description })
+  }
+
   return (
     <Grid>
       <Switch>
         <Route exact path="/">
-          <VotingPage />
+          <VotingPage nominatedBooks={nominatedBooks} />
         </Route>
         <Route path="/inspiration">
-          <BookCardsPage />
+          <BookCardsPage
+            onNominate={onNominate}
+            nominatedBooks={nominatedBooks}
+          />
         </Route>
       </Switch>
       <Navigation />
