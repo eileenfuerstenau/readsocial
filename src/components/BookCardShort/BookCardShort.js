@@ -8,17 +8,17 @@ export default function BookCardShort({
   title,
   author,
   description,
-  isDescriptionExtended,
+  descriptionExtended,
   setDescriptionExtended,
 }) {
   let descriptionsExpandedArray
   function readmore(title) {
-    if (isDescriptionExtended.includes(title)) {
-      descriptionsExpandedArray = isDescriptionExtended.filter(
+    if (descriptionExtended.includes(title)) {
+      descriptionsExpandedArray = descriptionExtended.filter(
         book => book !== title
       )
     } else {
-      descriptionsExpandedArray = [...isDescriptionExtended, title]
+      descriptionsExpandedArray = [...descriptionExtended, title]
     }
     setDescriptionExtended(descriptionsExpandedArray)
   }
@@ -30,7 +30,7 @@ export default function BookCardShort({
           {title} von {author}
         </Title>
         <Description>
-          <span hidden={!isDescriptionExtended.includes(title)}>
+          <span hidden={!descriptionExtended.includes(title)}>
             {description}
           </span>
         </Description>
@@ -38,7 +38,7 @@ export default function BookCardShort({
           aria-label="expand-shrink-description"
           onClick={() => readmore(title)}
         >
-          {isDescriptionExtended.includes(title) ? 'Weniger' : 'Mehr'}
+          {descriptionExtended.includes(title) ? 'Weniger' : 'Mehr'}
         </Button>
       </section>
     </Card>
@@ -50,10 +50,7 @@ BookCardShort.propTypes = {
   title: PropTypes.string,
   author: PropTypes.string,
   description: PropTypes.string,
-  isDescriptionExtended: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.array,
-  ]),
+  descriptionExtended: PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
   setDescriptionExtended: PropTypes.func,
 }
 

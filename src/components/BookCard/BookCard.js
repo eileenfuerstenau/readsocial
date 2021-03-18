@@ -12,7 +12,7 @@ export default function BookCard({
   description,
   onBookmarkClick,
   bookmarkedBooks,
-  isDescriptionExtended,
+  descriptionExtended,
   setDescriptionExtended,
   onNominate,
   nominatedBooks,
@@ -23,12 +23,12 @@ export default function BookCard({
 
   let descriptionsExpandedArray
   function handleReadMore(title) {
-    if (isDescriptionExtended.includes(title)) {
-      descriptionsExpandedArray = isDescriptionExtended.filter(
+    if (descriptionExtended.includes(title)) {
+      descriptionsExpandedArray = descriptionExtended.filter(
         book => book !== title
       )
     } else {
-      descriptionsExpandedArray = [...isDescriptionExtended, title]
+      descriptionsExpandedArray = [...descriptionExtended, title]
     }
     setDescriptionExtended(descriptionsExpandedArray)
   }
@@ -43,8 +43,8 @@ export default function BookCard({
         <Author>{author}</Author>
         <Description>
           <span>{description.slice(0, 99)}</span>
-          <span hidden={isDescriptionExtended.includes(title)}>...</span>
-          <span hidden={!isDescriptionExtended.includes(title)}>
+          <span hidden={descriptionExtended.includes(title)}>...</span>
+          <span hidden={!descriptionExtended.includes(title)}>
             {description.slice(99)}
           </span>
         </Description>
@@ -52,7 +52,7 @@ export default function BookCard({
           aria-label="expand-shrink-description"
           onClick={() => handleReadMore(title)}
         >
-          {isDescriptionExtended.includes(title) ? 'Weniger' : 'Mehr'}
+          {descriptionExtended.includes(title) ? 'Weniger' : 'Mehr'}
         </Button>
         <NominateButton
           aria-label="nominate"
@@ -92,10 +92,7 @@ BookCard.propTypes = {
   description: PropTypes.string,
   onBookmarkClick: PropTypes.func,
   bookmarkedBooks: PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
-  isDescriptionExtended: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.array,
-  ]),
+  descriptionExtended: PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
   setDescriptionExtended: PropTypes.func,
   onNominate: PropTypes.func,
   nominatedBooks: PropTypes.oneOfType([PropTypes.string, PropTypes.array]),

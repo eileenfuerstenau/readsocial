@@ -7,7 +7,7 @@ import SearchBar from '../SearchBar/SearchBar'
 export default function BookCardsPage({ onNominate, nominatedBooks }) {
   const [bookmarkedBooks, setBookmarkedBooks] = useState([])
   const [booksShown, setBooksShown] = useState('all')
-  const [isDescriptionExtended, setDescriptionExtended] = useState([])
+  const [descriptionExtended, setDescriptionExtended] = useState([])
   const [userInput, setUserInput] = useState('')
 
   let bookmarkedBooksArray
@@ -66,7 +66,7 @@ export default function BookCardsPage({ onNominate, nominatedBooks }) {
               description={card.content}
               onBookmarkClick={onBookmarkClick}
               bookmarkedBooks={bookmarkedBooks}
-              isDescriptionExtended={isDescriptionExtended}
+              descriptionExtended={descriptionExtended}
               setDescriptionExtended={setDescriptionExtended}
               onNominate={onNominate}
               nominatedBooks={nominatedBooks}

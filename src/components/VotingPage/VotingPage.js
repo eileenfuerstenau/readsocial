@@ -3,7 +3,7 @@ import BookCardShort from '../BookCardShort/BookCardShort'
 import { useState } from 'react'
 
 export default function VotingPage({ nominatedBooks }) {
-  const [isDescriptionExtended, setDescriptionExtended] = useState([])
+  const [descriptionExtended, setDescriptionExtended] = useState([])
 
   return (
     <VotingPageLayout>
@@ -14,7 +14,7 @@ export default function VotingPage({ nominatedBooks }) {
             title={title}
             author={author}
             description={description}
-            isDescriptionExtended={isDescriptionExtended}
+            descriptionExtended={descriptionExtended}
             setDescriptionExtended={setDescriptionExtended}
           />
         ))}

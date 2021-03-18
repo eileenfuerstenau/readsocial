@@ -15,7 +15,7 @@ Primary.args = {
   cover: '/book-cover/3.jpg',
   description:
     'Die Geschichte einer unglücklichen jungen Frau, die sterben will und erst angesichts des Todes entdeckt, wie schön das Leben sein kann, wenn man darum kämpft und etwas riskiert.',
-  isDescriptionExtended: '[Herr aller Dinge]',
+  descriptionExtended: '[Herr aller Dinge]',
   nominatedBooks: [
     {
       author: 'Paulo Coelho',

@@ -10,7 +10,7 @@ const testdataShort = {
   description:
     'Wie treffen wir unsere Entscheidungen? Warum ist Zögern ein überlebensnotwendiger Reflex?',
   bookmarkedBooks: '[Becoming]',
-  isDescriptionExtended: '[Herr aller Dinge]',
+  descriptionExtended: '[Herr aller Dinge]',
   nominatedBooks: [
     {
       author: 'Paulo Coelho',
@@ -30,7 +30,7 @@ const testdataLong = {
   description:
     'Wie treffen wir unsere Entscheidungen? Warum ist Zögern ein überlebensnotwendiger Reflex, und warum ist es so schwer zu wissen, was uns in der Zukunft glücklich macht?',
   bookmarkedBooks: '[Becoming]',
-  isDescriptionExtended: '[Herr aller Dinge]',
+  descriptionExtended: '[Herr aller Dinge]',
   nominatedBooks: [
     {
       author: 'Paulo Coelho',

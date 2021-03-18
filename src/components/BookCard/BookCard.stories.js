@@ -16,7 +16,7 @@ Primary.args = {
   description:
     'Die Geschichte einer unglücklichen jungen Frau, die sterben will und erst angesichts des Todes entdeckt, wie schön das Leben sein kann, wenn man darum kämpft und etwas riskiert.',
   bookmarkedBooks: '[Becoming]',
-  isDescriptionExtended: '[Herr aller Dinge]',
+  descriptionExtended: '[Herr aller Dinge]',
   nominatedBooks: [
     {
       author: 'Paulo Coelho',

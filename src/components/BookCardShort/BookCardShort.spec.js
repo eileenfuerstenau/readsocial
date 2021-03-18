@@ -9,7 +9,7 @@ const testdataShort = {
   author: 'Daniel Kahneman',
   description:
     'Wie treffen wir unsere Entscheidungen? Warum ist Zögern ein überlebensnotwendiger Reflex?',
-  isDescriptionExtended: '[Herr aller Dinge]',
+  descriptionExtended: '[Herr aller Dinge]',
   nominatedBooks: [
     {
       author: 'Paulo Coelho',
