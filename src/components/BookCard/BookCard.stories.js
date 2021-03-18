@@ -10,11 +10,20 @@ const Template = args => <BookCard {...args} />
 export const Primary = Template.bind({})
 
 Primary.args = {
-  title: 'Title of Book',
-  author: 'Max Mustermann',
-  cover: '/book-cover/2.jpg',
+  title: 'Schnelles Denken, langsames Denken',
+  author: 'Daniel Kahneman',
+  cover: '/book-cover/3.jpg',
   description:
-    'Als Hemingway 1956 nach Paris zurückkehrte, ließ er sich aus dem Keller des Hotel Ritz seine alten Koffer bringen. Sie enthielten Tagebücher und Notizen aus seiner Zeit als Auslandskorrespondent. Aus diesen Aufzeichnungen formte Hemingway den Roman seiner Pariser Jahre. Für ihn war es eine glückliche, prägende Zeit, als er an der Seine angelte, bescheidene Gewinne beim Pferderennen in Champagner umsetzte, mit Gertrude Stein, James Joyce, Ezra Pound und Scott F. Fitzgerald zusammentraf.',
-  bookmarkedBooks: '[Booktitle]',
-  isDescriptionExtended: '[title, another book]',
+    'Die Geschichte einer unglücklichen jungen Frau, die sterben will und erst angesichts des Todes entdeckt, wie schön das Leben sein kann, wenn man darum kämpft und etwas riskiert.',
+  bookmarkedBooks: '[Becoming]',
+  isDescriptionExtended: '[Herr aller Dinge]',
+  nominatedBooks: [
+    {
+      author: 'Paulo Coelho',
+      title: 'Veronika beschließt zu sterben',
+      description:
+        'Die Geschichte einer unglücklichen jungen Frau, die sterben will und erst angesichts des Todes entdeckt, wie schön das Leben sein kann, wenn man darum kämpft und etwas riskiert.',
+      id: '21',
+    },
+  ],
 }
