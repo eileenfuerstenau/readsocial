@@ -22,7 +22,7 @@ export default function BookCard({
   )
 
   let descriptionsExpandedArray
-  function readmore(title) {
+  function handleReadMore(title) {
     if (isDescriptionExtended.includes(title)) {
       descriptionsExpandedArray = isDescriptionExtended.filter(
         book => book !== title
@@ -50,7 +50,7 @@ export default function BookCard({
         </Description>
         <Button
           aria-label="expand-shrink-description"
-          onClick={() => readmore(title)}
+          onClick={() => handleReadMore(title)}
         >
           {isDescriptionExtended.includes(title) ? 'Weniger' : 'Mehr'}
         </Button>
@@ -59,7 +59,7 @@ export default function BookCard({
           disabled={isBookNominated}
           onClick={() => onNominate(id, title, author, description)}
         >
-          {isBookNominated ? ' ☑️ Nominiert' : 'Nominieren'}
+          {isBookNominated ? 'Nominiert' : 'Nominieren'}
         </NominateButton>
         <BookmarkButton
           role="button"

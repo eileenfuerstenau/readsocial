@@ -91,4 +91,20 @@ describe('BookCard', () => {
     expect(callback).toHaveBeenCalledTimes(1)
     expect(callback).toHaveBeenCalledWith('Schnelles Denken, langsames Denken')
   })
+
+  it('calls onNominate with the respective id, booktitle, author and description on clicking the nominate button', () => {
+    const callback = jest.fn()
+    render(<BookCard {...testdataLong} onNominate={callback} />)
+    const bookmarkButton = screen.getByRole('button', {
+      name: 'nominate',
+    })
+    userEvent.click(bookmarkButton)
+    expect(callback).toHaveBeenCalledTimes(1)
+    expect(callback).toHaveBeenCalledWith(
+      '3',
+      'Schnelles Denken, langsames Denken',
+      'Daniel Kahneman',
+      'Wie treffen wir unsere Entscheidungen? Warum ist Zögern ein überlebensnotwendiger Reflex, und warum ist es so schwer zu wissen, was uns in der Zukunft glücklich macht?'
+    )
+  })
 })

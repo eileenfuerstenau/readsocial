@@ -1,4 +1,4 @@
-import BookCardsPage from './BookCardsPage'
+import VotingPage from './VotingPage'
 import { render, screen } from '@testing-library/react'
 
 const testdata = {
@@ -13,13 +13,11 @@ const testdata = {
   ],
 }
 
-describe('BookCardsPage', () => {
-  it('renders two filterbuttons and multiple bookcards by default', () => {
-    render(<BookCardsPage {...testdata} />)
-    expect(screen.getAllByRole('button', { name: /filter/ })).toHaveLength(2)
-    expect(screen.getByText('Ernest Hemingway')).toBeInTheDocument()
+describe('VotingPage', () => {
+  it('renders nominated bookcards by default', () => {
+    render(<VotingPage {...testdata} />)
     expect(
-      screen.getByText('Ichiro Kishimi, Fumitake Koga')
+      screen.getByText('Veronika beschließt zu sterben von Paulo Coelho')
     ).toBeInTheDocument()
   })
 })

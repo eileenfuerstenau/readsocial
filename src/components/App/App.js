@@ -11,25 +11,7 @@ export default function App() {
   function onNominate(id, title, author, description) {
     const newNominatedBook = { id, title, author, description }
     setNominatedBooks([...nominatedBooks, newNominatedBook])
-    console.log(nominatedBooks)
   }
-
-  /* 
-   let nominatedBooksArray
-  function onNominate(id, title, author, description) {
-    const newNominatedBook = { id, title, author, description }
-    if (
-      nominatedBooks.some(nominatedBook => nominatedBook === newNominatedBook)
-    ) {
-      nominatedBooksArray = nominatedBooks.filter(
-        books => books !== newNominatedBook
-      )
-    } else {
-      nominatedBooksArray = [...nominatedBooks, newNominatedBook]
-    }
-    setNominatedBooks(nominatedBooksArray)
-  }
-  */
 
   return (
     <Grid>

@@ -10,7 +10,7 @@ export default function VotingPage({ nominatedBooks }) {
       <BooksWrapper>
         {nominatedBooks.map(({ id, title, author, description }) => (
           <BookCardShort
-            id={id}
+            key={id}
             title={title}
             author={author}
             description={description}
