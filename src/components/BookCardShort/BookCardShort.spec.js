@@ -1,80 +1,49 @@
-/* import BookCardShort from './BookCardShort'
+import BookCardShort from './BookCardShort'
 import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 
+const testdataShort = {
+  id: '3',
+  cover: '/book-cover/3.jpg',
+  title: 'Schnelles Denken, langsames Denken',
+  author: 'Daniel Kahneman',
+  description:
+    'Wie treffen wir unsere Entscheidungen? Warum ist Zögern ein überlebensnotwendiger Reflex?',
+  isDescriptionExtended: '[Herr aller Dinge]',
+  nominatedBooks: [
+    {
+      author: 'Paulo Coelho',
+      title: 'Veronika beschließt zu sterben',
+      description:
+        'Die Geschichte einer unglücklichen jungen Frau, die sterben will und erst angesichts des Todes entdeckt, wie schön das Leben sein kann, wenn man darum kämpft und etwas riskiert.',
+      id: '21',
+    },
+  ],
+}
+
 describe('BookCardShort', () => {
-  it('renders a booktitle, an author and a book description up to 100 characters', () => {
-    render(
-      <BookCardShort
-        title="Booktitle"
-        author="John Doe"
-        description="Wie treffen wir unsere Entscheidungen? Warum ist Zögern ein überlebensnotwendiger Reflex?"
-      />
-    )
-    expect(screen.getByText('Booktitle')).toBeInTheDocument()
-    expect(screen.getByText('John Doe')).toBeInTheDocument()
+  it('renders a booktitle with an author and a button', () => {
+    render(<BookCardShort {...testdataShort} />)
     expect(
-      screen.getByText(
-        'Wie treffen wir unsere Entscheidungen? Warum ist Zögern ein überlebensnotwendiger Reflex?'
-      )
+      screen.getByText('Schnelles Denken, langsames Denken von Daniel Kahneman')
+    ).toBeInTheDocument()
+    expect(
+      screen.getByRole('button', { name: 'expand-shrink-description' })
     ).toBeInTheDocument()
   })
 
-  it('does not render a book description of more than 100 characters by default', () => {
+  it('calls setDescriptionExtended when the read-more button was clicked', () => {
+    const setDescriptionExtended = jest.fn()
     render(
       <BookCardShort
-        title="Booktitle"
-        author="John Doe"
-        cover="/book-cover/1.jpg"
-        description="Wie treffen wir unsere Entscheidungen? Warum ist Zögern ein überlebensnotwendiger Reflex, und warum ist es so schwer zu wissen, was uns in der Zukunft glücklich macht?"
-        bookmarkedBooks="[Booktitle]"
-      />
-    )
-    expect(
-      screen.getByText(
-        'ist es so schwer zu wissen, was uns in der Zukunft glücklich macht?'
-      )
-    ).not.toBeVisible()
-  })
-
-  it('renders a book description of more than 100 characters if read-more button was clicked', () => {
-    render(
-      <BookCardShort
-        title="Booktitle"
-        author="John Doe"
-        cover="/book-cover/1.jpg"
-        description="Wie treffen wir unsere Entscheidungen? Warum ist Zögern ein überlebensnotwendiger Reflex, und warum ist es so schwer zu wissen, was uns in der Zukunft glücklich macht?"
-        bookmarkedBooks="[Booktitle]"
+        {...testdataShort}
+        setDescriptionExtended={setDescriptionExtended}
       />
     )
     const extendButton = screen.getByRole('button', {
       name: 'expand-shrink-description',
     })
     userEvent.click(extendButton)
-    expect(
-      screen.getByText(
-        'ist es so schwer zu wissen, was uns in der Zukunft glücklich macht?'
-      )
-    ).toBeVisible()
-  })
-
-  it('calls onBookmarkClick with the respective booktitle on clicking the bookmark button', () => {
-    const callback = jest.fn()
-    render(
-      <BookCardShort
-        title="Booktitle"
-        author="John Doe"
-        description="Wie treffen wir unsere Entscheidungen? Warum ist Zögern ein überlebensnotwendiger Reflex, und warum ist es so schwer zu wissen, was uns in der Zukunft glücklich macht?"
-        isDescriptionExtended="[booktitle]"
-        setDescriptionExtended={callback}
-      />
-    )
-    const bookmarkButton = screen.getByRole('button', {
-      name: 'toggle-bookmarked',
-    })
-    userEvent.click(bookmarkButton)
-    expect(callback).toHaveBeenCalledTimes(1)
-    expect(callback).toHaveBeenCalledWith('Booktitle')
+    expect(setDescriptionExtended).toHaveBeenCalledTimes(1)
   })
 })
- */

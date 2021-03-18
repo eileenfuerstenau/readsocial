@@ -30,8 +30,6 @@ export default function BookCardShort({
           {title} von {author}
         </Title>
         <Description>
-          <span>{description.slice(0, 99)}</span>
-          <span hidden={isDescriptionExtended.includes(title)}>...</span>
           <span hidden={!isDescriptionExtended.includes(title)}>
             {description}
           </span>
