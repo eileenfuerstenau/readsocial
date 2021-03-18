@@ -8,9 +8,9 @@ import { useState } from 'react'
 export default function App() {
   const [nominatedBooks, setNominatedBooks] = useState([])
 
-  function onNominate(id, title, author, description) {
+  function nominateBook(id, title, author, description) {
     const newNominatedBook = { id, title, author, description }
-    setNominatedBooks([...nominatedBooks, newNominatedBook])
+    setNominatedBooks([newNominatedBook, ...nominatedBooks])
   }
 
   return (
@@ -21,12 +21,14 @@ export default function App() {
         </Route>
         <Route path="/inspiration">
           <BookCardsPage
-            onNominate={onNominate}
+            onNominate={nominateBook}
             nominatedBooks={nominatedBooks}
           />
         </Route>
       </Switch>
-      <Navigation />
+      <Route exact path={['/', '/inspiration']}>
+        <Navigation />
+      </Route>
     </Grid>
   )
 }

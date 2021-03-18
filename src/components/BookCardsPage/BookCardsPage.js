@@ -11,7 +11,7 @@ export default function BookCardsPage({ onNominate, nominatedBooks }) {
   const [userInput, setUserInput] = useState('')
 
   let bookmarkedBooksArray
-  function onBookmarkClick(currentBook) {
+  function handleBookmarkClick(currentBook) {
     if (bookmarkedBooks.includes(currentBook)) {
       bookmarkedBooksArray = bookmarkedBooks.filter(
         book => book !== currentBook
@@ -64,7 +64,7 @@ export default function BookCardsPage({ onNominate, nominatedBooks }) {
               title={card.title}
               author={card.author}
               description={card.content}
-              onBookmarkClick={onBookmarkClick}
+              onBookmarkClick={handleBookmarkClick}
               bookmarkedBooks={bookmarkedBooks}
               descriptionExtended={descriptionExtended}
               setDescriptionExtended={setDescriptionExtended}
