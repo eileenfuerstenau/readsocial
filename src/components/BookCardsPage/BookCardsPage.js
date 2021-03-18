@@ -11,7 +11,7 @@ export default function BookCardsPage({ onNominate, nominatedBooks }) {
   const [userInput, setUserInput] = useState('')
 
   let bookmarkedBooksArray
-  function handleBookmarkClick(currentBook) {
+  function onBookmarkClick(currentBook) {
     if (bookmarkedBooks.includes(currentBook)) {
       bookmarkedBooksArray = bookmarkedBooks.filter(
         book => book !== currentBook
@@ -64,7 +64,7 @@ export default function BookCardsPage({ onNominate, nominatedBooks }) {
               title={card.title}
               author={card.author}
               description={card.content}
-              onBookmarkClick={handleBookmarkClick}
+              onBookmarkClick={onBookmarkClick}
               bookmarkedBooks={bookmarkedBooks}
               isDescriptionExtended={isDescriptionExtended}
               setDescriptionExtended={setDescriptionExtended}
@@ -85,9 +85,9 @@ export default function BookCardsPage({ onNominate, nominatedBooks }) {
 const CardsPageLayout = styled.div`
   position: relative;
   padding: 2%;
+  overflow-y: scroll;
   &:first-child {
     padding-top: 105px;
-    overflow-y: scroll;
   }
 `
 const TabBarWrapper = styled.div`

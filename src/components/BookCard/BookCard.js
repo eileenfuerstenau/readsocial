@@ -17,6 +17,10 @@ export default function BookCard({
   onNominate,
   nominatedBooks,
 }) {
+  const isBookNominated = nominatedBooks.some(
+    nominatedBook => nominatedBook.title === title
+  )
+
   let descriptionsExpandedArray
   function readmore(title) {
     if (isDescriptionExtended.includes(title)) {
@@ -50,12 +54,13 @@ export default function BookCard({
         >
           {isDescriptionExtended.includes(title) ? 'Weniger' : 'Mehr'}
         </Button>
-        <Button
+        <NominateButton
           aria-label="nominate"
+          disabled={isBookNominated}
           onClick={() => onNominate(id, title, author, description)}
         >
-          {nominatedBooks.includes(title) ? 'Schon nominiert' : 'Nominieren'}
-        </Button>
+          {isBookNominated ? ' ☑️ Nominiert' : 'Nominieren'}
+        </NominateButton>
         <BookmarkButton
           role="button"
           aria-label="toggle-bookmarked"
@@ -87,8 +92,13 @@ BookCard.propTypes = {
   description: PropTypes.string,
   onBookmarkClick: PropTypes.func,
   bookmarkedBooks: PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
-  /*  isDescriptionExtended,
-  setDescriptionExtended, */
+  isDescriptionExtended: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.array,
+  ]),
+  setDescriptionExtended: PropTypes.func,
+  onNominate: PropTypes.func,
+  nominatedBooks: PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
 }
 
 const Card = styled.section`
@@ -119,8 +129,15 @@ const Description = styled.p`
   font-weight: normal;
   font-size: 70%;
 `
-const BookmarkButton = styled.span`
+const BookmarkButton = styled.button`
   position: absolute;
   top: 1px;
   right: 0.5px;
+  background: transparent;
+  border: none;
+`
+const NominateButton = styled(Button)`
+  background: ${props => props.disabled && 'lightgrey'};
+  box-shadow: ${props => props.disabled && 'none'};
+  width: ${props => props.disabled && '80px'};
 `

@@ -3,12 +3,33 @@ import { Route, Switch } from 'react-router-dom'
 import Grid from '../Grid/Grid'
 import Navigation from '../Navigation/Navigation'
 import VotingPage from '../VotingPage/VotingPage'
+import { useState } from 'react'
 
 export default function App() {
-  const nominatedBooks = []
+  const [nominatedBooks, setNominatedBooks] = useState([])
+
   function onNominate(id, title, author, description) {
-    nominatedBooks.push({ id, title, author, description })
+    const newNominatedBook = { id, title, author, description }
+    setNominatedBooks([...nominatedBooks, newNominatedBook])
+    console.log(nominatedBooks)
   }
+
+  /* 
+   let nominatedBooksArray
+  function onNominate(id, title, author, description) {
+    const newNominatedBook = { id, title, author, description }
+    if (
+      nominatedBooks.some(nominatedBook => nominatedBook === newNominatedBook)
+    ) {
+      nominatedBooksArray = nominatedBooks.filter(
+        books => books !== newNominatedBook
+      )
+    } else {
+      nominatedBooksArray = [...nominatedBooks, newNominatedBook]
+    }
+    setNominatedBooks(nominatedBooksArray)
+  }
+  */
 
   return (
     <Grid>
