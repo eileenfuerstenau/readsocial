@@ -1,11 +1,11 @@
-import BookCard from './BookCard'
+import BookCardShort from './BookCardShort'
 
 export default {
-  title: 'BookCard',
-  component: BookCard,
+  title: 'BookCardShort',
+  component: BookCardShort,
 }
 
-const Template = args => <BookCard {...args} />
+const Template = args => <BookCardShort {...args} />
 
 export const Primary = Template.bind({})
 
@@ -15,7 +15,6 @@ Primary.args = {
   cover: '/book-cover/3.jpg',
   description:
     'Die Geschichte einer unglücklichen jungen Frau, die sterben will und erst angesichts des Todes entdeckt, wie schön das Leben sein kann, wenn man darum kämpft und etwas riskiert.',
-  bookmarkedBooks: '[Becoming]',
   descriptionExtended: '[Herr aller Dinge]',
   nominatedBooks: [
     {

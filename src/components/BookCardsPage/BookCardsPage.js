@@ -4,10 +4,10 @@ import styled from 'styled-components/macro'
 import React, { useState } from 'react'
 import SearchBar from '../SearchBar/SearchBar'
 
-export default function BookCardsPage() {
+export default function BookCardsPage({ onNominate, nominatedBooks }) {
   const [bookmarkedBooks, setBookmarkedBooks] = useState([])
   const [booksShown, setBooksShown] = useState('all')
-  const [isDescriptionExtended, setDescriptionExtended] = useState([])
+  const [descriptionExtended, setDescriptionExtended] = useState([])
   const [userInput, setUserInput] = useState('')
 
   let bookmarkedBooksArray
@@ -66,8 +66,10 @@ export default function BookCardsPage() {
               description={card.content}
               onBookmarkClick={handleBookmarkClick}
               bookmarkedBooks={bookmarkedBooks}
-              isDescriptionExtended={isDescriptionExtended}
+              descriptionExtended={descriptionExtended}
               setDescriptionExtended={setDescriptionExtended}
+              onNominate={onNominate}
+              nominatedBooks={nominatedBooks}
             />
           ))}
       </BooksWrapper>
@@ -83,9 +85,9 @@ export default function BookCardsPage() {
 const CardsPageLayout = styled.div`
   position: relative;
   padding: 2%;
+  overflow-y: scroll;
   &:first-child {
     padding-top: 105px;
-    overflow-y: scroll;
   }
 `
 const TabBarWrapper = styled.div`
