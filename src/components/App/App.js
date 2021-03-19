@@ -4,6 +4,7 @@ import Grid from '../Grid/Grid'
 import Navigation from '../Navigation/Navigation'
 import VotingPage from '../VotingPage/VotingPage'
 import { useState } from 'react'
+import AppHeader from '../Header/Header'
 
 export default function App() {
   const [nominatedBooks, setNominatedBooks] = useState([])
@@ -16,19 +17,19 @@ export default function App() {
   return (
     <Grid>
       <Switch>
-        <Route exact path="/">
-          <VotingPage nominatedBooks={nominatedBooks} />
-        </Route>
         <Route path="/inspiration">
+          <AppHeader title={'Lass dich inspirieren'} />
           <BookCardsPage
             onNominate={nominateBook}
             nominatedBooks={nominatedBooks}
           />
         </Route>
+        <Route exact path="/">
+          <AppHeader title={'Wofür stimmst du?'} />
+          <VotingPage nominatedBooks={nominatedBooks} />
+        </Route>
       </Switch>
-      <Route exact path={['/', '/inspiration']}>
-        <Navigation />
-      </Route>
+      <Navigation />
     </Grid>
   )
 }

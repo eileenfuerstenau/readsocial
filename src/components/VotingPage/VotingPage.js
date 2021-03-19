@@ -1,6 +1,7 @@
 import styled from 'styled-components/macro'
 import BookCardShort from '../BookCardShort/BookCardShort'
 import { useState } from 'react'
+import AppHeader from '../Header/Header'
 
 export default function VotingPage({ nominatedBooks }) {
   const [descriptionExtended, setDescriptionExtended] = useState([])
@@ -26,7 +27,7 @@ export default function VotingPage({ nominatedBooks }) {
   )
 }
 
-const VotingPageLayout = styled.div`
+const VotingPageLayout = styled.main`
   position: relative;
   padding: 2%;
   overflow-y: scroll;

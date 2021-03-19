@@ -3,6 +3,7 @@ import BookCard from '../BookCard/BookCard'
 import styled from 'styled-components/macro'
 import React, { useState } from 'react'
 import SearchBar from '../SearchBar/SearchBar'
+import AppHeader from '../Header/Header'
 
 export default function BookCardsPage({ onNominate, nominatedBooks }) {
   const [bookmarkedBooks, setBookmarkedBooks] = useState([])
@@ -24,29 +25,6 @@ export default function BookCardsPage({ onNominate, nominatedBooks }) {
 
   return (
     <CardsPageLayout>
-      <TabBarWrapper>
-        <SearchBar userInput={userInput} setUserInput={setUserInput} />
-        <PageButton
-          aria-label="filter-all"
-          isActive={booksShown === 'all'}
-          onClick={() => {
-            setBooksShown('all')
-            setDescriptionExtended([])
-          }}
-        >
-          Alle
-        </PageButton>
-        <PageButton
-          aria-label="filter-favorites"
-          isActive={booksShown === 'favorites'}
-          onClick={() => {
-            setBooksShown('favorites')
-            setDescriptionExtended([])
-          }}
-        >
-          Favoriten
-        </PageButton>
-      </TabBarWrapper>
       <BooksWrapper>
         {books
           .filter(
@@ -73,6 +51,30 @@ export default function BookCardsPage({ onNominate, nominatedBooks }) {
             />
           ))}
       </BooksWrapper>
+      <TabBarWrapper>
+        <Decorator />
+        <SearchBar userInput={userInput} setUserInput={setUserInput} />
+        <PageButton
+          aria-label="filter-all"
+          isActive={booksShown === 'all'}
+          onClick={() => {
+            setBooksShown('all')
+            setDescriptionExtended([])
+          }}
+        >
+          Alle
+        </PageButton>
+        <PageButton
+          aria-label="filter-favorites"
+          isActive={booksShown === 'favorites'}
+          onClick={() => {
+            setBooksShown('favorites')
+            setDescriptionExtended([])
+          }}
+        >
+          Favoriten
+        </PageButton>
+      </TabBarWrapper>
       <NoFavoritesStatement>
         {bookmarkedBooks.length === 0 && booksShown === 'favorites'
           ? 'Du hast noch keine Favoriten.'
@@ -82,31 +84,43 @@ export default function BookCardsPage({ onNominate, nominatedBooks }) {
   )
 }
 
-const CardsPageLayout = styled.div`
+const CardsPageLayout = styled.main`
   position: relative;
   padding: 2%;
   overflow-y: scroll;
-  &:first-child {
-    padding-top: 105px;
-  }
 `
 const TabBarWrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
-  background: white;
   width: 100%;
   position: fixed;
-  top: 0px;
-  left: 0px;
+  top: 48px;
+  left: 0;
   z-index: 2;
   padding: 10px;
+  border-radius: 0 0 20px 20px;
+  background: white;
+  max-width: 800px;
+`
+
+const Decorator = styled.span`
+  background: #555eb8;
+  height: 45px;
+  width: 100%;
   border-radius: 0 0 10px 10px;
+  position: absolute;
+  top: -10px;
+  max-width: 800px;
 `
 
 const BooksWrapper = styled.div`
   padding: 0 2% 0 2%;
   display: grid;
   gap: 10px;
+
+  &:first-child {
+    padding-top: 95px;
+  }
 `
 
 const PageButton = styled.button`
