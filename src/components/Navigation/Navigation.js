@@ -9,6 +9,7 @@ export default function Navigation(booksShown) {
       <NavButton
         aria-label="inspiration"
         as={NavLink}
+        exact
         to="/"
         style={{ color: '#87939F' }}
         activeStyle={{
@@ -21,7 +22,6 @@ export default function Navigation(booksShown) {
       <NavButton
         aria-label="voting"
         as={NavLink}
-        exact
         to="/voting"
         style={{ color: '#87939F' }}
         activeStyle={{

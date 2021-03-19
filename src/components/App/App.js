@@ -24,7 +24,7 @@ export default function App() {
             nominatedBooks={nominatedBooks}
           />
         </Route>
-        <Route path="/voting">
+        <Route exact path="/voting">
           <AppHeader title={'Wofür stimmst du?'} />
           <VotingPage nominatedBooks={nominatedBooks} />
         </Route>
