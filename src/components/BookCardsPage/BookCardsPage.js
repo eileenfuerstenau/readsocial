@@ -3,7 +3,6 @@ import BookCard from '../BookCard/BookCard'
 import styled from 'styled-components/macro'
 import React, { useState } from 'react'
 import SearchBar from '../SearchBar/SearchBar'
-import AppHeader from '../Header/Header'
 
 export default function BookCardsPage({ onNominate, nominatedBooks }) {
   const [bookmarkedBooks, setBookmarkedBooks] = useState([])
@@ -119,19 +118,18 @@ const BooksWrapper = styled.div`
   gap: 10px;
 
   &:first-child {
-    padding-top: 95px;
+    padding-top: 88px;
   }
 `
-
 const PageButton = styled.button`
   border: none;
   border-bottom: ${props =>
     props.isActive ? '2px solid #f1613d' : '2px solid transparent'};
   background: transparent;
   font-size: 100%;
-  padding: 5px;
   justify-self: center;
   margin-top: 5px;
+  padding: 2px;
 `
 const NoFavoritesStatement = styled.p`
   text-align: center;

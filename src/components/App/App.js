@@ -17,14 +17,14 @@ export default function App() {
   return (
     <Grid>
       <Switch>
-        <Route path="/inspiration">
+        <Route exact path="/">
           <AppHeader title={'Lass dich inspirieren'} />
           <BookCardsPage
             onNominate={nominateBook}
             nominatedBooks={nominatedBooks}
           />
         </Route>
-        <Route exact path="/">
+        <Route path="/voting">
           <AppHeader title={'Wofür stimmst du?'} />
           <VotingPage nominatedBooks={nominatedBooks} />
         </Route>
