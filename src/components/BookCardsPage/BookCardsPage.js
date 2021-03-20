@@ -102,7 +102,7 @@ const TabBarWrapper = styled.div`
 `
 
 const TabBarBackgroundPart = styled.span`
-  height: 70px;
+  height: 60px;
   background: white;
   width: 100%;
   border-radius: 0 0 20px 20px;
