@@ -4,6 +4,8 @@ import Grid from '../Grid/Grid'
 import Navigation from '../Navigation/Navigation'
 import VotingPage from '../VotingPage/VotingPage'
 import { useState } from 'react'
+import Header from '../Header/Header'
+import styled from 'styled-components/macro'
 
 export default function App() {
   const [nominatedBooks, setNominatedBooks] = useState([])
@@ -17,18 +19,23 @@ export default function App() {
     <Grid>
       <Switch>
         <Route exact path="/">
-          <VotingPage nominatedBooks={nominatedBooks} />
-        </Route>
-        <Route path="/inspiration">
+          <ExtendedHeader>Lass dich inspirieren</ExtendedHeader>
           <BookCardsPage
             onNominate={nominateBook}
             nominatedBooks={nominatedBooks}
           />
         </Route>
+        <Route exact path="/voting">
+          <Header>Wofür stimmst du?</Header>
+          <VotingPage nominatedBooks={nominatedBooks} />
+        </Route>
       </Switch>
-      <Route exact path={['/', '/inspiration']}>
-        <Navigation />
-      </Route>
+      <Navigation />
     </Grid>
   )
 }
+
+const ExtendedHeader = styled(Header)`
+  height: 80px;
+  z-index: 5;
+`

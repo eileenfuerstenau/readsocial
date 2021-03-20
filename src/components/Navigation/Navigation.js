@@ -7,7 +7,7 @@ export default function Navigation(booksShown) {
   return (
     <Nav>
       <NavButton
-        aria-label="about"
+        aria-label="inspiration"
         as={NavLink}
         exact
         to="/"
@@ -16,20 +16,20 @@ export default function Navigation(booksShown) {
           color: '#f1613d',
         }}
       >
-        <Icon glyph="checkmark" size={30} />
-        Abstimmung
+        <Icon glyph="idea" size={30} />
+        Inspiration
       </NavButton>
       <NavButton
-        aria-label="inspiration"
+        aria-label="voting"
         as={NavLink}
-        to="/inspiration"
+        to="/voting"
         style={{ color: '#87939F' }}
         activeStyle={{
           color: '#f1613d',
         }}
       >
-        <Icon glyph="idea" size={30} />
-        Inspiration
+        <Icon glyph="checkmark" size={30} />
+        Abstimmung
       </NavButton>
     </Nav>
   )

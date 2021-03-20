@@ -24,29 +24,6 @@ export default function BookCardsPage({ onNominate, nominatedBooks }) {
 
   return (
     <CardsPageLayout>
-      <TabBarWrapper>
-        <SearchBar userInput={userInput} setUserInput={setUserInput} />
-        <PageButton
-          aria-label="filter-all"
-          isActive={booksShown === 'all'}
-          onClick={() => {
-            setBooksShown('all')
-            setDescriptionExtended([])
-          }}
-        >
-          Alle
-        </PageButton>
-        <PageButton
-          aria-label="filter-favorites"
-          isActive={booksShown === 'favorites'}
-          onClick={() => {
-            setBooksShown('favorites')
-            setDescriptionExtended([])
-          }}
-        >
-          Favoriten
-        </PageButton>
-      </TabBarWrapper>
       <BooksWrapper>
         {books
           .filter(
@@ -73,6 +50,30 @@ export default function BookCardsPage({ onNominate, nominatedBooks }) {
             />
           ))}
       </BooksWrapper>
+      <TabBarWrapper>
+        <TabBarBackgroundPart />
+        <SearchBar userInput={userInput} setUserInput={setUserInput} />
+        <PageButton
+          aria-label="filter-all"
+          isActive={booksShown === 'all'}
+          onClick={() => {
+            setBooksShown('all')
+            setDescriptionExtended([])
+          }}
+        >
+          Alle
+        </PageButton>
+        <PageButton
+          aria-label="filter-favorites"
+          isActive={booksShown === 'favorites'}
+          onClick={() => {
+            setBooksShown('favorites')
+            setDescriptionExtended([])
+          }}
+        >
+          Favoriten
+        </PageButton>
+      </TabBarWrapper>
       <NoFavoritesStatement>
         {bookmarkedBooks.length === 0 && booksShown === 'favorites'
           ? 'Du hast noch keine Favoriten.'
@@ -82,42 +83,63 @@ export default function BookCardsPage({ onNominate, nominatedBooks }) {
   )
 }
 
-const CardsPageLayout = styled.div`
+const CardsPageLayout = styled.main`
   position: relative;
   padding: 2%;
   overflow-y: scroll;
-  &:first-child {
-    padding-top: 105px;
-  }
 `
 const TabBarWrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
-  background: white;
   width: 100%;
   position: fixed;
-  top: 0px;
-  left: 0px;
-  z-index: 2;
+  top: 48px;
+  left: 0;
+  z-index: 5;
   padding: 10px;
-  border-radius: 0 0 10px 10px;
+  border-radius: 0 0 20px 20px;
+  background: transparent;
+`
+
+const TabBarBackgroundPart = styled.span`
+  height: 60px;
+  background: white;
+  width: 100%;
+  border-radius: 0 0 20px 20px;
+  position: absolute;
+  top: 32px;
+  left: 0;
+  z-index: -2;
 `
 
 const BooksWrapper = styled.div`
   padding: 0 2% 0 2%;
   display: grid;
   gap: 10px;
-`
 
+  &:first-child {
+    padding-top: 88px;
+  }
+
+  &:before {
+    background: #555eb8;
+    height: 45px;
+    width: 100%;
+    border-radius: 0 0 10px 10px;
+    position: absolute;
+    top: -10px;
+    max-width: 800px;
+  }
+`
 const PageButton = styled.button`
   border: none;
   border-bottom: ${props =>
     props.isActive ? '2px solid #f1613d' : '2px solid transparent'};
   background: transparent;
   font-size: 100%;
-  padding: 5px;
   justify-self: center;
   margin-top: 5px;
+  padding: 2px;
 `
 const NoFavoritesStatement = styled.p`
   text-align: center;

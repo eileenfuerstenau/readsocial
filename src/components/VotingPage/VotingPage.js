@@ -26,7 +26,7 @@ export default function VotingPage({ nominatedBooks }) {
   )
 }
 
-const VotingPageLayout = styled.div`
+const VotingPageLayout = styled.main`
   position: relative;
   padding: 2%;
   overflow-y: scroll;
