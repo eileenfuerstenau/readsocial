@@ -5,6 +5,7 @@ import Navigation from '../Navigation/Navigation'
 import VotingPage from '../VotingPage/VotingPage'
 import { useState } from 'react'
 import Header from '../Header/Header'
+import styled from 'styled-components/macro'
 
 export default function App() {
   const [nominatedBooks, setNominatedBooks] = useState([])
@@ -18,7 +19,7 @@ export default function App() {
     <Grid>
       <Switch>
         <Route exact path="/">
-          <Header>Lass dich inspirieren</Header>
+          <ExtendedHeader>Lass dich inspirieren</ExtendedHeader>
           <BookCardsPage
             onNominate={nominateBook}
             nominatedBooks={nominatedBooks}
@@ -33,3 +34,8 @@ export default function App() {
     </Grid>
   )
 }
+
+const ExtendedHeader = styled(Header)`
+  height: 80px;
+  z-index: 5;
+`

@@ -51,7 +51,7 @@ export default function BookCardsPage({ onNominate, nominatedBooks }) {
           ))}
       </BooksWrapper>
       <TabBarWrapper>
-        <Decorator />
+        <TabBarBackgroundPart />
         <SearchBar userInput={userInput} setUserInput={setUserInput} />
         <PageButton
           aria-label="filter-all"
@@ -95,21 +95,21 @@ const TabBarWrapper = styled.div`
   position: fixed;
   top: 48px;
   left: 0;
-  z-index: 2;
+  z-index: 5;
   padding: 10px;
   border-radius: 0 0 20px 20px;
-  background: white;
-  max-width: 800px;
+  background: transparent;
 `
 
-const Decorator = styled.span`
-  background: #555eb8;
-  height: 45px;
+const TabBarBackgroundPart = styled.span`
+  height: 70px;
+  background: white;
   width: 100%;
-  border-radius: 0 0 10px 10px;
+  border-radius: 0 0 20px 20px;
   position: absolute;
-  top: -10px;
-  max-width: 800px;
+  top: 32px;
+  left: 0;
+  z-index: -2;
 `
 
 const BooksWrapper = styled.div`
@@ -119,6 +119,16 @@ const BooksWrapper = styled.div`
 
   &:first-child {
     padding-top: 88px;
+  }
+
+  &:before {
+    background: #555eb8;
+    height: 45px;
+    width: 100%;
+    border-radius: 0 0 10px 10px;
+    position: absolute;
+    top: -10px;
+    max-width: 800px;
   }
 `
 const PageButton = styled.button`

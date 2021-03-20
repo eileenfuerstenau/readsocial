@@ -24,7 +24,7 @@ const InputLabel = styled.label`
   border: 1px solid #87939f;
   border-radius: 30px;
   background: white;
-  z-index: 5;
+  z-index: 7;
 `
 
 const Input = styled.input`
@@ -32,5 +32,5 @@ const Input = styled.input`
   border: none;
   outline: 0 none;
   font-size: 16px;
-  z-index: 5;
+  z-index: 7;
 `
