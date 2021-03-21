@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import App from '../src/components/App/App'
+import App from '../src/pages/App/App'
 import reportWebVitals from './reportWebVitals'
 import GlobalStyle from './components/GlobalStyle'
 import { BrowserRouter as Router } from 'react-router-dom'
