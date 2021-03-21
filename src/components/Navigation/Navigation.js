@@ -3,7 +3,7 @@ import styled from 'styled-components/macro'
 import Icon from 'supercons'
 import { NavLink } from 'react-router-dom'
 
-export default function Navigation(booksShown) {
+export default function Navigation() {
   return (
     <Nav>
       <NavButton

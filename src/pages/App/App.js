@@ -1,10 +1,10 @@
-import BookCardsPage from '../../pages/BookCardsPage/BookCardsPage'
+import BookCardsPage from '../BookCardsPage/BookCardsPage'
 import { Route, Switch } from 'react-router-dom'
-import Grid from '../Grid/Grid'
-import Navigation from '../Navigation/Navigation'
-import VotingPage from '../../pages/VotingPage/VotingPage'
+import Grid from '../../components/Grid/Grid'
+import Navigation from '../../components/Navigation/Navigation'
+import VotingPage from '../VotingPage/VotingPage'
 import { useState } from 'react'
-import Header from '../Header/Header'
+import Header from '../../components/Header/Header'
 import styled from 'styled-components/macro'
 
 export default function App() {
