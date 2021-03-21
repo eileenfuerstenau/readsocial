@@ -134,7 +134,7 @@ const BooksWrapper = styled.div`
 const PageButton = styled.button`
   border: none;
   border-bottom: ${props =>
-    props.isActive ? '2px solid #f1613d' : '2px solid transparent'};
+    props.isActive ? '2px solid var(--orange)' : '2px solid transparent'};
   background: transparent;
   font-size: 100%;
   justify-self: center;

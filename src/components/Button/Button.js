@@ -1,7 +1,7 @@
 import styled from 'styled-components/macro'
 
 export default styled.button`
-  background: #f1613d;
+  background: var(--orange);
   color: white;
   border: none;
   border-radius: 5px;
