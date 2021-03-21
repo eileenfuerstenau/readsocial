@@ -75,9 +75,9 @@ export default function BookCardsPage({ onNominate, nominatedBooks }) {
         </PageButton>
       </TabBarWrapper>
       <NoFavoritesStatement>
-        {bookmarkedBooks.length === 0 && booksShown === 'favorites'
-          ? 'Du hast noch keine Favoriten.'
-          : ' '}
+        {bookmarkedBooks.length === 0 &&
+          booksShown === 'favorites' &&
+          'Du hast noch keine Favoriten.'}
       </NoFavoritesStatement>
     </CardsPageLayout>
   )
