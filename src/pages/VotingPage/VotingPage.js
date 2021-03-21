@@ -1,5 +1,5 @@
 import styled from 'styled-components/macro'
-import BookCardShort from '../BookCardShort/BookCardShort'
+import BookCardShort from '../../components/BookCardShort/BookCardShort'
 import { useState } from 'react'
 
 export default function VotingPage({ nominatedBooks }) {

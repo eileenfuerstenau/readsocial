@@ -1,8 +1,8 @@
 import { books } from '../../material/bookdata.json'
-import BookCard from '../BookCard/BookCard'
+import BookCard from '../../components/BookCard/BookCard'
 import styled from 'styled-components/macro'
 import React, { useState } from 'react'
-import SearchBar from '../SearchBar/SearchBar'
+import SearchBar from '../../components/SearchBar/SearchBar'
 
 export default function BookCardsPage({ onNominate, nominatedBooks }) {
   const [bookmarkedBooks, setBookmarkedBooks] = useState([])
