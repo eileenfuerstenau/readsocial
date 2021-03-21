@@ -140,5 +140,4 @@ const BookmarkButton = styled.button`
 const NominateButton = styled(Button)`
   background: ${props => props.disabled && 'lightgrey'};
   box-shadow: ${props => props.disabled && 'none'};
-  width: ${props => props.disabled && '80px'};
 `
