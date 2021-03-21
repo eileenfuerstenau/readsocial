@@ -1,11 +1,15 @@
 import { books } from '../../material/bookdata.json'
-import BookCard from '../BookCard/BookCard'
+import BookCard from '../../components/BookCard/BookCard'
 import styled from 'styled-components/macro'
 import React, { useState } from 'react'
-import SearchBar from '../SearchBar/SearchBar'
+import SearchBar from '../../components/SearchBar/SearchBar'
+import useLocalStorage from '../../hooks/useLocalStorage'
 
 export default function BookCardsPage({ onNominate, nominatedBooks }) {
-  const [bookmarkedBooks, setBookmarkedBooks] = useState([])
+  const [bookmarkedBooks, setBookmarkedBooks] = useLocalStorage(
+    'bookmarked books',
+    []
+  )
   const [booksShown, setBooksShown] = useState('all')
   const [descriptionExtended, setDescriptionExtended] = useState([])
   const [userInput, setUserInput] = useState('')
@@ -75,9 +79,9 @@ export default function BookCardsPage({ onNominate, nominatedBooks }) {
         </PageButton>
       </TabBarWrapper>
       <NoFavoritesStatement>
-        {bookmarkedBooks.length === 0 && booksShown === 'favorites'
-          ? 'Du hast noch keine Favoriten.'
-          : ' '}
+        {bookmarkedBooks.length === 0 &&
+          booksShown === 'favorites' &&
+          'Du hast noch keine Favoriten.'}
       </NoFavoritesStatement>
     </CardsPageLayout>
   )
@@ -134,7 +138,7 @@ const BooksWrapper = styled.div`
 const PageButton = styled.button`
   border: none;
   border-bottom: ${props =>
-    props.isActive ? '2px solid #f1613d' : '2px solid transparent'};
+    props.isActive ? '2px solid var(--orange)' : '2px solid transparent'};
   background: transparent;
   font-size: 100%;
   justify-self: center;

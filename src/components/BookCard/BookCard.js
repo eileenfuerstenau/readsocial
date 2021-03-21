@@ -67,9 +67,13 @@ export default function BookCard({
           onClick={() => onBookmarkClick(title)}
         >
           {bookmarkedBooks.includes(title) ? (
-            <Icon style={{ color: '#f1613d' }} glyph="like-fill" size={45} />
+            <Icon
+              style={{ color: 'var(--orange)' }}
+              glyph="like-fill"
+              size={45}
+            />
           ) : (
-            <Icon style={{ color: '#f1613d' }} glyph="like" size={45} />
+            <Icon style={{ color: 'var(--orange)' }} glyph="like" size={45} />
           )}
         </BookmarkButton>
       </section>
@@ -99,7 +103,7 @@ BookCard.propTypes = {
 }
 
 const Card = styled.section`
-  background-color: #f3f3f3;
+  background-color: var(--grey);
   display: grid;
   grid-template-columns: 2fr 5fr;
   border-radius: 5px;
@@ -136,5 +140,4 @@ const BookmarkButton = styled.button`
 const NominateButton = styled(Button)`
   background: ${props => props.disabled && 'lightgrey'};
   box-shadow: ${props => props.disabled && 'none'};
-  width: ${props => props.disabled && '80px'};
 `

@@ -3,7 +3,7 @@ import styled from 'styled-components/macro'
 import Icon from 'supercons'
 import { NavLink } from 'react-router-dom'
 
-export default function Navigation(booksShown) {
+export default function Navigation() {
   return (
     <Nav>
       <NavButton
@@ -11,9 +11,9 @@ export default function Navigation(booksShown) {
         as={NavLink}
         exact
         to="/"
-        style={{ color: '#87939F' }}
+        style={{ color: 'var(--darkgrey)' }}
         activeStyle={{
-          color: '#f1613d',
+          color: 'var(--orange)',
         }}
       >
         <Icon glyph="idea" size={30} />
@@ -23,9 +23,9 @@ export default function Navigation(booksShown) {
         aria-label="voting"
         as={NavLink}
         to="/voting"
-        style={{ color: '#87939F' }}
+        style={{ color: 'var(--darkgrey)' }}
         activeStyle={{
-          color: '#f1613d',
+          color: 'var(--orange)',
         }}
       >
         <Icon glyph="checkmark" size={30} />
@@ -47,7 +47,6 @@ const Nav = styled.div`
 const NavButton = styled.button`
   display: grid;
   justify-items: center;
-  color: '#87939F';
   font-size: 60%;
   text-decoration: none;
 `

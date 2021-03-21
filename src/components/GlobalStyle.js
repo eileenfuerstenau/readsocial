@@ -1,6 +1,13 @@
 import { createGlobalStyle } from 'styled-components'
 
 export default createGlobalStyle`
+:root {
+  --orange: #f1613d;
+  --purple: #555eb8;
+  --grey: #f3f3f3;
+  --darkgrey: #87939F;
+}
+
   * {
     box-sizing: border-box;
 
