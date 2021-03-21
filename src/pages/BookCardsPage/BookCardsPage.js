@@ -3,9 +3,13 @@ import BookCard from '../../components/BookCard/BookCard'
 import styled from 'styled-components/macro'
 import React, { useState } from 'react'
 import SearchBar from '../../components/SearchBar/SearchBar'
+import useLocalStorage from '../../hooks/useLocalStorage'
 
 export default function BookCardsPage({ onNominate, nominatedBooks }) {
-  const [bookmarkedBooks, setBookmarkedBooks] = useState([])
+  const [bookmarkedBooks, setBookmarkedBooks] = useLocalStorage(
+    'bookmarked books',
+    []
+  )
   const [booksShown, setBooksShown] = useState('all')
   const [descriptionExtended, setDescriptionExtended] = useState([])
   const [userInput, setUserInput] = useState('')
