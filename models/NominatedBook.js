@@ -1,9 +1,6 @@
 const mongoose = require('mongoose')
 
 const schema = new mongoose.Schema({
-  id: {
-    type: Number,
-  },
   title: {
     type: String,
   },
@@ -16,3 +13,6 @@ const schema = new mongoose.Schema({
 })
 
 module.exports = mongoose.model('NominatedBook', schema)
+
+/* id: {
+  type: Number, */

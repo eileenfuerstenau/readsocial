@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 import Icon from 'supercons'
 
 export default function BookCardShort({
-  _id,
+  id,
   title,
   author,
   description,
@@ -26,7 +26,7 @@ export default function BookCardShort({
   }
 
   return (
-    <Card key={_id} id={_id}>
+    <Card key={id} id={id}>
       <section>
         <Title>
           {title} von {author}
@@ -43,7 +43,7 @@ export default function BookCardShort({
           {descriptionExtended.includes(title) ? 'Weniger' : 'Mehr'}
         </Button>
       </section>
-      <DeleteButton aria-label="delete-nominated" onClick={() => onDelete(_id)}>
+      <DeleteButton aria-label="delete-nominated" onClick={() => onDelete(id)}>
         <Icon style={{ color: 'var(--darkgrey)' }} glyph="delete" size={35} />
       </DeleteButton>
     </Card>
@@ -51,7 +51,7 @@ export default function BookCardShort({
 }
 
 BookCardShort.propTypes = {
-  id: PropTypes.number,
+  id: PropTypes.string,
   title: PropTypes.string,
   author: PropTypes.string,
   description: PropTypes.string,
