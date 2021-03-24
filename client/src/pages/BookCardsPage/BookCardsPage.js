@@ -41,6 +41,7 @@ export default function BookCardsPage({ onNominate, nominatedBooks }) {
           .map(card => (
             <BookCard
               key={card.id}
+              id={card.id}
               cover={card.cover}
               title={card.title}
               author={card.author}

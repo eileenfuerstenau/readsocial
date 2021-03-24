@@ -2,14 +2,16 @@ import { React } from 'react'
 import styled from 'styled-components/macro'
 import Button from '../Button/Button'
 import PropTypes from 'prop-types'
+import Icon from 'supercons'
 
 export default function BookCardShort({
-  id,
+  _id,
   title,
   author,
   description,
   descriptionExtended,
   setDescriptionExtended,
+  onDelete,
 }) {
   let descriptionsExpandedArray
   function readmore(title) {
@@ -24,7 +26,7 @@ export default function BookCardShort({
   }
 
   return (
-    <Card key={id}>
+    <Card key={_id} id={_id}>
       <section>
         <Title>
           {title} von {author}
@@ -41,12 +43,15 @@ export default function BookCardShort({
           {descriptionExtended.includes(title) ? 'Weniger' : 'Mehr'}
         </Button>
       </section>
+      <DeleteButton aria-label="delete-nominated" onClick={() => onDelete(_id)}>
+        <Icon style={{ color: 'var(--darkgrey)' }} glyph="delete" size={35} />
+      </DeleteButton>
     </Card>
   )
 }
 
 BookCardShort.propTypes = {
-  id: PropTypes.string,
+  id: PropTypes.number,
   title: PropTypes.string,
   author: PropTypes.string,
   description: PropTypes.string,
@@ -58,6 +63,7 @@ const Card = styled.section`
   border-radius: 5px;
   box-shadow: 0 2px 5px;
   padding: 5px 10px 10px 10px;
+  position: relative;
 `
 const Title = styled.h2`
   font-weight: bold;
@@ -68,4 +74,11 @@ const Title = styled.h2`
 const Description = styled.p`
   font-weight: normal;
   font-size: 70%;
+`
+const DeleteButton = styled.button`
+  background: transparent;
+  border: none;
+  position: absolute;
+  right: 0;
+  bottom: 0;
 `

@@ -6,8 +6,9 @@ import VotingPage from '../VotingPage/VotingPage'
 import { useEffect, useState } from 'react'
 import Header from '../../components/Header/Header'
 import styled from 'styled-components/macro'
-import saveNominatedBook from '../../services/saveNominatedBook'
+import postNominatedBook from '../../services/postNominatedBook'
 import getNominatedBooks from '../../services/getNominatedBooks'
+import deleteBook from '../../services/deleteBook'
 
 export default function App() {
   const [nominatedBooks, setNominatedBooks] = useState([])
@@ -19,8 +20,16 @@ export default function App() {
   function nominateBook(id, title, author, description) {
     const newNominatedBook = { id, title, author, description }
     setNominatedBooks([newNominatedBook, ...nominatedBooks])
-    saveNominatedBook(id, title, author, description)
+    postNominatedBook(id, title, author, description)
   }
+  function handleDeleteBook(_id) {
+    deleteBook(_id).then(() => {
+      const updatedBooks = nominatedBooks.filter(book => book._id !== _id)
+      setNominatedBooks([...updatedBooks])
+    })
+  }
+
+  console.log(nominatedBooks)
 
   return (
     <Grid>
@@ -34,7 +43,10 @@ export default function App() {
         </Route>
         <Route exact path="/voting">
           <Header>Wofür stimmst du?</Header>
-          <VotingPage nominatedBooks={nominatedBooks} />
+          <VotingPage
+            nominatedBooks={nominatedBooks}
+            onDelete={handleDeleteBook}
+          />
         </Route>
       </Switch>
       <Navigation />
