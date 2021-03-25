@@ -9,6 +9,7 @@ export default function BookCardShort({
   title,
   author,
   description,
+  isbn,
   descriptionExtended,
   setDescriptionExtended,
   onDelete,

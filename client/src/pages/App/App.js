@@ -17,10 +17,10 @@ export default function App() {
     getNominatedBooks().then(data => setNominatedBooks([...data]))
   }, [])
 
-  function nominateBook(id, title, author, description) {
-    const newNominatedBook = { id, title, author, description }
-    setNominatedBooks([newNominatedBook, ...nominatedBooks])
-    postNominatedBook(id, title, author, description)
+  function nominateBook(id, title, author, description, isbn) {
+    postNominatedBook(id, title, author, description, isbn).then(data =>
+      setNominatedBooks([data, ...nominatedBooks])
+    )
   }
   function handleDeleteBook(id) {
     deleteBook(id).then(() => {

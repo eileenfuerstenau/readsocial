@@ -1,0 +1,11 @@
+###
+GET http://localhost:4000/api/nominatedbooks
+
+###
+DELETE http://localhost:4000/api/nominatedbooks/605c6f7063b736bb0eee4fa7
+
+###
+POST http://localhost:4000/api/nominatedbooks
+Content-Type: application/json
+
+{  "title" : "Der  letzte Tag", "author" : "Sebastian", "description": "Livius." }

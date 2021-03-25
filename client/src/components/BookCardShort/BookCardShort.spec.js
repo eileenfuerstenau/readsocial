@@ -46,4 +46,14 @@ describe('BookCardShort', () => {
     userEvent.click(extendButton)
     expect(setDescriptionExtended).toHaveBeenCalledTimes(1)
   })
+
+  it('calls onDelete when the delete button was clicked', () => {
+    const onDelete = jest.fn()
+    render(<BookCardShort {...testdataShort} onDelete={onDelete} />)
+    const extendButton = screen.getByRole('button', {
+      name: 'expand-shrink-description',
+    })
+    userEvent.click(extendButton)
+    expect(onDelete).toHaveBeenCalledTimes(1)
+  })
 })

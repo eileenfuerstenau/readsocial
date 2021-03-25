@@ -10,6 +10,9 @@ const schema = new mongoose.Schema({
   description: {
     type: String,
   },
+  isbn: {
+    type: Number,
+  },
 })
 
 module.exports = mongoose.model('NominatedBook', schema)
