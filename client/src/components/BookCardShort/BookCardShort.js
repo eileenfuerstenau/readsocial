@@ -12,6 +12,7 @@ export default function BookCardShort({
   descriptionExtended,
   setDescriptionExtended,
   onDelete,
+  onVote,
 }) {
   let descriptionsExpandedArray
   function readmore(title) {
@@ -46,6 +47,9 @@ export default function BookCardShort({
       <DeleteButton aria-label="delete-nominated" onClick={() => onDelete(id)}>
         <Icon style={{ color: 'var(--darkgrey)' }} glyph="delete" size={35} />
       </DeleteButton>
+      <VoteButton aria-label="vote-nominated" onClick={onVote}>
+        <Icon style={{ color: 'var(--orange)' }} glyph="checkbox" size={55} />
+      </VoteButton>
     </Card>
   )
 }
@@ -80,5 +84,12 @@ const DeleteButton = styled.button`
   border: none;
   position: absolute;
   right: 0;
-  bottom: 0;
+  bottom: 2px;
+`
+const VoteButton = styled.button`
+  background: transparent;
+  border: none;
+  position: absolute;
+  right: -10px;
+  top: 0;
 `

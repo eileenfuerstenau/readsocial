@@ -9,3 +9,8 @@ POST http://localhost:4000/api/nominatedbooks
 Content-Type: application/json
 
 {  "title" : "Der  letzte Tag", "author" : "Sebastian", "description": "Livius." }
+
+### 
+PATCH http://localhost:4000/api/nominatedbooks/605ce2f6369bf7f18381af4c/vote
+Content-Type: application/json
+

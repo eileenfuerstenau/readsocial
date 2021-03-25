@@ -17,11 +17,12 @@ export default function App() {
     getNominatedBooks().then(data => setNominatedBooks([...data]))
   }, [])
 
-  function nominateBook(id, title, author, description) {
-    postNominatedBook(id, title, author, description).then(data =>
+  function nominateBook(id, title, author, description, votes) {
+    postNominatedBook(id, title, author, description, votes).then(data =>
       setNominatedBooks([data, ...nominatedBooks])
     )
   }
+
   function handleDeleteBook(id) {
     deleteBook(id).then(() => {
       const updatedBooks = nominatedBooks.filter(book => book._id !== id)
@@ -44,6 +45,7 @@ export default function App() {
           <VotingPage
             nominatedBooks={nominatedBooks}
             onDelete={handleDeleteBook}
+            setNominatedBooks={setNominatedBooks}
           />
         </Route>
       </Switch>
