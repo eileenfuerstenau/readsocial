@@ -55,5 +55,6 @@ describe('BookCardShort', () => {
     })
     userEvent.click(deleteButton)
     expect(onDelete).toHaveBeenCalledTimes(1)
+    expect(onDelete).toHaveBeenCalledWith('3')
   })
 })
