@@ -50,10 +50,10 @@ describe('BookCardShort', () => {
   it('calls onDelete when the delete button was clicked', () => {
     const onDelete = jest.fn()
     render(<BookCardShort {...testdataShort} onDelete={onDelete} />)
-    const extendButton = screen.getByRole('button', {
-      name: 'expand-shrink-description',
+    const deleteButton = screen.getByRole('button', {
+      name: 'delete-nominated',
     })
-    userEvent.click(extendButton)
+    userEvent.click(deleteButton)
     expect(onDelete).toHaveBeenCalledTimes(1)
   })
 })

@@ -52,7 +52,6 @@ export default function BookCardsPage({ onNominate, nominatedBooks }) {
               title={card.title}
               author={card.author}
               description={card.content}
-              isbn={card.isbn}
               onBookmarkClick={handleBookmarkClick}
               bookmarkedBooks={bookmarkedBooks}
               descriptionExtended={descriptionExtended}

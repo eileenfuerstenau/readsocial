@@ -8,13 +8,12 @@ export default function VotingPage({ onDelete, nominatedBooks }) {
   return (
     <VotingPageLayout>
       <BooksWrapper>
-        {nominatedBooks.map(({ _id, title, author, description, isbn }) => (
+        {nominatedBooks.map(({ _id, title, author, description }) => (
           <BookCardShort
             key={_id}
             id={_id}
             title={title}
             author={author}
-            isbn={isbn}
             description={description}
             descriptionExtended={descriptionExtended}
             setDescriptionExtended={setDescriptionExtended}

@@ -10,7 +10,6 @@ export default function BookCard({
   title,
   author,
   description,
-  isbn,
   onBookmarkClick,
   bookmarkedBooks,
   descriptionExtended,
@@ -58,7 +57,7 @@ export default function BookCard({
         <NominateButton
           aria-label="nominate"
           disabled={isBookNominated}
-          onClick={() => onNominate(id, title, author, description, isbn)}
+          onClick={() => onNominate(id, title, author, description)}
         >
           {isBookNominated ? 'Nominiert' : 'Nominieren'}
         </NominateButton>

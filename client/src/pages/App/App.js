@@ -17,8 +17,8 @@ export default function App() {
     getNominatedBooks().then(data => setNominatedBooks([...data]))
   }, [])
 
-  function nominateBook(id, title, author, description, isbn) {
-    postNominatedBook(id, title, author, description, isbn).then(data =>
+  function nominateBook(id, title, author, description) {
+    postNominatedBook(id, title, author, description).then(data =>
       setNominatedBooks([data, ...nominatedBooks])
     )
   }
@@ -28,8 +28,6 @@ export default function App() {
       setNominatedBooks([...updatedBooks])
     })
   }
-
-  console.log(nominatedBooks)
 
   return (
     <Grid>
