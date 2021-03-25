@@ -2,20 +2,22 @@ import styled from 'styled-components/macro'
 import BookCardShort from '../../components/BookCardShort/BookCardShort'
 import { useState } from 'react'
 
-export default function VotingPage({ nominatedBooks }) {
+export default function VotingPage({ onDelete, nominatedBooks }) {
   const [descriptionExtended, setDescriptionExtended] = useState([])
 
   return (
     <VotingPageLayout>
       <BooksWrapper>
-        {nominatedBooks.map(({ id, title, author, description }) => (
+        {nominatedBooks.map(({ _id, title, author, description }) => (
           <BookCardShort
-            key={id}
+            key={_id}
+            id={_id}
             title={title}
             author={author}
             description={description}
             descriptionExtended={descriptionExtended}
             setDescriptionExtended={setDescriptionExtended}
+            onDelete={onDelete}
           />
         ))}
       </BooksWrapper>
