@@ -12,4 +12,4 @@ const schema = new mongoose.Schema({
   },
 })
 
-module.exports = mongoose.model('NominatedBook', schema)
+module.exports = mongoose.model('RecommendedBook', schema)

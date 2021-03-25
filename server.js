@@ -8,6 +8,7 @@ setupMongo()
 app.use('/', express.json())
 
 app.use('/api/nominatedbooks', require('./routes/nominatedbooks'))
+app.use('/api/recommendedbooks', require('./routes/recommendedbooks'))
 app.use(require('./routes/error'))
 
 app.listen(PORT, () => {
