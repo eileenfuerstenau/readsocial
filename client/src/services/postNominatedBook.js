@@ -1,4 +1,4 @@
-export default function saveNominatedBook(
+export default function postNominatedBook(
   id,
   title,
   author,

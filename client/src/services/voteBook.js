@@ -1,6 +1,6 @@
-export default function submitVote(id) {
+export default function voteBook(id) {
   return fetch(`/api/nominatedbooks/${id}/vote`, {
-    method: 'Patch',
+    method: 'PATCH',
     headers: {
       'content-type': 'application/json',
     },
