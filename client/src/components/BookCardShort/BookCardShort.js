@@ -58,7 +58,11 @@ export default function BookCardShort({
       <DeleteButton aria-label="delete-nominated" onClick={() => onDelete(id)}>
         <Icon style={{ color: 'var(--darkgrey)' }} glyph="delete" size={35} />
       </DeleteButton>
-      <VoteButton aria-label="vote-nominated" onClick={() => handleVote(id)}>
+      <VoteButton
+        role="button"
+        aria-label="vote-nominated"
+        onClick={() => handleVote(id)}
+      >
         {isVoted.includes(id) ? (
           <Icon
             style={{ color: 'var(--orange)' }}
@@ -87,6 +91,7 @@ const Card = styled.section`
   box-shadow: 0 2px 5px;
   padding: 5px 10px 10px 10px;
   position: relative;
+  height: min-content;
 `
 const Title = styled.h2`
   font-weight: bold;
@@ -105,10 +110,10 @@ const DeleteButton = styled.button`
   right: 0;
   bottom: 2px;
 `
-const VoteButton = styled.button`
+const VoteButton = styled.div`
   background: transparent;
   border: none;
   position: absolute;
-  right: -10px;
+  right: -3px;
   top: 0;
 `

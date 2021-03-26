@@ -2,6 +2,8 @@ import styled from 'styled-components/macro'
 import BookCardShort from '../../components/BookCardShort/BookCardShort'
 import { useState } from 'react'
 import deleteBook from '../../services/deleteBook'
+import Button from '../../components/Button/Button'
+import voteBook from '../../services/voteBook'
 
 export default function VotingPage({ setNominatedBooks, nominatedBooks }) {
   const [descriptionExtended, setDescriptionExtended] = useState([])
@@ -14,27 +16,35 @@ export default function VotingPage({ setNominatedBooks, nominatedBooks }) {
     })
   }
 
+  function handleSubmit(event) {
+    event.preventDefault()
+    isVoted.forEach(book => voteBook(book.id))
+  }
+
   return (
     <VotingPageLayout>
-      <BooksWrapper>
-        {nominatedBooks.map(
-          ({ _id, title, author, description, votes }, index) => (
-            <BookCardShort
-              key={_id}
-              id={_id}
-              title={title}
-              author={author}
-              description={description}
-              votes={votes}
-              descriptionExtended={descriptionExtended}
-              setDescriptionExtended={setDescriptionExtended}
-              onDelete={handleDeleteBook}
-              isVoted={isVoted}
-              setIsVoted={setIsVoted}
-            />
-          )
-        )}
-      </BooksWrapper>
+      <Form onSubmit={handleSubmit}>
+        <BooksWrapper hidden={nominatedBooks.length === 0}>
+          {nominatedBooks.map(
+            ({ _id, title, author, description, votes }, index) => (
+              <BookCardShort
+                key={_id}
+                id={_id}
+                title={title}
+                author={author}
+                description={description}
+                votes={votes}
+                descriptionExtended={descriptionExtended}
+                setDescriptionExtended={setDescriptionExtended}
+                onDelete={handleDeleteBook}
+                isVoted={isVoted}
+                setIsVoted={setIsVoted}
+              />
+            )
+          )}
+        </BooksWrapper>
+        <SubmitButton>Submit vote</SubmitButton>
+      </Form>
       <EmptyShortListStatement>
         {nominatedBooks.length === 0 && 'Die Shortlist ist noch leer.'}
       </EmptyShortListStatement>
@@ -43,30 +53,32 @@ export default function VotingPage({ setNominatedBooks, nominatedBooks }) {
 }
 
 const VotingPageLayout = styled.main`
+  display: grid;
   position: relative;
-  padding: 2%;
-  overflow-y: scroll;
+  padding: 5%;
 `
 const BooksWrapper = styled.div`
-  padding: 0 2% 0 2%;
+  padding: 0 5%;
   display: grid;
   gap: 10px;
+  border: 1px solid var(--darkgrey);
+  height: 70vh;
+  overflow-y: scroll;
+  align-content: start;
+  border-radius: 5px;
+`
+const Form = styled.form`
+  display: grid;
+`
+const SubmitButton = styled(Button)`
+  width: 50%;
+  padding: 5px;
+  background: ${props => props.disabled && 'lightgrey'};
+  box-shadow: ${props => props.disabled && 'none'};
+  justify-self: center;
+  align-self: center;
 `
 
 const EmptyShortListStatement = styled.div`
   text-align: center;
 `
-
-/*   function handleVote(index) {
-    const nominatedBook = nominatedBooks[index]
-    setNominatedBooks([
-      ...nominatedBooks.slice(0, index),
-      { ...nominatedBook, votes: nominatedBook.votes + 1 },
-      ...nominatedBooks.slice(index + 1),
-    ])
-    voteBook(nominatedBook._id).finally(() => {
-      getNominatedBooks().then(nominatedBooks =>
-        setNominatedBooks(nominatedBooks)
-      )
-    })
-  } */
