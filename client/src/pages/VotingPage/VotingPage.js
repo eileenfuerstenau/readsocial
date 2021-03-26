@@ -8,6 +8,7 @@ import voteBook from '../../services/voteBook'
 export default function VotingPage({ setNominatedBooks, nominatedBooks }) {
   const [descriptionExtended, setDescriptionExtended] = useState([])
   const [isVoted, setIsVoted] = useState([])
+  const [hasVoted, setHasVoted] = useState(false)
 
   function handleDeleteBook(id) {
     deleteBook(id).then(() => {
@@ -20,7 +21,10 @@ export default function VotingPage({ setNominatedBooks, nominatedBooks }) {
     event.preventDefault()
     isVoted.forEach(id => voteBook(id))
     setIsVoted([])
+    setHasVoted(true)
   }
+
+  console.log(hasVoted)
 
   return (
     <VotingPageLayout>
@@ -39,10 +43,13 @@ export default function VotingPage({ setNominatedBooks, nominatedBooks }) {
               onDelete={handleDeleteBook}
               isVoted={isVoted}
               setIsVoted={setIsVoted}
+              hasVoted={hasVoted}
             />
           ))}
         </BooksWrapper>
-        <SubmitButton>Gib deine Stimme ab</SubmitButton>
+        <SubmitButton disabled={hasVoted}>
+          {hasVoted ? 'Erfolgreich abgestimmt' : 'Gib deine Stimme ab'}
+        </SubmitButton>
       </Form>
       <EmptyShortListStatement>
         {nominatedBooks.length === 0 && 'Die Shortlist ist noch leer.'}

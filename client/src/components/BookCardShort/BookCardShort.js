@@ -14,6 +14,7 @@ export default function BookCardShort({
   onDelete,
   isVoted,
   setIsVoted,
+  hasVoted,
 }) {
   let descriptionsExpandedArray
   function readmore(title) {
@@ -55,7 +56,11 @@ export default function BookCardShort({
           {descriptionExtended.includes(title) ? 'Weniger' : 'Mehr'}
         </Button>
       </section>
-      <DeleteButton aria-label="delete-nominated" onClick={() => onDelete(id)}>
+      <DeleteButton
+        disabled={isVoted.includes(id) || hasVoted}
+        aria-label="delete-nominated"
+        onClick={() => onDelete(id)}
+      >
         <Icon style={{ color: 'var(--darkgrey)' }} glyph="delete" size={35} />
       </DeleteButton>
       <VoteButton
@@ -63,14 +68,14 @@ export default function BookCardShort({
         aria-label="vote-nominated"
         onClick={() => handleVote(id)}
       >
-        {isVoted.includes(id) ? (
+        {!isVoted.includes(id) || hasVoted ? (
+          <Icon style={{ color: 'var(--orange)' }} glyph="checkbox" size={55} />
+        ) : (
           <Icon
             style={{ color: 'var(--orange)' }}
             glyph="checkmark"
             size={55}
           />
-        ) : (
-          <Icon style={{ color: 'var(--orange)' }} glyph="checkbox" size={55} />
         )}
       </VoteButton>
     </Card>
