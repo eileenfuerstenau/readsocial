@@ -59,10 +59,10 @@ export default function VotingPage({ setNominatedBooks, nominatedBooks }) {
 const VotingPageLayout = styled.main`
   display: grid;
   position: relative;
-  padding: 5%;
+  padding: 5px;
 `
 const BooksWrapper = styled.div`
-  padding: 0 5%;
+  padding: 0 10px;
   display: grid;
   gap: 10px;
   border: 1px solid var(--darkgrey);

@@ -41,9 +41,8 @@ export default function BookCardShort({
   return (
     <Card key={id} id={id}>
       <section>
-        <Title>
-          {title} von {author}
-        </Title>
+        <Title>{title}</Title>
+        <Author>von {author}</Author>
         <Description>
           <span hidden={!descriptionExtended.includes(title)}>
             {description}
@@ -92,6 +91,7 @@ BookCardShort.propTypes = {
 }
 
 const Card = styled.section`
+  background-color: var(--grey);
   border-radius: 5px;
   box-shadow: 0 2px 5px;
   padding: 5px 10px 10px 10px;
@@ -100,7 +100,13 @@ const Card = styled.section`
 `
 const Title = styled.h2`
   font-weight: bold;
-  font-size: 90%;
+  font-size: 80%;
+  padding-right: 40px;
+  display: inline;
+`
+const Author = styled.h3`
+  font-weight: lighter;
+  font-size: 70%;
   padding-right: 40px;
 `
 
