@@ -1,16 +1,18 @@
 import styled from 'styled-components/macro'
 import BookCardShort from '../../components/BookCardShort/BookCardShort'
 import { useState } from 'react'
-import voteBook from '../../services/voteBook'
-import getNominatedBooks from '../../services/getNominatedBooks'
+import deleteBook from '../../services/deleteBook'
 
-export default function VotingPage({
-  setNominatedBooks,
-  onDelete,
-  nominatedBooks,
-}) {
+export default function VotingPage({ setNominatedBooks, nominatedBooks }) {
   const [descriptionExtended, setDescriptionExtended] = useState([])
   const [isVoted, setIsVoted] = useState([])
+
+  function handleDeleteBook(id) {
+    deleteBook(id).then(() => {
+      const updatedBooks = nominatedBooks.filter(book => book._id !== id)
+      setNominatedBooks([...updatedBooks])
+    })
+  }
 
   return (
     <VotingPageLayout>
@@ -26,7 +28,7 @@ export default function VotingPage({
               votes={votes}
               descriptionExtended={descriptionExtended}
               setDescriptionExtended={setDescriptionExtended}
-              onDelete={onDelete}
+              onDelete={handleDeleteBook}
               isVoted={isVoted}
               setIsVoted={setIsVoted}
             />
