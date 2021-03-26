@@ -10,6 +10,7 @@ export default function VotingPage({
   nominatedBooks,
 }) {
   const [descriptionExtended, setDescriptionExtended] = useState([])
+  const [isVoted, setIsVoted] = useState([])
 
   return (
     <VotingPageLayout>
@@ -26,7 +27,8 @@ export default function VotingPage({
               descriptionExtended={descriptionExtended}
               setDescriptionExtended={setDescriptionExtended}
               onDelete={onDelete}
-              onVote={() => handleVote(index)}
+              isVoted={isVoted}
+              setIsVoted={setIsVoted}
             />
           )
         )}
@@ -36,20 +38,6 @@ export default function VotingPage({
       </EmptyShortListStatement>
     </VotingPageLayout>
   )
-
-  function handleVote(index) {
-    const nominatedBook = nominatedBooks[index]
-    setNominatedBooks([
-      ...nominatedBooks.slice(0, index),
-      { ...nominatedBook, votes: nominatedBook.votes + 1 },
-      ...nominatedBooks.slice(index + 1),
-    ])
-    voteBook(nominatedBook._id).finally(() => {
-      getNominatedBooks().then(nominatedBooks =>
-        setNominatedBooks(nominatedBooks)
-      )
-    })
-  }
 }
 
 const VotingPageLayout = styled.main`
@@ -66,3 +54,17 @@ const BooksWrapper = styled.div`
 const EmptyShortListStatement = styled.div`
   text-align: center;
 `
+
+/*   function handleVote(index) {
+    const nominatedBook = nominatedBooks[index]
+    setNominatedBooks([
+      ...nominatedBooks.slice(0, index),
+      { ...nominatedBook, votes: nominatedBook.votes + 1 },
+      ...nominatedBooks.slice(index + 1),
+    ])
+    voteBook(nominatedBook._id).finally(() => {
+      getNominatedBooks().then(nominatedBooks =>
+        setNominatedBooks(nominatedBooks)
+      )
+    })
+  } */

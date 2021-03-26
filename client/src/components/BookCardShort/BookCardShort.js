@@ -12,7 +12,8 @@ export default function BookCardShort({
   descriptionExtended,
   setDescriptionExtended,
   onDelete,
-  onVote,
+  isVoted,
+  setIsVoted,
 }) {
   let descriptionsExpandedArray
   function readmore(title) {
@@ -24,6 +25,16 @@ export default function BookCardShort({
       descriptionsExpandedArray = [...descriptionExtended, title]
     }
     setDescriptionExtended(descriptionsExpandedArray)
+  }
+
+  let handleVoteArray
+  function handleVote(id) {
+    if (isVoted.includes(id)) {
+      handleVoteArray = isVoted.filter(book => book !== id)
+    } else {
+      handleVoteArray = [...isVoted, id]
+    }
+    setIsVoted(handleVoteArray)
   }
 
   return (
@@ -47,8 +58,16 @@ export default function BookCardShort({
       <DeleteButton aria-label="delete-nominated" onClick={() => onDelete(id)}>
         <Icon style={{ color: 'var(--darkgrey)' }} glyph="delete" size={35} />
       </DeleteButton>
-      <VoteButton aria-label="vote-nominated" onClick={onVote}>
-        <Icon style={{ color: 'var(--orange)' }} glyph="checkbox" size={55} />
+      <VoteButton aria-label="vote-nominated" onClick={() => handleVote(id)}>
+        {isVoted.includes(id) ? (
+          <Icon
+            style={{ color: 'var(--orange)' }}
+            glyph="checkmark"
+            size={55}
+          />
+        ) : (
+          <Icon style={{ color: 'var(--orange)' }} glyph="checkbox" size={55} />
+        )}
       </VoteButton>
     </Card>
   )
