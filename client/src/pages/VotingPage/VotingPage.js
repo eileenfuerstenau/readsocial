@@ -18,32 +18,31 @@ export default function VotingPage({ setNominatedBooks, nominatedBooks }) {
 
   function handleSubmit(event) {
     event.preventDefault()
-    isVoted.forEach(book => voteBook(book.id))
+    isVoted.forEach(id => voteBook(id))
+    setIsVoted([])
   }
 
   return (
     <VotingPageLayout>
       <Form onSubmit={handleSubmit}>
         <BooksWrapper hidden={nominatedBooks.length === 0}>
-          {nominatedBooks.map(
-            ({ _id, title, author, description, votes }, index) => (
-              <BookCardShort
-                key={_id}
-                id={_id}
-                title={title}
-                author={author}
-                description={description}
-                votes={votes}
-                descriptionExtended={descriptionExtended}
-                setDescriptionExtended={setDescriptionExtended}
-                onDelete={handleDeleteBook}
-                isVoted={isVoted}
-                setIsVoted={setIsVoted}
-              />
-            )
-          )}
+          {nominatedBooks.map(({ _id, title, author, description, votes }) => (
+            <BookCardShort
+              key={_id}
+              id={_id}
+              title={title}
+              author={author}
+              description={description}
+              votes={votes}
+              descriptionExtended={descriptionExtended}
+              setDescriptionExtended={setDescriptionExtended}
+              onDelete={handleDeleteBook}
+              isVoted={isVoted}
+              setIsVoted={setIsVoted}
+            />
+          ))}
         </BooksWrapper>
-        <SubmitButton>Submit vote</SubmitButton>
+        <SubmitButton>Gib deine Stimme ab</SubmitButton>
       </Form>
       <EmptyShortListStatement>
         {nominatedBooks.length === 0 && 'Die Shortlist ist noch leer.'}
