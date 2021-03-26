@@ -7,6 +7,7 @@ const app = express()
 setupMongo()
 app.use('/', express.json())
 
+app.use(express.static('./client/build'))
 app.use('/api/nominatedbooks', require('./routes/nominatedbooks'))
 app.use(require('./routes/error'))
 
