@@ -89,7 +89,7 @@ const isPathToCover = function (props, pathToCover) {
 }
 
 BookCard.propTypes = {
-  id: PropTypes.number,
+  id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   cover: isPathToCover,
   title: PropTypes.string,
   author: PropTypes.string,

@@ -24,8 +24,6 @@ export default function VotingPage({ setNominatedBooks, nominatedBooks }) {
     setHasVoted(true)
   }
 
-  console.log(hasVoted)
-
   return (
     <VotingPageLayout>
       <Form onSubmit={handleSubmit}>
