@@ -56,6 +56,7 @@ export default function BookCardShort({
         </Button>
       </section>
       <DeleteButton
+        role="button"
         disabled={isVoted.includes(id) || hasVoted}
         aria-label="delete-nominated"
         onClick={() => onDelete(id)}
@@ -100,13 +101,12 @@ const Card = styled.section`
 `
 const Title = styled.h2`
   font-weight: bold;
-  font-size: 80%;
+  font-size: 90%;
   padding-right: 40px;
-  display: inline;
 `
 const Author = styled.h3`
   font-weight: lighter;
-  font-size: 70%;
+  font-size: 80%;
   padding-right: 40px;
 `
 
@@ -114,11 +114,11 @@ const Description = styled.p`
   font-weight: normal;
   font-size: 70%;
 `
-const DeleteButton = styled.button`
+const DeleteButton = styled.div`
   background: transparent;
   border: none;
   position: absolute;
-  right: 0;
+  right: 7px;
   bottom: 2px;
 `
 const VoteButton = styled.div`

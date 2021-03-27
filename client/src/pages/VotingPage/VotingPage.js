@@ -27,7 +27,7 @@ export default function VotingPage({ setNominatedBooks, nominatedBooks }) {
   return (
     <VotingPageLayout>
       <Form onSubmit={handleSubmit}>
-        <BooksWrapper hidden={nominatedBooks.length === 0}>
+        <BooksWrapper>
           {nominatedBooks.map(({ _id, title, author, description, votes }) => (
             <BookCardShort
               key={_id}
@@ -44,20 +44,19 @@ export default function VotingPage({ setNominatedBooks, nominatedBooks }) {
               hasVoted={hasVoted}
             />
           ))}
+          <EmptyShortListStatement>
+            {nominatedBooks.length === 0 && 'Die Shortlist ist noch leer.'}
+          </EmptyShortListStatement>
         </BooksWrapper>
         <SubmitButton disabled={hasVoted}>
           {hasVoted ? 'Erfolgreich abgestimmt' : 'Gib deine Stimme ab'}
         </SubmitButton>
       </Form>
-      <EmptyShortListStatement>
-        {nominatedBooks.length === 0 && 'Die Shortlist ist noch leer.'}
-      </EmptyShortListStatement>
     </VotingPageLayout>
   )
 }
 
 const VotingPageLayout = styled.main`
-  display: grid;
   position: relative;
   padding: 5px;
 `
@@ -66,23 +65,25 @@ const BooksWrapper = styled.div`
   display: grid;
   gap: 10px;
   border: 1px solid var(--darkgrey);
-  height: 70vh;
+  height: 75vh;
   overflow-y: scroll;
   align-content: start;
-  border-radius: 5px;
+  border-radius: 10px;
 `
 const Form = styled.form`
   display: grid;
 `
 const SubmitButton = styled(Button)`
   width: 50%;
-  padding: 5px;
+  padding: 10px;
   background: ${props => props.disabled && 'lightgrey'};
   box-shadow: ${props => props.disabled && 'none'};
   justify-self: center;
   align-self: center;
+  margin: 10px;
 `
 
 const EmptyShortListStatement = styled.div`
   text-align: center;
+  padding: 10px;
 `
