@@ -14,5 +14,4 @@ Content-Type: application/json
 PATCH http://localhost:4000/api/nominatedbooks/605dafe43783dff7289f56b7/vote
 Content-Type: application/json
 
-###
 
