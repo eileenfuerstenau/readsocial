@@ -10,6 +10,7 @@ export default function BookCard({
   title,
   author,
   description,
+  votes,
   onBookmarkClick,
   bookmarkedBooks,
   descriptionExtended,
@@ -57,7 +58,7 @@ export default function BookCard({
         <NominateButton
           aria-label="nominate"
           disabled={isBookNominated}
-          onClick={() => onNominate(id, title, author, description)}
+          onClick={() => onNominate(id, title, author, description, votes)}
         >
           {isBookNominated ? 'Nominiert' : 'Nominieren'}
         </NominateButton>
@@ -88,7 +89,7 @@ const isPathToCover = function (props, pathToCover) {
 }
 
 BookCard.propTypes = {
-  id: PropTypes.number,
+  id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   cover: isPathToCover,
   title: PropTypes.string,
   author: PropTypes.string,

@@ -19,6 +19,7 @@ const testdataShort = {
       id: '21',
     },
   ],
+  isVoted: [4, 5],
 }
 
 describe('BookCardShort', () => {

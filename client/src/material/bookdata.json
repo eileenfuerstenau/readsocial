@@ -6,7 +6,7 @@
       "author": "Ernest Hemingway",
       "content": "Als Hemingway 1956 nach Paris zurückkehrte, ließ er sich aus dem Keller des Hotel Ritz seine alten Koffer bringen. Sie enthielten Tagebücher und Notizen aus seiner Zeit als Auslandskorrespondent. Aus diesen Aufzeichnungen formte Hemingway den Roman seiner Pariser Jahre. Für ihn war es eine glückliche, prägende Zeit, als er an der Seine angelte, bescheidene Gewinne beim Pferderennen in Champagner umsetzte, mit Gertrude Stein, James Joyce, Ezra Pound und Scott F. Fitzgerald zusammentraf.",
       "cover": "/book-cover/1.jpg",
-      "isbn": 123456781
+      "votes": 0
     },
     {
       "id": 2,
@@ -15,7 +15,7 @@
       "author": "Ichiro Kishimi, Fumitake Koga",
       "content": "Ein zutiefst unglücklicher junger Mann trifft auf einen Philosophen, der ihm erklärt, wie jeder von uns in der Lage ist, sein eigenes Leben zu bestimmen, und wie sich jeder von den Fesseln vergangener Erfahrungen, Zweifeln und Erwartungen anderer lösen kann. Es sind die Erkenntnisse von Alfred Adler - dem großen Vorreiter der Achtsamkeitsbewegung - die diesem bewegenden Dialog zugrunde liegen, die zutiefst befreiend sind und uns allen ermöglichen, endlich die Begrenzungen zu ignorieren, die unsere Mitmenschen und wir selbst uns auferlegen. «Du musst nicht von allen gemocht werden» ist ein zugänglicher wie tiefgründiger und definitiv außergewöhnlicher Lebenshilfe-Ratgeber - Millionen haben ihn bereits gelesen und profitieren von seiner Weisheit.",
       "cover": "/book-cover/2.jpg",
-      "isbn": 12345678
+      "votes": 0
     },
     {
       "id": 3,
@@ -23,7 +23,7 @@
       "author": "Daniel Kahneman",
       "content": "Wie treffen wir unsere Entscheidungen? Warum ist Zögern ein überlebensnotwendiger Reflex, und warum ist es so schwer zu wissen, was uns in der Zukunft glücklich macht? Daniel Kahneman, Nobelpreisträger und einer der einflussreichsten Wissenschaftler unserer Zeit, zeigt anhand ebenso nachvollziehbarer wie verblüffender Beispiele, welchen mentalen Mustern wir folgen und wie wir uns gegen verhängnisvolle Fehlentscheidungen wappnen können.",
       "cover": "/book-cover/3.jpg",
-      "isbn": 123456783
+      "votes": 0
     },
     {
       "id": 4,
@@ -31,7 +31,7 @@
       "author": "Alice Hasters",
       "content": "Wer Rassismus bekämpfen will, muss Veränderung befürworten – und die fängt bei einem selbst an.'Darf ich mal deine Haare anfassen?', 'Kannst du Sonnenbrand bekommen?', 'Wo kommst du her?' Wer solche Fragen stellt, meint es meist nicht böse. Aber dennoch: Sie sind rassistisch. Warum, das wollen weiße Menschen oft nicht hören. Alice Hasters erklärt es trotzdem. Eindringlich und geduldig beschreibt sie, wie Rassismus ihren Alltag als Schwarze Frau in Deutschland prägt. Dabei wird klar: Rassismus ist nicht nur ein Problem am rechten Rand der Gesellschaft. Und sich mit dem eigenen Rassismus zu konfrontieren, ist im ersten Moment schmerzhaft, aber der einzige Weg, ihn zu überwinden.",
       "cover": "/book-cover/4.jpg",
-      "isbn": 123456784
+      "votes": 0
     },
     {
       "id": 5,
@@ -39,7 +39,7 @@
       "author": "Trevor Noah",
       "content": "Trevor Noah, the funny guy who hosts The Daily Show on Comedy Central, shares his remarkable story of growing up in South Africa with a black South African mother and a white European father at a time when it was against the law for a mixed-race child to exist. But he did exist--and from the beginning, the often-misbehaved Trevor used his keen smarts and humor to navigate a harsh life under a racist government.",
       "cover": "/book-cover/5.png",
-      "isbn": 123456785
+      "votes": 0
     },
     {
       "id": 6,
@@ -48,7 +48,7 @@
       "author": "Michelle Obama",
       "content": "Michelle Obama ist eine der überzeugendsten und beeindruckendsten Frauen der Gegenwart. Als erste afro-amerikanische First Lady der USA trug sie maßgeblich dazu bei, das gastfreundlichste und offenste Weiße Haus zu schaffen, das es je gab. Sie wurde zu einer energischen Fürsprecherin für die Rechte von Frauen und Mädchen in der ganzen Welt, setzte sich für einen dringend notwendigen gesellschaftlichen Wandel hin zu einem gesünderen und aktiveren Leben ein und stärkte außerdem ihrem Ehemann den Rücken, während dieser die USA durch einige der schmerzlichsten Momente des Landes führte. Ganz nebenbei zeigte sie uns noch ein paar lässige Dance-Moves, glänzte beim „Carpool Karaoke“ und schaffte es obendrein auch, zwei bodenständige Töchter zu erziehen – mitten im gnadenlosen Blitzlichtgewitter der Medien.",
       "cover": "/book-cover/6.jpg",
-      "isbn": 12345678
+      "votes": 0
     },
     {
       "id": 7,
@@ -56,7 +56,7 @@
       "author": "Philippa Perry",
       "content": "Alle Eltern möchten glückliche Kinder großziehen. Und niemand möchte bei der Erziehung versagen. Wie bekommen wir das hin? Kann ich meinen Eltern verzeihen? Darf ich zugeben, dass ich als Mutter oder Vater einen Fehler gemacht habe? Ja, sagt die erfahrene Psychotherapeutin Philippa Perry. Was Kinder brauchen, sind keine falschen Ideale, sondern wahrhaftige Bezugspersonen. In ihrem internationalen Bestseller erklärt Philippa Perry, worauf es zwischen Eltern und Kindern wirklich ankommt.",
       "cover": "/book-cover/7.jpg",
-      "isbn": 123456787
+      "votes": 0
     },
     {
       "id": 8,
@@ -64,7 +64,7 @@
       "author": "Andreas Eschbach",
       "content": "Als Kinder begegnen sie sich zum ersten Mal: Charlotte, die Tochter des französischen Botschafters, und Hiroshi, der Sohn einer Hausangestellten. Von Anfang an steht der soziale Unterschied spürbar zwischen ihnen. Doch Hiroshi hat eine Idee. Eine Idee, wie er den Unterschied zwischen Arm und Reich aus der Welt schaffen könnte. Um Charlottes Liebe zu gewinnen, tritt er an, seine Idee in die Tat umzusetzen - und die Welt für immer zu verändern. Was mit einer bahnbrechenden Erfindung beginnt, führt ihn allerdings bald auf die Spur eines uralten Geheimnisses - und des schrecklichsten aller Verbrechen ...",
       "cover": "/book-cover/8.jpg",
-      "isbn": 123456788
+      "votes": 0
     },
     {
       "id": 9,
@@ -73,7 +73,7 @@
       "author": "Niko Rittenau",
       "content": "»Vegan-Klischee ade!« räumt evidenzbasiert mit den häufigsten Vorurteilen gegenüber der veganen Ernährung auf. Wissenschaftlich fundiert, aber allgemein verständlich, beantwortet das Buch wichtige Fragen zur Versorgung mit essentiellen Nährstoffen und entkräftet weit verbreitete Mythen über die pflanzliche Ernährung: Woher erhält man ganz ohne Milchprodukte genügend Kalzium, ohne Fisch ausreichend Omega-3-Fettsäuren und wie steht es um das Dauerthema Vitamin B12? Welche pflanzlichen Lebensmittel sind besonders reich an Mineralstoffen wie Eisen, Zink, Jod und Selen und woher bekommen Veganer gänzlich ohne tierische Produkte genügend Protein? Die Quellen der vielfältigen Vegan-Klischees werden hierbei ausführlich untersucht und unvoreingenommen auf ihren Wahrheitsgehalt überprüft. Enthält Soja wirklich Östrogene, die schädlich für Männer sein können und Brustkrebs bei Frauen begünstigen? Wirkt Fruchtzucker im Obst gesundheitlich abträglich und sind Nüsse tatsächlich Dickmacher? Schadet Gluten im Getreide und was hat es mit den angeblich toxischen Antinährstoffen in Hülsenfrüchten auf sich? All diese und viele weitere Vorurteile werden basierend auf der aktuellen Studienlage objektiv und undogmatisch erläutert.",
       "cover": "/book-cover/9.jpg",
-      "isbn": 123456789
+      "votes": 0
     },
     {
       "id": 10,
@@ -81,7 +81,7 @@
       "author": "Michaela Schmitt",
       "content": "Michi und Thorben tun das, wovon viele nur träumen. Sie fahren los auf den Spuren der alten Hippies nach Goa: Einfach so, mit einem 50 Jahre alten Bus, der sie oft herausfordert, aber mit Abenteuern und unerwarteten Begegnungen belohnt. Dabei tauchen sie ein in fremde Kulturen, erleben nie geahnte Gastfreundschaft und Hilfsbereitschaft und spüren, was Freiheit bedeutet. Am Ende der Reise machen sie die wichtigste Erfahrung – eine, die ihr zukünftiges Leben in eine völlig neue Richtung lenkt.",
       "cover": "/book-cover/10.jpg",
-      "isbn": 1234567810
+      "votes": 0
     },
     {
       "id": 11,
@@ -89,7 +89,7 @@
       "author": "Lena Johannson",
       "content": "Hamburg, 1919: Das Kontor Hannemann & Tietz handelt nicht nur mit Kakao, sondern betreibt auch eine eigene Schokoladenmanufaktur. Frieda, jüngster Spross der traditionsreichen Kaufmannsfamilie, würde am liebsten ihre Tage in der Speicherstadt oder in der Schokoladenküche verbringen. Als ihr Vater sie mit dem Sohn eines befreundeten Handelspartners verheiraten will, um das Überleben der Firma zu sichern, bricht für Frieda eine Welt zusammen. Nicht nur, weil ihr Herz für einen anderen schlägt. Wird es ihr gelingen, das Erbe der Familie zu retten, ohne ihre Liebe zu verraten?",
       "cover": "/book-cover/11.jpeg",
-      "isbn": 1234567811
+      "votes": 0
     },
     {
       "id": 12,
@@ -97,7 +97,7 @@
       "author": "Jean Ziegler",
       "content": "Der jährliche Hungertod von mehreren zehn Millionen Menschen ist der Skandal unseres Jahrhunderts. Alle fünf Sekunden verhungert ein Kind unter zehn Jahren. Und das auf einem Planeten, der grenzenlosen Überfluss produziert. Dieser Massenvernichtung von menschlichem Leben begegnet die öffentliche Meinung mit eisiger Gleichgültigkeit - solange die alltäglichen Katastrophen nicht allzu aufdringlich »sichtbar« werden, wie etwa die Hungersnot, die seit Sommer 2011 in fünf Ländern am Horn von Afrika eine tödliche Bedrohung darstellt. Jean Ziegler verbindet seine Erfahrungen aus acht Jahren als UN-Sonderberichterstatter für das Recht auf Nahrung mit seinem unermüdlichen Kampf für eine friedliche, gerechte Welt. Er erinnert an die dramatische ungleiche Verteilung von Reichtum, an die strukturelle Gewalt unserer Weltordnung, an Milliardenzocker, die Nahrungsmittel monströs verteuern, und er zeichnet das brutale Bild des Hungers.",
       "cover": "/book-cover/12.jpg",
-      "isbn": 1234567812
+      "votes": 0
     },
     {
       "id": 13,
@@ -105,7 +105,7 @@
       "author": "Tom Phillips",
       "content": "An exhilarating journey through the most creative and catastrophic f*ck ups in human history, from our very first ancestor falling out of that tree, to the most spectacular fails of the present day. In the seventy thousand years that modern human beings have walked this earth, we've come a long way. Art, science, culture, trade - on the evolutionary food chain, we're real winners. But, frankly, it's not exactly been plain sailing, and sometimes - just occasionally - we've managed to really, truly, quite unbelievably f*ck things up. From Chairman Mao's Four Pests Campaign, to the American Dustbowl; from the Austrian army attacking itself one drunken night, to the world's leading superpower electing a reality TV mogul as President... it's pretty safe to say that, as a species, we haven't exactly grown wiser with age.",
       "cover": "/book-cover/13.jpg",
-      "isbn": 1234567813
+      "votes": 0
     },
     {
       "id": 14,
@@ -114,7 +114,7 @@
       "author": "Jon Krakauer",
       "content": "Im August 1992 wurde die Leiche von Chris McCandless im Eis von Alaska gefunden. Wer war dieser junge Mann, und was hatte ihn in die gottverlassene Wildnis getrieben? Jon Krakauer hat sein Leben erforscht, seine Reise in den Tod rekonstruiert und ein traurig-schönes Buch geschrieben über die Sehnsucht, die diesen Mann veranlasste, sämtliche Besitztümer und Errungenschaften der Zivilisation hinter sich zu lassen, um tief in die wilde und einsame Schönheit der Natur einzutauchen.",
       "cover": "/book-cover/14.jpg",
-      "isbn": 1234567814
+      "votes": 0
     },
     {
       "id": 15,
@@ -122,7 +122,7 @@
       "author": "Laurence Anthony, Graham Spence",
       "content": "Der bewegende Bericht vom preisgekrönten Umweltschützer Lawrence Anthony über seine Elefantenherde in der Wildnis Südafrikas. In Lawrence Anthonys Naturschutzreservat hatten fast hundert Jahre keine Elefanten mehr gelebt. Eines Tages erfuhr er von einer heimatlosen und bedrohten Herde, die er bei sich aufnahm. Er entwickelte eine enge Beziehung zu den sanften Riesen, die sein Leben für immer veränderten.",
       "cover": "/book-cover/15.jpg",
-      "isbn": 1234567815
+      "votes": 0
     },
     {
       "id": 16,
@@ -130,7 +130,7 @@
       "author": "Stefan Rinke",
       "content": "Lateinamerika war das 'erste Amerika' im Zeitalter der Entdeckungen. Es war die Säule der ersten europäischen Kolonialreiche und Schnittstelle riesiger Menschen- und Warenströme aus vier Kontinenten. Doch nicht nur die 'entdeckenden' Europäer, sondern auch die ursprünglichen Bewohner gestalteten die Geschichte Lateinamerikas. Lateinamerika wurde zum Land der Befreiung vom Kolonialismus und zum Kontinent der Diktatoren. Im Zeitalter der neuen Globalisierung bleibt Lateinamerika ein Brennpunkt und ein Labor von Entwicklungen, die weit über den Kontinent hinausweisen.",
       "cover": "/book-cover/16.jpg",
-      "isbn": 1234567816
+      "votes": 0
     },
     {
       "id": 17,
@@ -139,7 +139,7 @@
       "author": "Michaela Schmitt",
       "content": "Das ist Abenteuer pur: Mit einem alten Mercedes LKW in zwei Jahren von Alaska nach Feuerland! Zusammen mit ihrer einjährigen Tochter Romy brechen Michaela und Thorben aus ihrer Komfortzone aus, um die große Freiheit zu spüren und die Welt zu entdecken.",
       "cover": "/book-cover/17.jpg",
-      "isbn": 1234567817
+      "votes": 0
     },
     {
       "id": 18,
@@ -148,7 +148,7 @@
       "author": "Cheryl Strayed",
       "content": "„Die Frau mit dem Loch im Herzen, das war ich.“ Gerade 26 geworden, hat Cheryl Strayed das Gefühl, alles verloren zu haben. Und so trifft sie die folgenreichste Entscheidung ihres Lebens: die mehr als tausend Meilen des Pacific Crest Trail zu wandern, durch die Wüsten Kaliforniens, über die eisigen Höhen der Sierra Nevada, durch die Wälder Oregons bis zur „Brücke der Götter“ im Bundesstaat Washington – allein, ohne Erfahrungen und mit einem Rucksack auf dem Rücken, den sie „Monster“ nennt. Diese Reise führt Cheryl Strayed bis an ihre Grenzen und darüber hinaus ...",
       "cover": "/book-cover/18.jpeg",
-      "isbn": 1234567818
+      "votes": 0
     },
     {
       "id": 19,
@@ -156,7 +156,7 @@
       "author": "Gillian Flynn",
       "content": "Who are you? What have we done to each other? These are the questions Nick Dunne finds himself asking on the morning of his fifth wedding anniversary, when his wife Amy suddenly disappears. The police suspect Nick. Amy's friends reveal that she was afraid of him, that she kept secrets from him. He swears it isn't true. A police examination of his computer shows strange searches. He says they weren't made by him. And then there are the persistent calls on his mobile phone. So what really did happen to Nick's beautiful wife?",
       "cover": "/book-cover/19.jpg",
-      "isbn": 1234567819
+      "votes": 0
     },
     {
       "id": 20,
@@ -164,7 +164,7 @@
       "author": "Melanie Metzenthin",
       "content": "Hamburg, 1945: Der Krieg ist zu Ende und die Naziherrschaft endlich vorbei. Doch in der Familie von Richard und Paula Hellmer kommt an diesem ersten Weihnachtsfest im Frieden keine rechte Freude auf. Zu beengt sind die Wohnverhältnisse, zu groß der Mangel an Lebensmitteln und warmer Kleidung. Vor allem Richard macht sich Sorgen – nicht nur um seine Familie. Er, der im Dritten Reich als Psychiater immer wieder sein Leben aufs Spiel gesetzt hat, um Menschen zu retten, muss feststellen, dass die alten Seilschaften sich nahtlos in die neuen Machtverhältnisse eingegliedert haben. Überzeugt, das Richtige zu tun, sagt er in einem Prozess gegen seinen Erzfeind Chefarzt Krüger aus und muss sich zu seinem Entsetzen plötzlich für sein eigenes Tun rechtfertigen. Unterdessen stellen seine Frau Paula und sein bester Freund Fritz eine medizinische Versorgung ganz eigener Art auf die Beine – gefährlich und nicht immer legal …",
       "cover": "/book-cover/20.jpeg",
-      "isbn": 1234567820
+      "votes": 0
     },
     {
       "id": 21,
@@ -172,7 +172,7 @@
       "author": "Paulo Coelho",
       "content": "Die Geschichte einer unglücklichen jungen Frau, die sterben will und erst angesichts des Todes entdeckt, wie schön das Leben sein kann, wenn man darum kämpft und etwas riskiert. Ein wunderbares Buch über die Prise ›Verrücktheit‹, die es braucht, um den eigenen Lebenstraum Wirklichkeit werden zu lassen, und eine große Liebeserklärung an das Glück in jedem von uns.",
       "cover": "/book-cover/21.jpeg",
-      "isbn": 1234567821
+      "votes": 0
     },
     {
       "id": 22,
@@ -180,7 +180,7 @@
       "author": "Andreas Brendt",
       "content": "Andi ist ein pflichtbewusster VWL-Student, dem eine lukrative Zukunft winkt. Doch dann entscheidet er spontan, sein Konto zu plündern und nach Asien aufzubrechen. Auf Bali wird er mit dem Surfvirus infiziert, und von nun an ist das Wellenreiten seine lebensbestimmende Leidenschaft, die ihn vor eine große Entscheidung stellt: Gibt er dem inneren Feuer Zündstoff oder ebnet er den Weg für die geplante Managerkarriere? Die Suche nach der Antwort dauert zehn Jahre und führt über unfassbare Abenteuer, durch ferne Länder, zeigt Begegnungen mit außergewöhnlichen Menschen, skurrilen Typen und gefährlichen Gangstern. Und sie beschreibt den ständigen Kampf mit sich selbst auf dem Weg zum persönlichen Glück.",
       "cover": "/book-cover/22.jpeg",
-      "isbn": 1234567822
+      "votes": 0
     },
     {
       "id": 23,
@@ -188,7 +188,7 @@
       "author": "Andreas Eschbach",
       "content": "Weimar 1942: Die Programmiererin Helene arbeitet im NSA, dem Nationalen-Sicherheits-Amt, und entwickelt dort Komputer-Programme, mit deren Hilfe alle Bürger überwacht werden. Erst als die Liebe ihres Lebens Fahnenflucht begeht und untertauchen muss, widersetzt Helene sich. Dabei muss sie nicht nur gegen das Regime kämpfen, sondern auch gegen ihren Vorgesetzten Lettke, der die perfekte Überwachungstechnik des Staates für ganz eigene Zwecke benutzt und dabei zunehmend jede Grenze überschreitet ...",
       "cover": "/book-cover/23.jpeg",
-      "isbn": 1234567823
+      "votes": 0
     },
     {
       "id": 24,
@@ -196,7 +196,7 @@
       "author": "Marc-Uwe Kling",
       "content": "Willkommen in QualityLand, in einer nicht allzu fernen Zukunft: Alles läuft rund - Arbeit, Freizeit und Beziehungen sind von Algorithmen optimiert. Trotzdem beschleicht den Maschinenverschrotter Peter Arbeitsloser immer mehr das Gefühl, dass mit seinem Leben etwas nicht stimmt. Wenn das System wirklich so perfekt ist, warum gibt es dann Drohnen, die an Flugangst leiden, oder Kampfroboter mit posttraumatischer Belastungsstörung? Warum werden die Maschinen immer menschlicher, aber die Menschen immer maschineller? Marc-Uwe Kling hat die Verheißungen und das Unbehagen der digitalen Gegenwart zu einer verblüffenden Zukunftssatire verdichtet, die lange nachwirkt. Visionär, hintergründig – und so komisch wie die Känguru-Trilogie.",
       "cover": "/book-cover/24.jpeg",
-      "isbn": 1234567824
+      "votes": 0
     },
     {
       "id": 25,
@@ -204,7 +204,7 @@
       "author": "Marc Elsberg",
       "content": "Ist Fortschritt ein Rückschritt? - Die Welt, wie wir sie kennen, gibt es bald nicht mehr. Der Countdown läuft ... An einem kalten Februartag brechen in Europa alle Stromnetze zusammen. Der totale Blackout. Der italienische Informatiker Piero Manzano vermutet einen Hackerangriff und versucht, zu den Behörden durchzudringen – erfolglos. Als Europol-Kommissar Bollard ihm endlich zuhört, werden dubiose E-Mails auf seinem Computer gefunden. Selbst unter Verdacht wird Manzano eins klar: Ihr Gegner ist ebenso raffiniert wie gnadenlos. Unterdessen liegt Europa im Dunkeln, und die Menschen stehen vor ihrer größten Herausforderung: Überleben.",
       "cover": "/book-cover/25.jpeg",
-      "isbn": 1234567825
+      "votes": 0
     },
     {
       "id": 26,
@@ -212,7 +212,7 @@
       "author": "Marc Elsberg",
       "content": "London. Bei einer Verfolgungsjagd wird ein Junge erschossen. Sein Tod führt die Journalistin Cynthia Bonsant zu der gefeierten Internetplattform Freemee. Diese sammelt und analysiert Daten – und verspricht dadurch ihren Millionen Nutzern ein besseres Leben und mehr Erfolg. Nur einer warnt vor Freemee und vor der Macht, die der Online-Newcomer einigen wenigen verleihen könnte: ZERO, der meistgesuchte Online-Aktivist der Welt. Als Cynthia anfängt, genauer zu recherchieren, wird sie selbst zur Gejagten. Doch in einer Welt voller Kameras, Datenbrillen und Smartphones kann man sich nicht verstecken … ",
       "cover": "/book-cover/26.jpeg",
-      "isbn": 1234567826
+      "votes": 0
     },
     {
       "id": 27,
@@ -220,7 +220,7 @@
       "author": "Andreas Eschbach",
       "content": "Christopher ist auf der Flucht. Gemeinsam mit der gleichaltrigen Serenity ist er unterwegs in der Wüste Nevadas. Irgendwo dort draußen muss Serenitys Vater leben, der Visionär und Vordenker Jeremiah Jones, der sämtlicher Technik abgeschworen hat, nachdem er erkennen musste, welche Gefahren die weltweite Vernetzung mit sich bringen kann. Doch eine Flucht vor der Technik - ist das heute überhaupt möglich? Serenity ahnt bald, auf was und vor allem auf wen sie sich eingelassen hat. Denn der schwer durchschaubare Christopher ist nicht irgendjemand. Christopher hat einst den berühmtesten Hack der Geschichte getätigt. Und nun ist er im Besitz eines Geheimnisses, das dramatischer nicht sein könnte: Die Tage der Menschheit, wie wir sie kennen, sind gezählt.",
       "cover": "/book-cover/27.jpeg",
-      "isbn": 1234567827
+      "votes": 0
     },
     {
       "id": 28,
@@ -228,7 +228,7 @@
       "author": "Andreas Eschbach",
       "content": "John Salvatore Fontanelli ist ein armer Schlucker, bis er eine unglaubliche Erbschaft macht: ein Vermögen, das ein entfernter Vorfahr im 16. Jahrhundert hinterlassen hat und das durch Zins und Zinseszins in fast 500 Jahren auf über eine Billion Dollar angewachsen ist. Der Erbe dieses Vermögens, so heißt es im Testament, werde einst der Menschheit die verlorene Zukunft wiedergeben. John tritt das Erbe an. Er legt sich Leibwächter zu, verhandelt mit Ministern und Kardinälen. Die schönsten Frauen liegen ihm zu Füßen. Aber kann er noch jemandem trauen? Und dann erhält er einen Anruf von einem geheimnisvollen Fremden, der zu wissen behauptet, was es mit dem Erbe auf sich hat ... ",
       "cover": "/book-cover/28.jpeg",
-      "isbn": 1234567828
+      "votes": 0
     },
     {
       "id": 29,
@@ -236,7 +236,7 @@
       "author": "Karl Olsberg",
       "content": "Dein Mirror kennt dich besser als du selbst. Er tut alles, um dich glücklich zu machen. Ob du willst oder nicht. Wie digitale Spiegelbilder wissen Mirrors stets, was ihre Besitzer wollen, fühlen, brauchen. Sie steuern subtil das Verhalten der Menschen und sorgen dafür, dass jeder sich wohlfühlt. Als die Journalistin Freya bemerkt, dass sich ihr Mirror merkwürdig verhält, beginnt sie sich zu fragen, welche Macht diese Geräte haben. Dann lernt sie den autistischen Andy kennen und entdeckt, dass sich die Mirrors immer mehr in das Leben ihrer Besitzer einmischen – auch gegen deren Willen. Als sie mit ihrem Wissen an die Öffentlichkeit geht, hat das unabsehbare Folgen.",
       "cover": "/book-cover/29.jpeg",
-      "isbn": 1234567829
+      "votes": 0
     },
     {
       "id": 30,
@@ -244,7 +244,7 @@
       "author": "Ursula Poznanski",
       "content": "Es ist klein. Es ist leise. Es sieht alles. Jona ist siebzehn und seinen Altersgenossen ein ganzes Stück voraus, was Intelligenz und Auffassungsgabe betrifft. Allerdings ist er auch sehr talentiert darin, sich bei anderen unbeliebt zu machen und anzuecken. Auf die hervorgerufene Ablehnung reagiert Jonas auf ganz eigene Weise: Er lässt sein privates Forschungsobjekt auf seine Neider los: eine Drohne. Klein, leise, mit einer hervorragenden Kamera ausgestattet und imstande, jede Person aufzuspüren, über deren Handynummer Jona verfügt. Mit dem, was er auf diese Weise zu sehen bekommt, kann er sich zur Wehr setzen gegen Spott und Häme. Doch dann erfährt er etwas, das besser unentdeckt geblieben wäre, und plötzlich schwebt er in tödlicher Gefahr.",
       "cover": "/book-cover/30.jpeg",
-      "isbn": 1234567830
+      "votes": 0
     },
     {
       "id": 31,
@@ -253,7 +253,7 @@
       "author": "Homer Hickam",
       "content": "Homer liebt Elsie. Und Elsie liebt Albert. Eigentlich einfach. Bis auf ein großes grünes Manko: Albert ist ein Alligator. Und Homer will sein Badezimmer keinen Tag länger mit einem bissigen Reptil teilen. Elsie entscheidet sich für Homer - unter einer Bedingung: Gemeinsam müssen sie Albert nach Hause bringen. Vom trostlosen West-Virginia ins sonnenverwöhnte Florida. Mit dem Alligator auf dem Rücksitz ihres Buicks unternehmen sie die Fahrt ihres Lebens - und die führt sie weiter, als sie es sich hätten träumen lassen.",
       "cover": "/book-cover/31.jpeg",
-      "isbn": 1234567831
+      "votes": 0
     },
     {
       "id": 32,
@@ -261,7 +261,7 @@
       "author": "Ingrid Betancourt",
       "content": "Präsidentin von Kolumbien wollte sie werden, ihr zerrissenes Land versöhnen, der Korruption hatte sie den Kampf angesagt: Ingrid Betancourt wurde zur Hoffnungsträgerin in ihrer Heimat und auch im Ausland, bis sie am 23. Februar 2002 von der linksgerichteten Rebellen-Armee FARC entführt und in den Dschungel verschleppt wurde. In diesem 'Gefängnis ohne Mauern' musste sie ausharren, unvorstellbare sechseinhalb Jahre lang der Willkür der Geiselnehmer ausgeliefert. Nun legt sie Zeugnis ab über das, was ihr angetan wurde, wie sie mehrfach versuchte zu fliehen und wie sie unter immer weiter verschärften Bedingungen überlebte. Sie bricht ihr Schweigen und setzt sich der Erinnerung an die Horrorjahre aus, die sie an die Grenzen ihrer Leidensfähigkeit und Widerstandskraft brachten - auf dass die Welt endlich ihr Schweigen breche über die Zustände in Kolumbien. Am Ende findet sie wieder zu sich selbst und schreibt ein aufrüttelndes Buch von großer literarischer Kraft.",
       "cover": "/book-cover/32.jpg",
-      "isbn": 1234567832
+      "votes": 0
     },
     {
       "id": 33,
@@ -269,7 +269,7 @@
       "author": "Dan Brown",
       "content": "Robert Langdon, Harvard-Professor für Symbologie, erwacht mit einer Schusswunde in einem Krankenhaus in Florenz und kann sich nicht an die letzten zwei Tage erinnern. Doch viel Zeit zur Erholung bleibt ihm nicht, denn nach einem Anschlag muss er mit der jungen Ärztin Sienna Brooks in deren Wohnung flüchten. Dort stellt sich heraus, dass Langdon dabei war, die versteckte Botschaft in einem jahrhundertealten Gemälde zu Dantes 'Inferno' zu entschlüsseln. Die Spur führt sie in den Palazzio Vecchio, wo sie sich von Dantes Totenmaske konkretere Hinweise erhoffen, doch diese ist gestohlen worden. Nun beginnt eine Jagd durch halb Europa, bei der Langdon die Maske wiederfinden und einen perfiden Plan vereiteln muss.",
       "cover": "/book-cover/33.jpeg",
-      "isbn": 133234567833
+      "votes": 0
     }
   ]
 }

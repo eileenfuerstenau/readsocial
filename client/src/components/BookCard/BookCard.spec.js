@@ -9,6 +9,7 @@ const testdataShort = {
   author: 'Daniel Kahneman',
   description:
     'Wie treffen wir unsere Entscheidungen? Warum ist Zögern ein überlebensnotwendiger Reflex?',
+  votes: 0,
   bookmarkedBooks: '[Becoming]',
   descriptionExtended: '[Herr aller Dinge]',
   nominatedBooks: [
@@ -29,6 +30,7 @@ const testdataLong = {
   author: 'Daniel Kahneman',
   description:
     'Wie treffen wir unsere Entscheidungen? Warum ist Zögern ein überlebensnotwendiger Reflex, und warum ist es so schwer zu wissen, was uns in der Zukunft glücklich macht?',
+  votes: 0,
   bookmarkedBooks: '[Becoming]',
   descriptionExtended: '[Herr aller Dinge]',
   nominatedBooks: [
@@ -92,7 +94,7 @@ describe('BookCard', () => {
     expect(callback).toHaveBeenCalledWith('Schnelles Denken, langsames Denken')
   })
 
-  it('calls onNominate with the respective id, booktitle, author and description on clicking the nominate button', () => {
+  it('calls onNominate with the respective id, booktitle, author, description and votes on clicking the nominate button', () => {
     const callback = jest.fn()
     render(<BookCard {...testdataLong} onNominate={callback} />)
     const bookmarkButton = screen.getByRole('button', {
@@ -104,7 +106,8 @@ describe('BookCard', () => {
       '3',
       'Schnelles Denken, langsames Denken',
       'Daniel Kahneman',
-      'Wie treffen wir unsere Entscheidungen? Warum ist Zögern ein überlebensnotwendiger Reflex, und warum ist es so schwer zu wissen, was uns in der Zukunft glücklich macht?'
+      'Wie treffen wir unsere Entscheidungen? Warum ist Zögern ein überlebensnotwendiger Reflex, und warum ist es so schwer zu wissen, was uns in der Zukunft glücklich macht?',
+      0
     )
   })
 })

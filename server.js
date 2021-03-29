@@ -3,12 +3,13 @@ const setupMongo = require('./setupMongo')
 require('dotenv').config()
 const { PORT = 4000 } = process.env
 
-const app = express()
 setupMongo()
+const app = express()
+
 app.use('/', express.json())
 
+app.use(express.static('./client/build'))
 app.use('/api/nominatedbooks', require('./routes/nominatedbooks'))
-app.use('/api/recommendedbooks', require('./routes/recommendedbooks'))
 app.use(require('./routes/error'))
 
 app.listen(PORT, () => {

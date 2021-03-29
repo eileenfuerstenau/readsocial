@@ -8,7 +8,7 @@ const testdata = {
       title: 'Veronika beschließt zu sterben',
       description:
         'Die Geschichte einer unglücklichen jungen Frau, die sterben will und erst angesichts des Todes entdeckt, wie schön das Leben sein kann, wenn man darum kämpft und etwas riskiert.',
-      id: '21',
+      _id: '21',
     },
   ],
 }

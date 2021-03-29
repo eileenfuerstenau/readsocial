@@ -8,7 +8,6 @@ import Header from '../../components/Header/Header'
 import styled from 'styled-components/macro'
 import postNominatedBook from '../../services/postNominatedBook'
 import getNominatedBooks from '../../services/getNominatedBooks'
-import deleteBook from '../../services/deleteBook'
 
 export default function App() {
   const [nominatedBooks, setNominatedBooks] = useState([])
@@ -17,16 +16,10 @@ export default function App() {
     getNominatedBooks().then(data => setNominatedBooks([...data]))
   }, [])
 
-  function nominateBook(id, title, author, description) {
-    postNominatedBook(id, title, author, description).then(data =>
+  function nominateBook(id, title, author, description, votes) {
+    postNominatedBook(id, title, author, description, votes).then(data =>
       setNominatedBooks([data, ...nominatedBooks])
     )
-  }
-  function handleDeleteBook(id) {
-    deleteBook(id).then(() => {
-      const updatedBooks = nominatedBooks.filter(book => book._id !== id)
-      setNominatedBooks([...updatedBooks])
-    })
   }
 
   return (
@@ -43,7 +36,7 @@ export default function App() {
           <Header>Wofür stimmst du?</Header>
           <VotingPage
             nominatedBooks={nominatedBooks}
-            onDelete={handleDeleteBook}
+            setNominatedBooks={setNominatedBooks}
           />
         </Route>
       </Switch>
