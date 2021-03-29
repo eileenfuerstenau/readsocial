@@ -7,6 +7,7 @@ export default function BookCardShort({
   id,
   title,
   author,
+  votes,
   description,
   descriptionExtended,
   setDescriptionExtended,
@@ -48,6 +49,7 @@ export default function BookCardShort({
           </span>
         </Description>
         <ReadMoreButton
+          role="button"
           aria-label="expand-shrink-description"
           onClick={() => readmore(title)}
         >
@@ -56,18 +58,19 @@ export default function BookCardShort({
       </section>
       <DeleteButton
         role="button"
-        disabled={isVoted.includes(id) || hasVoted}
+        hidden={!hasVoted || votes}
         aria-label="delete-nominated"
         onClick={() => onDelete(id)}
       >
         <Icon style={{ color: 'var(--darkgrey)' }} glyph="delete" size={35} />
       </DeleteButton>
       <VoteButton
+        hidden={hasVoted}
         role="button"
         aria-label="vote-nominated"
         onClick={() => handleVote(id)}
       >
-        {!isVoted.includes(id) || hasVoted ? (
+        {!isVoted.includes(id) ? (
           <Icon style={{ color: 'var(--orange)' }} glyph="checkbox" size={55} />
         ) : (
           <Icon
@@ -77,6 +80,9 @@ export default function BookCardShort({
           />
         )}
       </VoteButton>
+      <ResultWrapper hidden={!hasVoted}>
+        <Result>{votes}</Result>
+      </ResultWrapper>
     </Card>
   )
 }
@@ -108,7 +114,6 @@ const Author = styled.h3`
   font-size: 80%;
   padding-right: 40px;
 `
-
 const Description = styled.p`
   font-weight: normal;
   font-size: 70%;
@@ -140,4 +145,21 @@ const VoteButton = styled.div`
   position: absolute;
   right: -3px;
   top: 0;
+`
+const Result = styled.div`
+  display: grid;
+  align-content: center;
+  justify-content: center;
+  color: var(--darkgrey);
+  border: 2px solid var(--darkgrey);
+  border-radius: 50%;
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  height: 40px;
+  width: 40px;
+`
+
+const ResultWrapper = styled.div`
+  color: transparent;
 `

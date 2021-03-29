@@ -4,10 +4,8 @@ import styled from 'styled-components/macro'
 import { useState } from 'react'
 import SearchBar from '../../components/SearchBar/SearchBar'
 import useLocalStorage from '../../hooks/useLocalStorage'
-// import getRecommendedBooks from '../../services/getRecommendedBooks'
 
 export default function BookCardsPage({ onNominate, nominatedBooks }) {
-  // const [recommendedBooks, setRecommendedBooks] = useState([])
   const [bookmarkedBooks, setBookmarkedBooks] = useLocalStorage(
     'bookmarked books',
     []
@@ -15,10 +13,6 @@ export default function BookCardsPage({ onNominate, nominatedBooks }) {
   const [booksShown, setBooksShown] = useState('all')
   const [descriptionExtended, setDescriptionExtended] = useState([])
   const [userInput, setUserInput] = useState('')
-
-  /*   useEffect(() => {
-    getRecommendedBooks().then(data => setRecommendedBooks([...data]))
-  }, []) */
 
   let bookmarkedBooksArray
   function handleBookmarkClick(currentBook) {
