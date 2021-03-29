@@ -1,6 +1,5 @@
 import { React } from 'react'
 import styled from 'styled-components/macro'
-import Button from '../Button/Button'
 import PropTypes from 'prop-types'
 import Icon from 'supercons'
 
@@ -48,12 +47,12 @@ export default function BookCardShort({
             {description}
           </span>
         </Description>
-        <Button
+        <ReadMoreButton
           aria-label="expand-shrink-description"
           onClick={() => readmore(title)}
         >
           {descriptionExtended.includes(title) ? 'Weniger' : 'Mehr'}
-        </Button>
+        </ReadMoreButton>
       </section>
       <DeleteButton
         role="button"
@@ -121,6 +120,20 @@ const DeleteButton = styled.div`
   right: 7px;
   bottom: 2px;
 `
+
+const ReadMoreButton = styled.div`
+  background: var(--orange);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 4px;
+  box-shadow: 2px 1px 4px #f37a72;
+  width: 90px;
+  margin-right: 15px;
+  font-size: 65%;
+  text-align: center;
+`
+
 const VoteButton = styled.div`
   background: transparent;
   border: none;
