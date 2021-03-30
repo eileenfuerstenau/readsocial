@@ -1,6 +1,5 @@
 import { React } from 'react'
 import styled from 'styled-components/macro'
-import Button from '../Button/Button'
 import PropTypes from 'prop-types'
 import Icon from 'supercons'
 
@@ -8,6 +7,7 @@ export default function BookCardShort({
   id,
   title,
   author,
+  votes,
   description,
   descriptionExtended,
   setDescriptionExtended,
@@ -48,27 +48,29 @@ export default function BookCardShort({
             {description}
           </span>
         </Description>
-        <Button
+        <ReadMoreButton
+          role="button"
           aria-label="expand-shrink-description"
           onClick={() => readmore(title)}
         >
           {descriptionExtended.includes(title) ? 'Weniger' : 'Mehr'}
-        </Button>
+        </ReadMoreButton>
       </section>
       <DeleteButton
         role="button"
-        disabled={isVoted.includes(id) || hasVoted}
+        hidden={!hasVoted || votes}
         aria-label="delete-nominated"
         onClick={() => onDelete(id)}
       >
         <Icon style={{ color: 'var(--darkgrey)' }} glyph="delete" size={35} />
       </DeleteButton>
       <VoteButton
+        hidden={hasVoted}
         role="button"
         aria-label="vote-nominated"
         onClick={() => handleVote(id)}
       >
-        {!isVoted.includes(id) || hasVoted ? (
+        {!isVoted.includes(id) ? (
           <Icon style={{ color: 'var(--orange)' }} glyph="checkbox" size={55} />
         ) : (
           <Icon
@@ -78,6 +80,9 @@ export default function BookCardShort({
           />
         )}
       </VoteButton>
+      <ResultWrapper hidden={!hasVoted}>
+        <Result>{votes}</Result>
+      </ResultWrapper>
     </Card>
   )
 }
@@ -109,7 +114,6 @@ const Author = styled.h3`
   font-size: 80%;
   padding-right: 40px;
 `
-
 const Description = styled.p`
   font-weight: normal;
   font-size: 70%;
@@ -121,10 +125,41 @@ const DeleteButton = styled.div`
   right: 7px;
   bottom: 2px;
 `
+
+const ReadMoreButton = styled.div`
+  background: var(--orange);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 4px;
+  box-shadow: 2px 1px 4px #f37a72;
+  width: 90px;
+  margin-right: 15px;
+  font-size: 65%;
+  text-align: center;
+`
+
 const VoteButton = styled.div`
   background: transparent;
   border: none;
   position: absolute;
   right: -3px;
   top: 0;
+`
+const Result = styled.div`
+  display: grid;
+  align-content: center;
+  justify-content: center;
+  color: var(--darkgrey);
+  border: 2px solid var(--darkgrey);
+  border-radius: 50%;
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  height: 40px;
+  width: 40px;
+`
+
+const ResultWrapper = styled.div`
+  color: transparent;
 `

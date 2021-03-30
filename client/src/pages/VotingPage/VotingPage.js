@@ -4,6 +4,7 @@ import { useState } from 'react'
 import deleteBook from '../../services/deleteBook'
 import Button from '../../components/Button/Button'
 import voteBook from '../../services/voteBook'
+import getNominatedBooks from '../../services/getNominatedBooks'
 
 export default function VotingPage({ setNominatedBooks, nominatedBooks }) {
   const [descriptionExtended, setDescriptionExtended] = useState([])
@@ -22,6 +23,7 @@ export default function VotingPage({ setNominatedBooks, nominatedBooks }) {
     isVoted.forEach(id => voteBook(id))
     setIsVoted([])
     setHasVoted(true)
+    getNominatedBooks().then(data => setNominatedBooks([...data]))
   }
 
   return (
@@ -48,7 +50,7 @@ export default function VotingPage({ setNominatedBooks, nominatedBooks }) {
             {nominatedBooks.length === 0 && 'Die Shortlist ist noch leer.'}
           </EmptyShortListStatement>
         </BooksWrapper>
-        <SubmitButton disabled={hasVoted}>
+        <SubmitButton disabled={isVoted.length === 0 || hasVoted}>
           {hasVoted ? 'Erfolgreich abgestimmt' : 'Gib deine Stimme ab'}
         </SubmitButton>
       </Form>
