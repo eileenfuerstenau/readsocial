@@ -107,7 +107,7 @@ const Card = styled.section`
   display: grid;
   grid-template-columns: 2fr 5fr;
   border-radius: 5px;
-  box-shadow: 0 2px 5px;
+  box-shadow: 0 2px 5px var(--darkgrey);
   padding: 5px 10px 15px 5px;
   position: relative;
 `

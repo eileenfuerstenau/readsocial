@@ -10,7 +10,7 @@ export default function SearchBar({ userInput, setUserInput }) {
         value={userInput}
         onChange={event => setUserInput(event.target.value)}
         maxLength={200}
-        placeholder="Suche Buch oder Autor*in"
+        placeholder="Suche Buch oder Autor:in"
       />
     </InputLabel>
   )

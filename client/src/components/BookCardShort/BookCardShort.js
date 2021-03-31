@@ -99,7 +99,7 @@ BookCardShort.propTypes = {
 const Card = styled.section`
   background-color: var(--grey);
   border-radius: 5px;
-  box-shadow: 0 2px 5px;
+  box-shadow: 0 2px 5px var(--darkgrey);
   padding: 5px 10px 10px 10px;
   position: relative;
   height: min-content;
