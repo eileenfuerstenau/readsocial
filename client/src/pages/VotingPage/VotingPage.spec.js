@@ -17,7 +17,7 @@ describe('VotingPage', () => {
   it('renders nominated bookcards by default', () => {
     render(<VotingPage {...testdata} />)
     expect(
-      screen.getByText('Veronika beschließt zu sterben von Paulo Coelho')
+      screen.getByText('Veronika beschließt zu sterben')
     ).toBeInTheDocument()
   })
 })

@@ -3,6 +3,7 @@ import { Route, Switch } from 'react-router-dom'
 import Grid from '../../components/Grid/Grid'
 import Navigation from '../../components/Navigation/Navigation'
 import VotingPage from '../VotingPage/VotingPage'
+import HomePage from '../HomePage/HomePage'
 import { useEffect, useState } from 'react'
 import Header from '../../components/Header/Header'
 import styled from 'styled-components/macro'
@@ -26,6 +27,10 @@ export default function App() {
     <Grid>
       <Switch>
         <Route exact path="/">
+          <DoubleExtendedHeader />
+          <HomePage />
+        </Route>
+        <Route exact path="/inspiration">
           <ExtendedHeader>Lass dich inspirieren</ExtendedHeader>
           <BookCardsPage
             onNominate={nominateBook}
@@ -47,5 +52,9 @@ export default function App() {
 
 const ExtendedHeader = styled(Header)`
   height: 80px;
+  z-index: 5;
+`
+const DoubleExtendedHeader = styled(Header)`
+  height: 160px;
   z-index: 5;
 `

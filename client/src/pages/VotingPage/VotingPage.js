@@ -30,6 +30,7 @@ export default function VotingPage({ setNominatedBooks, nominatedBooks }) {
     <VotingPageLayout>
       <Form onSubmit={handleSubmit}>
         <BooksWrapper>
+          {hasVoted ?? nominatedBooks.sort((a, b) => b.votes - a.votes)}
           {nominatedBooks.map(({ _id, title, author, description, votes }) => (
             <BookCardShort
               key={_id}

@@ -7,6 +7,7 @@ const testdataShort = {
   cover: '/book-cover/3.jpg',
   title: 'Schnelles Denken, langsames Denken',
   author: 'Daniel Kahneman',
+  votes: 0,
   description:
     'Wie treffen wir unsere Entscheidungen? Warum ist Zögern ein überlebensnotwendiger Reflex?',
   descriptionExtended: '[Herr aller Dinge]',
@@ -26,7 +27,7 @@ describe('BookCardShort', () => {
   it('renders a booktitle with an author and a button', () => {
     render(<BookCardShort {...testdataShort} />)
     expect(
-      screen.getByText('Schnelles Denken, langsames Denken von Daniel Kahneman')
+      screen.getByText('Schnelles Denken, langsames Denken')
     ).toBeInTheDocument()
     expect(
       screen.getByRole('button', { name: 'expand-shrink-description' })
@@ -46,16 +47,5 @@ describe('BookCardShort', () => {
     })
     userEvent.click(extendButton)
     expect(setDescriptionExtended).toHaveBeenCalledTimes(1)
-  })
-
-  it('calls onDelete when the delete button was clicked', () => {
-    const onDelete = jest.fn()
-    render(<BookCardShort {...testdataShort} onDelete={onDelete} />)
-    const deleteButton = screen.getByRole('button', {
-      name: 'delete-nominated',
-    })
-    userEvent.click(deleteButton)
-    expect(onDelete).toHaveBeenCalledTimes(1)
-    expect(onDelete).toHaveBeenCalledWith('3')
   })
 })
