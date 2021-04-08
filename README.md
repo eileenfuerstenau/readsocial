@@ -31,4 +31,5 @@ See the section about running tests for more information.
 
 ## Demo
 
-![ReadSocial Demo](demo/eileen_fuerstenau_readsocial.gif)
+<img src="demo/eileen_fuerstenau_readsocial.gif" alt="Demo"
+	title="ReadSocial" width="375" height="667" />
