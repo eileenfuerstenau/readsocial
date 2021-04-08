@@ -68,7 +68,7 @@ const BooksWrapper = styled.div`
   display: grid;
   gap: 10px;
   border: 1px solid var(--darkgrey);
-  height: 75vh;
+  height: 70vh;
   overflow-y: scroll;
   align-content: start;
   border-radius: 10px;
@@ -85,7 +85,6 @@ const SubmitButton = styled(Button)`
   align-self: center;
   margin: 10px;
 `
-
 const EmptyShortListStatement = styled.div`
   text-align: center;
   padding: 10px;
