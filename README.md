@@ -32,4 +32,4 @@ See the section about running tests for more information.
 ## Demo
 
 <img src="demo/eileen_fuerstenau_readsocial.gif" alt="Demo"
-	title="ReadSocial" width="375" height="667" />
+	title="ReadSocial" width="375" />
