@@ -26,7 +26,6 @@ const InputLabel = styled.label`
   background: white;
   z-index: 7;
 `
-
 const Input = styled.input`
   border-radius: 25px;
   border: none;

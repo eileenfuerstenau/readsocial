@@ -106,7 +106,6 @@ const TabBarWrapper = styled.div`
   border-radius: 0 0 20px 20px;
   background: transparent;
 `
-
 const TabBarBackgroundPart = styled.span`
   height: 60px;
   background: white;
@@ -117,7 +116,6 @@ const TabBarBackgroundPart = styled.span`
   left: 0;
   z-index: -2;
 `
-
 const BooksWrapper = styled.div`
   padding: 0 2% 0 2%;
   display: grid;

@@ -1,7 +1,7 @@
 {
-  "name": "backend",
+  "name": "readsocial",
   "version": "1.0.0",
-  "description": "",
+  "description": "Find the next book to read together with your friends",
   "main": "index.js",
   "scripts": {
     "start": "node server.js",
