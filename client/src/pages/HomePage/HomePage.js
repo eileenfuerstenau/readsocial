@@ -36,20 +36,22 @@ const HomePageLayout = styled.main`
   display: grid;
 `
 const WelcomeTextWrapper = styled.section`
-  height: 350px;
+  height: 330px;
   width: 80%;
   background: var(--grey);
   z-index: 7;
   position: absolute;
-  top: 30px;
+  top: 25px;
   left: 10%;
   border-radius: 10px;
   box-shadow: 0 2px 5px var(--darkgrey);
   display: grid;
+  font-size: 90%;
+  align-content: start;
 `
 const TextWrapper = styled.section`
   text-align: center;
-  padding: 0 30px;
+  padding: 0 20px;
 `
 const Title = styled.h1`
   font-size: 150%;
@@ -62,7 +64,7 @@ const SVGWrapper = styled.section`
   align-self: end;
   z-index: 10;
   position: absolute;
-  bottom: -15px;
+  bottom: -25px;
 `
 const ButtonWrapper = styled.section`
   align-self: start;
