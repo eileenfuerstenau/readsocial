@@ -19,7 +19,7 @@ You can clone my repository using:
 
 $ git clone https://github.com/eileenfuerstenau/capstone.git
 
-# Available Scripts
+## Available Scripts
 
 `npm start`
 Runs the app in the development mode.
