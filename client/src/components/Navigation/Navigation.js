@@ -8,6 +8,7 @@ export default function Navigation() {
     <Nav>
       <NavButton
         aria-label="home"
+        data-testid="home"
         as={NavLink}
         exact
         to="/"
@@ -21,6 +22,7 @@ export default function Navigation() {
       </NavButton>
       <NavButton
         aria-label="inspiration"
+        data-testid="inspiration"
         as={NavLink}
         to="/inspiration"
         style={{ color: 'var(--darkgrey)' }}
@@ -33,6 +35,7 @@ export default function Navigation() {
       </NavButton>
       <NavButton
         aria-label="voting"
+        data-testid="voting"
         as={NavLink}
         to="/voting"
         style={{ color: 'var(--darkgrey)' }}
