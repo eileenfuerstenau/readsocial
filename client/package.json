@@ -24,7 +24,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006 -s public",
-    "build-storybook": "build-storybook -s public"
+    "build-storybook": "build-storybook -s public",
+    "cy:open": "cypress open"
   },
   "eslintConfig": {
     "extends": [
@@ -53,6 +54,7 @@
     "@storybook/addon-links": "^6.1.21",
     "@storybook/node-logger": "^6.1.21",
     "@storybook/preset-create-react-app": "^3.1.6",
-    "@storybook/react": "^6.1.21"
+    "@storybook/react": "^6.1.21",
+    "cypress": "^7.0.1"
   }
 }
