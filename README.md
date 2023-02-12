@@ -1,8 +1,4 @@
-# Capstone Project | ReadSocial | Eileen Fürstenau
-
-## Capstone Project ?
-
-The Web Development Bootcamp of the neue fische School and Pool for Digital Talent ends with the independent development of an own web app as a capstone project. From conception and design to every line of code, the entire app was worked on by myself. During the last four weeks of the 12-week bootcamp, I was thus able to repeat and deepen what I had previously learned.
+# ReadSocial 
 
 ## About ReadSocial
 
